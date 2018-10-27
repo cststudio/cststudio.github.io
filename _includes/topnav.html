@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <!--网站logo-->
+            <a class="navbar-brand" href="{{ site.baseurl }}/">
+                <span><img src="{{site.baseurl}}/img/logonav.png"></span> {{ site.title }}
+            </a>
+        </div>
+        <!--顶部左侧，TODO：考虑要加什么内容-->
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li {% if page.sectionid=='docs' %} class="active" {% endif %}><a href="{{ "/docs/home/" | prepend: site.baseurl }}">文档</a></li>
+                <li {% if page.sectionid=='blog' %} class="active" {% endif %}><a href="{{ site.posts.first.url | prepend: site.baseurl }}">博客</a></li>
+                <li><a href="{{ site.git_address }}" target=_blank><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+            <!--顶部右侧 TODO:添加搜索，但要找一个插件-->
+            <div class="navbar-right">
+                {% comment %} <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="text" class="form-control" placeholder="假装支持搜索...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</nav>

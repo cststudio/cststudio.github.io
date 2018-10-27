@@ -1,0 +1,62 @@
+# Site settings
+title: 迟思堂工作室
+email: cst@cststudio.com.cn
+description: 迟思堂工作室 李迟 
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+#url: http://127.0.0.1:4000/ # the base hostname & protocol for your site
+url: https://www.cststudio.com.cn # the base hostname & protocol for your site
+
+# 图片地址，暂时为空
+imgurl: 
+git_address: https://github.com/cststudio
+git_edit_address: 
+
+# theme options from https://bootswatch.com/
+# comment out this to use default Bootstrap
+bootwatch: paper
+
+# mathjax
+mathjax: true
+mathjax_autoNumber: true
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - README.md
+timezone: Asia/Shanghai
+defaults:
+# 左上角页面布局
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:title/
+    output: true
