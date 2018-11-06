@@ -9,5 +9,4 @@ layout: default
     </ul>
     <br>
     <h4><strong>more comming soon...</strong></h4>
-
 </div>
