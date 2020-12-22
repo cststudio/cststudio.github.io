@@ -1,0 +1,3809 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.4 Makefile · 《嵌入式Linux入门与实践》 by 李迟</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李迟 <li@latelee.org>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ch05.4.html" />
+    
+    
+    <link rel="prev" href="ch05.3.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.cststudio.com.cn" target="_blank" class="custom-link">返回主页</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.cststudio.com.cn/book/ellp" target="_blank" class="custom-link">返回书目</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分 Linux系统使用篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../ch01/">
+            
+                <a href="../ch01/">
+            
+                    
+                    第1章 嵌入式Linux基础概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch11">
+            
+                    
+                    1.1 嵌入式Linux是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch12">
+            
+                    
+                    1.2 嵌入式Linux由哪些部分组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch13">
+            
+                    
+                    1.3 如何学习嵌入式Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch14">
+            
+                    
+                    1.4 其它知识点补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch15">
+            
+                    
+                    1.5 本书代码示例说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch16">
+            
+                    
+                    1.6 本书实验平台说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch17">
+            
+                    
+                    1.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../ch02/">
+            
+                <a href="../ch02/">
+            
+                    
+                    第2章 Ubuntu系统安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch21">
+            
+                    
+                    2.1 使用虚拟机VMware Workstation安装Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch22">
+            
+                    
+                    2.2 安装Ubuntu后要做的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch23">
+            
+                    
+                    2.3 虚拟机Ubuntu的访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch24">
+            
+                    
+                    2.4 拓展思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch25">
+            
+                    
+                    2.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../ch03/ch03.html">
+            
+                <a href="../ch03/ch03.html">
+            
+                    
+                    第3章 Linux系统使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../ch03/ch03.1.html">
+            
+                <a href="../ch03/ch03.1.html">
+            
+                    
+                    3.1 UNIX哲学准则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../ch03/ch03.2.html">
+            
+                <a href="../ch03/ch03.2.html">
+            
+                    
+                    3.2 “一切皆文件”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../ch03/ch03.3.html">
+            
+                <a href="../ch03/ch03.3.html">
+            
+                    
+                    3.3 Linux系统目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../ch03/ch03.4.html">
+            
+                <a href="../ch03/ch03.4.html">
+            
+                    
+                    3.4 Linux命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../ch03/ch03.5.html">
+            
+                <a href="../ch03/ch03.5.html">
+            
+                    
+                    3.5 shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../ch03/ch03.6.html">
+            
+                <a href="../ch03/ch03.6.html">
+            
+                    
+                    3.6 系统配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../ch03/ch03.7.html">
+            
+                <a href="../ch03/ch03.7.html">
+            
+                    
+                    3.7 软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../ch03/ch03.8.html">
+            
+                <a href="../ch03/ch03.8.html">
+            
+                    
+                    3.8 更新Linux内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../ch03/ch03.9.html">
+            
+                <a href="../ch03/ch03.9.html">
+            
+                    
+                    3.9 自定义构建Linux系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../ch03/ch03.10.html">
+            
+                <a href="../ch03/ch03.10.html">
+            
+                    
+                    3.10 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../ch04/ch04.html">
+            
+                <a href="../ch04/ch04.html">
+            
+                    
+                    第4章 嵌入式Linux开发环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../ch04/ch04.1.html">
+            
+                <a href="../ch04/ch04.1.html">
+            
+                    
+                    4.1 嵌入式Linux开发概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html">
+            
+                    
+                    4.2 Windows系统所需工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch421">
+            
+                    
+                    4.2.1 综合类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch422">
+            
+                    
+                    4.2.2 编辑类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch423">
+            
+                    
+                    4.2.3 连接工类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html">
+            
+                    
+                    4.3 Linux系统所需服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.3.1" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch431">
+            
+                    
+                    4.3.1 SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.2" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch432">
+            
+                    
+                    4.3.2 Samba
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.3" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch433">
+            
+                    
+                    4.3.3 NFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.4" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch434">
+            
+                    
+                    4.3.4 FTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.5" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch435">
+            
+                    
+                    4.3.5 Telnet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../ch04/ch04.4.html">
+            
+                <a href="../ch04/ch04.4.html">
+            
+                    
+                    4.4 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="ch05.html">
+            
+                <a href="ch05.html">
+            
+                    
+                    第5章 自动化编译和Makefile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="ch05.1.html">
+            
+                <a href="ch05.1.html">
+            
+                    
+                    5.1 Linux系统源码编译方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1.1" data-path="ch05.1.html">
+            
+                <a href="ch05.1.html#ch511">
+            
+                    
+                    5.1.1 下载源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.2" data-path="ch05.1.html">
+            
+                <a href="ch05.1.html#ch512">
+            
+                    
+                    5.1.2 手动解压
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.3" data-path="ch05.1.html">
+            
+                <a href="ch05.1.html#ch513">
+            
+                    
+                    5.1.3 编译安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.4" data-path="ch05.1.html">
+            
+                <a href="ch05.1.html#ch514">
+            
+                    
+                    5.1.4 编译实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="ch05.2.html">
+            
+                <a href="ch05.2.html">
+            
+                    
+                    5.2 安装交叉编译器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="ch05.2.html">
+            
+                <a href="ch05.2.html#ch521">
+            
+                    
+                    5.2.1 获取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="ch05.2.html">
+            
+                <a href="ch05.2.html#ch522">
+            
+                    
+                    5.2.2 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.3" data-path="ch05.2.html">
+            
+                <a href="ch05.2.html#ch523">
+            
+                    
+                    5.2.3 验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.4" data-path="ch05.2.html">
+            
+                <a href="ch05.2.html#ch524">
+            
+                    
+                    5.2.4 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html">
+            
+                    
+                    5.3 自制交叉编译器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.3.1" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch531">
+            
+                    
+                    5.3.1 安装必备工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.2" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch532">
+            
+                    
+                    5.3.2 下载源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch533">
+            
+                    
+                    5.3.3 编译安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.4" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch534">
+            
+                    
+                    5.3.4 配置交叉编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.5" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch535">
+            
+                    
+                    5.3.5 构建交叉编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.6" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch536">
+            
+                    
+                    5.3.6 设置PATH环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.7" data-path="ch05.3.html">
+            
+                <a href="ch05.3.html#ch537">
+            
+                    
+                    5.3.7 交叉编译器小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5.4" data-path="ch05.4.html">
+            
+                <a href="ch05.4.html">
+            
+                    
+                    5.4 Makefile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.4.1" data-path="ch05.4.html">
+            
+                <a href="ch05.4.html#ch541">
+            
+                    
+                    5.4.1 Makefile基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.2" data-path="ch05.4.html">
+            
+                <a href="ch05.4.html#ch542">
+            
+                    
+                    5.4.2 在Makefile中执行shell命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.3" data-path="ch05.4.html">
+            
+                <a href="ch05.4.html#ch543">
+            
+                    
+                    5.4.3 使用make编译Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.4" data-path="ch05.4.html">
+            
+                <a href="ch05.4.html#ch544">
+            
+                    
+                    5.4.4 Makefile模板实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="ch05.5.html">
+            
+                <a href="ch05.5.html">
+            
+                    
+                    5.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../ch06/ch06.html">
+            
+                <a href="../ch06/ch06.html">
+            
+                    
+                    第6章 程序的编译、链接和运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../ch06/ch06.1.html">
+            
+                <a href="../ch06/ch06.1.html">
+            
+                    
+                    6.1 探究helloworld——程序编译
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1.1" >
+            
+                <span>
+            
+                    
+                    预编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.2" >
+            
+                <span>
+            
+                    
+                    编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.3" >
+            
+                <span>
+            
+                    
+                    汇编
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.4" >
+            
+                <span>
+            
+                    
+                    链接
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../ch06/ch06.2.html">
+            
+                <a href="../ch06/ch06.2.html">
+            
+                    
+                    6.2 Linux二进制工具(Binutils)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" >
+            
+                <span>
+            
+                    
+                    ar
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" >
+            
+                <span>
+            
+                    
+                    nm
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" >
+            
+                <span>
+            
+                    
+                    strings
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" >
+            
+                <span>
+            
+                    
+                    strip
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" >
+            
+                <span>
+            
+                    
+                    objcopy
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.6" >
+            
+                <span>
+            
+                    
+                    objdump
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.7" >
+            
+                <span>
+            
+                    
+                    readelf
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.8" >
+            
+                <span>
+            
+                    
+                    size
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.9" >
+            
+                <span>
+            
+                    
+                    ld
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../ch06/ch06.3.html">
+            
+                <a href="../ch06/ch06.3.html">
+            
+                    
+                    6.3 目标文件格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.3.1" >
+            
+                <span>
+            
+                    
+                    目标文件格式分类
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.2" >
+            
+                <span>
+            
+                    
+                    ELF格式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.3" >
+            
+                <span>
+            
+                    
+                    符号修饰
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.4" >
+            
+                <span>
+            
+                    
+                    静态库
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.5" >
+            
+                <span>
+            
+                    
+                    动态库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../ch06/ch06.4.html">
+            
+                <a href="../ch06/ch06.4.html">
+            
+                    
+                    6.4 探究helloworld——程序运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.4.1" >
+            
+                <span>
+            
+                    
+                    进程空间
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.2" >
+            
+                <span>
+            
+                    
+                    栈
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.3" >
+            
+                <span>
+            
+                    
+                    堆
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.4" >
+            
+                <span>
+            
+                    
+                    Linux装载ELF文件过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../ch06/ch06.5.html">
+            
+                <a href="../ch06/ch06.5.html">
+            
+                    
+                    6.5 探究helloworld——库到内核
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.5.1" >
+            
+                <span>
+            
+                    
+                    glibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5.2" >
+            
+                <span>
+            
+                    
+                    Linux系统调用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5.3" >
+            
+                <span>
+            
+                    
+                    硬件输出
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../ch06/ch06.6.html">
+            
+                <a href="../ch06/ch06.6.html">
+            
+                    
+                    6.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../ch07/ch07.html">
+            
+                <a href="../ch07/ch07.html">
+            
+                    
+                    第7章 应用程序开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../ch07/ch07.1.html">
+            
+                <a href="../ch07/ch07.1.html">
+            
+                    
+                    7.1 编程规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1.1" >
+            
+                <span>
+            
+                    
+                    编码风格
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.1.2" >
+            
+                <span>
+            
+                    
+                    编程原则
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../ch07/ch07.2.html">
+            
+                <a href="../ch07/ch07.2.html">
+            
+                    
+                    7.2 C标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../ch07/ch07.3.html">
+            
+                <a href="../ch07/ch07.3.html">
+            
+                    
+                    7.3 C++标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../ch07/ch07.4.html">
+            
+                <a href="../ch07/ch07.4.html">
+            
+                    
+                    7.4 Linux应用层模块分类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.4.1" >
+            
+                <span>
+            
+                    
+                    文件IO编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.2" >
+            
+                <span>
+            
+                    
+                    多进程编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.3" >
+            
+                <span>
+            
+                    
+                    多线程编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.4" >
+            
+                <span>
+            
+                    
+                    信号处理编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.5" >
+            
+                <span>
+            
+                    
+                    串口编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../ch07/ch07.5.html">
+            
+                <a href="../ch07/ch07.5.html">
+            
+                    
+                    7.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../ch08/ch08.html">
+            
+                <a href="../ch08/ch08.html">
+            
+                    
+                    第8章 调试方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ch08/ch08.1.html">
+            
+                <a href="../ch08/ch08.1.html">
+            
+                    
+                    8.1 关于“调试”的说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html">
+            
+                    
+                    8.2 消除gcc编译警告
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.2.1" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html#ch821">
+            
+                    
+                    8.2.1 gcc编译警告选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2.2" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html#ch822">
+            
+                    
+                    8.2.2 gcc常见编译警告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ch08/ch08.3.html">
+            
+                <a href="../ch08/ch08.3.html">
+            
+                    
+                    8.3 C/C++代码静态检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ch08/ch08.4.html">
+            
+                <a href="../ch08/ch08.4.html">
+            
+                    
+                    8.4 使用printf打印跟踪流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ch08/ch08.4.html">
+            
+                <a href="../ch08/ch08.4.html">
+            
+                    
+                    8.5 gdb调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ch08/ch08.5.html">
+            
+                <a href="../ch08/ch08.5.html">
+            
+                    
+                    8.6 利用coredump文件调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.6.1" >
+            
+                <span>
+            
+                    
+                    生成coredump文件前置条件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6.2" >
+            
+                <span>
+            
+                    
+                    段错误调试实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6.3" >
+            
+                <span>
+            
+                    
+                    嵌入式设备上coredump调试经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ch08/ch08.6.html">
+            
+                <a href="../ch08/ch08.6.html">
+            
+                    
+                    8.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分 嵌入式Linux系统移植篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ch09/ch09.html">
+            
+                <a href="../ch09/ch09.html">
+            
+                    
+                    第9章 嵌入式Linux移植总览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../ch09/ch09.1.html">
+            
+                <a href="../ch09/ch09.1.html">
+            
+                    
+                    9.1 嵌入式Linux移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" >
+            
+                <span>
+            
+                    
+                    bootloader移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" >
+            
+                <span>
+            
+                    
+                    Linux内核移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.3" >
+            
+                <span>
+            
+                    
+                    根文件系统移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../ch09/ch09.2.html">
+            
+                <a href="../ch09/ch09.2.html">
+            
+                    
+                    9.2 宿主机与目标板共享的几种方式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" >
+            
+                <span>
+            
+                    
+                    NFS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" >
+            
+                <span>
+            
+                    
+                    SSH
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" >
+            
+                <span>
+            
+                    
+                    FTP
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" >
+            
+                <span>
+            
+                    
+                    硬件介质：U盘和SD卡
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../ch09/ch09.3.html">
+            
+                <a href="../ch09/ch09.3.html">
+            
+                    
+                    9.3 qemu模拟环境
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" >
+            
+                <span>
+            
+                    
+                    qemu介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" >
+            
+                <span>
+            
+                    
+                    qemu选项介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../ch09/ch09.4.html">
+            
+                <a href="../ch09/ch09.4.html">
+            
+                    
+                    9.4 嵌入式Linux开发实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" >
+            
+                <span>
+            
+                    
+                    嵌入式Linux移植实践经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" >
+            
+                <span>
+            
+                    
+                    嵌入式Linux应用开发实践经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" >
+            
+                <span>
+            
+                    
+                    如何阅读芯片手册
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.4" >
+            
+                <span>
+            
+                    
+                    如何阅读开源代码
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../ch09/ch09.5.html">
+            
+                <a href="../ch09/ch09.5.html">
+            
+                    
+                    9.5 几种嵌入式Linux平台的开发环境介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.5.1" >
+            
+                <span>
+            
+                    
+                    三星s3c2440(samsung)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.2" >
+            
+                <span>
+            
+                    
+                    德州仪器dm8127(TI)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.3" >
+            
+                <span>
+            
+                    
+                    瑞芯微rk8188(rockchip)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.4" >
+            
+                <span>
+            
+                    
+                    赛灵思zed board(Xilinx)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.5" >
+            
+                <span>
+            
+                    
+                    x86工控机
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../ch09/ch09.6.html">
+            
+                <a href="../ch09/ch09.6.html">
+            
+                    
+                    9.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ch10/ch10.html">
+            
+                <a href="../ch10/ch10.html">
+            
+                    
+                    第10章 bootloader移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../ch10/ch10.1.html">
+            
+                <a href="../ch10/ch10.1.html">
+            
+                    
+                    10.1 u-boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" >
+            
+                <span>
+            
+                    
+                    u-boot概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" >
+            
+                <span>
+            
+                    
+                    u-boot目录说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.3" >
+            
+                <span>
+            
+                    
+                    u-boot编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.4" >
+            
+                <span>
+            
+                    
+                    u-boot在qemu环境的启动
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.5" >
+            
+                <span>
+            
+                    
+                    u-boot启动流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.6" >
+            
+                <span>
+            
+                    
+                    在u-boot中新加命令
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.7" >
+            
+                <span>
+            
+                    
+                    u-boot进程空间
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../ch10/ch10.2.html">
+            
+                <a href="../ch10/ch10.2.html">
+            
+                    
+                    10.2 coreboot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" >
+            
+                <span>
+            
+                    
+                    coreboot概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" >
+            
+                <span>
+            
+                    
+                    coreboot目录说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" >
+            
+                <span>
+            
+                    
+                    coreboot编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.4" >
+            
+                <span>
+            
+                    
+                    coreboot在qemu环境的启动
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.5" >
+            
+                <span>
+            
+                    
+                    coreboot启动u-boot
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.6" >
+            
+                <span>
+            
+                    
+                    coreboot启动流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../ch10/ch10.3.html">
+            
+                <a href="../ch10/ch10.3.html">
+            
+                    
+                    10.3 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ch11/ch11.html">
+            
+                <a href="../ch11/ch11.html">
+            
+                    
+                    第11章 Linux内核移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../ch11/ch11.1.html">
+            
+                <a href="../ch11/ch11.1.html">
+            
+                    
+                    11.1 内核目录说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../ch11/ch11.2.html">
+            
+                <a href="../ch11/ch11.2.html">
+            
+                    
+                    11.2 内核配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../ch11/ch11.3.html">
+            
+                <a href="../ch11/ch11.3.html">
+            
+                    
+                    11.3 内核配置编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../ch11/ch11.4.html">
+            
+                <a href="../ch11/ch11.4.html">
+            
+                    
+                    11.4 helloworld设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../ch11/ch11.5.html">
+            
+                <a href="../ch11/ch11.5.html">
+            
+                    
+                    11.5 内核启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../ch11/ch11.6.html">
+            
+                <a href="../ch11/ch11.6.html">
+            
+                    
+                    11.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../ch12/ch12.html">
+            
+                <a href="../ch12/ch12.html">
+            
+                    
+                    第12章 根文件系统移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../ch12/ch12.1.html">
+            
+                <a href="../ch12/ch12.1.html">
+            
+                    
+                    12.1 busybox
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1.1" >
+            
+                <span>
+            
+                    
+                    [busybox介绍]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.1.2" >
+            
+                <span>
+            
+                    
+                    [busybox编译]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../ch12/ch12.2.html">
+            
+                <a href="../ch12/ch12.2.html">
+            
+                    
+                    12.2 构建Linux根文件系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.2.1" >
+            
+                <span>
+            
+                    
+                    构建/bin目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.2" >
+            
+                <span>
+            
+                    
+                    构建/lib目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.3" >
+            
+                <span>
+            
+                    
+                    构建/etc目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../ch12/ch12.3.html">
+            
+                <a href="../ch12/ch12.3.html">
+            
+                    
+                    12.3 其它构建方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../ch12/ch12.4.html">
+            
+                <a href="../ch12/ch12.4.html">
+            
+                    
+                    12.4 根文件系统启动流程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.4.1" >
+            
+                <span>
+            
+                    
+                    系统级别启动过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4.2" >
+            
+                <span>
+            
+                    
+                    用户级别启动过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../ch12/ch12.5.html">
+            
+                <a href="../ch12/ch12.5.html">
+            
+                    
+                    12.5 制作ramdisk镜像文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="../ch12/ch12.6.html">
+            
+                <a href="../ch12/ch12.6.html">
+            
+                    
+                    12.6 在qemu挂载rootfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.7" data-path="../ch12/ch12.7.html">
+            
+                <a href="../ch12/ch12.7.html">
+            
+                    
+                    12.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../ch13/ch13.html">
+            
+                <a href="../ch13/ch13.html">
+            
+                    
+                    第13章 Linux驱动开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../ch13/ch13.1.html">
+            
+                <a href="../ch13/ch13.1.html">
+            
+                    
+                    13.1 驱动分类概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../ch13/ch13.2.html">
+            
+                <a href="../ch13/ch13.2.html">
+            
+                    
+                    13.2 驱动实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../ch13/ch13.3.html">
+            
+                <a href="../ch13/ch13.3.html">
+            
+                    
+                    13.3 用户空间与内核空间的交互方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../ch13/ch13.4.html">
+            
+                <a href="../ch13/ch13.4.html">
+            
+                    
+                    13.4 驱动分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../ch13/ch13.5.html">
+            
+                <a href="../ch13/ch13.5.html">
+            
+                    
+                    13.5 Linux驱动常见错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../ch13/ch13.6.html">
+            
+                <a href="../ch13/ch13.6.html">
+            
+                    
+                    13.6 Linux驱动学习建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.7" data-path="../ch13/ch13.7.html">
+            
+                <a href="../ch13/ch13.7.html">
+            
+                    
+                    13.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../appendix/参考文献.html">
+            
+                <a href="../appendix/参考文献.html">
+            
+                    
+                    参考文献
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../postscript.html">
+            
+                <a href="../postscript.html">
+            
+                    
+                    后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.4 Makefile</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#54-makefile">5.4 Makefile</a></li><ul><li><a href="#541-makefile&#x57FA;&#x7840;&#x77E5;&#x8BC6;">5.4.1 Makefile&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a></li><ul><li><a href="#5411-&#x57FA;&#x672C;&#x5F62;&#x5F0F;">5.4.1.1 &#x57FA;&#x672C;&#x5F62;&#x5F0F;</a></li><li><a href="#5412-&#x89C4;&#x5219;&#x521D;&#x73B0;">5.4.1.2 &#x89C4;&#x5219;&#x521D;&#x73B0;</a></li><li><a href="#5413-&#x6761;&#x4EF6;&#x5224;&#x65AD;">5.4.1.3 &#x6761;&#x4EF6;&#x5224;&#x65AD;</a></li><li><a href="#5414-&#x5185;&#x7F6E;&#x51FD;&#x6570;">5.4.1.4 &#x5185;&#x7F6E;&#x51FD;&#x6570;</a></li><li><a href="#5415-&#x7EC8;&#x6781;&#x7248;&#x672C;">5.4.1.5 &#x7EC8;&#x6781;&#x7248;&#x672C;</a></li></ul><li><a href="#542-&#x5728;makefile&#x4E2D;&#x6267;&#x884C;shell&#x547D;&#x4EE4;">5.4.2 &#x5728;Makefile&#x4E2D;&#x6267;&#x884C;shell&#x547D;&#x4EE4;</a></li><li><a href="#543-&#x4F7F;&#x7528;make&#x7F16;&#x8BD1;makefile">5.4.3 &#x4F7F;&#x7528;make&#x7F16;&#x8BD1;Makefile</a></li><li><a href="#544-makefile&#x6A21;&#x677F;&#x5B9E;&#x4F8B;">5.4.4 Makefile&#x6A21;&#x677F;&#x5B9E;&#x4F8B;</a></li><ul><li><a href="#5441-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;">5.4.4.1 &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;</a></li><li><a href="#5442-&#x9A71;&#x52A8;&#x6A21;&#x677F;">5.4.4.2 &#x9A71;&#x52A8;&#x6A21;&#x677F;</a></li></ul></ul></ul></div><a href="#54-makefile" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="54-makefile"><a name="54-makefile" class="anchor-navigation-ex-anchor" href="#54-makefile"><i class="fa fa-link" aria-hidden="true"></i></a>5.4 Makefile</h1>
+<p>&#x8981;&#x8FDB;&#x884C;Linux&#x5F00;&#x53D1;&#xFF0C;&#x4E0D;&#x5F97;&#x4E0D;&#x63A5;&#x89E6;Makefile&#xFF0C;&#x5982;&#x679C;&#x770B;&#x5230;u-boot&#x6216;Linux&#x5185;&#x6838;&#x6E90;&#x7801;&#x7684;Makefile&#xFF0C;&#x4F1A;&#x987F;&#x65F6;&#x89C9;&#x5F97;Makefile&#x592A;&#x590D;&#x6742;&#x592A;&#x96BE;&#x5B66;&#x4E86;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x6E90;&#x7801;&#x9700;&#x8981;&#x590D;&#x6742;&#x7684;Makefile&#x624D;&#x80FD;&#x5904;&#x7406;&#x5F97;&#x4E86;&#x3002;&#x672C;&#x8282;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x7B80;&#x5355;&#x7684;Makefile&#x77E5;&#x8BC6;&#xFF0C;&#x6700;&#x540E;&#x7ED9;&#x51FA;Makefile&#x6A21;&#x677F;&#x3002;Makefile&#x5C5E;&#x4E8E;&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#xFF0C;&#x5728;&#x5DF2;&#x6709;&#x57FA;&#x7840;&#x4E0A;&#x80FD;&#x4FEE;&#x6539;&#x5E76;&#x6269;&#x5C55;&#x5230;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x4E2D;&#x5373;&#x53EF;&#xFF0C;&#x65E0;&#x987B;&#x7814;&#x7A76;&#x5185;&#x90E8;&#x539F;&#x7406;&#x3002;&#x5305;&#x62EC;&#xFF1A;  </p>
+<ul>
+<li>&#x5728;&#x5927;&#x578B;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF08;&#x5982;kernel&#xFF09;&#x4E2D;&#x5982;&#x4F55;&#x901A;&#x8FC7;Makefile&#x627E;&#x5230;&#x6240;&#x9700;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#x3002;  </li>
+<li>&#x5982;&#x4F55;&#x5728;&#x5185;&#x6838;&#x4E2D;&#x4EFF;&#x7167;Makefile&#x6DFB;&#x52A0;&#x81EA;&#x5DF1;&#x7684;&#x9A71;&#x52A8;&#x3002;  </li>
+<li>&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x9879;&#x76EE;&#xFF0C;&#x5982;&#x4F55;&#x6784;&#x9020;&#x9879;&#x76EE;&#x6E90;&#x7801;&#x6811;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x7528;Makefile&#x7BA1;&#x7406;&#x3002; </li>
+</ul>
+<p><span id="ch541"></span></p>
+<h2 id="541-makefile&#x57FA;&#x7840;&#x77E5;&#x8BC6;"><a name="541-makefile&#x57FA;&#x7840;&#x77E5;&#x8BC6;" class="anchor-navigation-ex-anchor" href="#541-makefile&#x57FA;&#x7840;&#x77E5;&#x8BC6;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.1 Makefile&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h2>
+<p>Makefile&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x5957;&#x89C4;&#x5219;&#x3001;&#x8BED;&#x6CD5;<sup><a href="#fn_&#x6CE8;1" id="reffn_&#x6CE8;1">&#x6CE8;1</a></sup>&#xFF0C;&#x5305;&#x62EC;&#x7F16;&#x8BD1;&#x987A;&#x5E8F;&#xFF0C;&#x7F16;&#x8BD1;&#x3001;&#x94FE;&#x63A5;&#x3001;&#x5B89;&#x88C5;&#x89C4;&#x5219;&#xFF0C;&#x7B49;&#x7B49;&#x3002; Makefile&#x89C4;&#x5219;&#x6709;&#x4E09;&#x4E2A;&#x8981;&#x7D20;&#xFF0C;&#x5206;&#x522B;&#x662F;&#xFF1A; </p>
+<ul>
+<li>&#x76EE;&#x6807;</li>
+<li>&#x4F9D;&#x8D56;</li>
+<li>&#x547D;&#x4EE4;</li>
+</ul>
+<p>&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>&#x76EE;&#x6807;: &#x4F9D;&#x8D56;
+tab &#x547D;&#x4EE4;
+</code></pre><p><strong>&#x547D;&#x4EE4;&#x524D;&#x9762;&#x4E00;&#x5B9A;&#x662F;tab&#xFF0C;&#x4E0D;&#x80FD;&#x662F;&#x7A7A;&#x683C;</strong><sup><a href="#fn_&#x6CE8;2" id="reffn_&#x6CE8;2">&#x6CE8;2</a></sup>&#x3002;  </p>
+<p>&#x4E0B;&#x9762;&#x4EE5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;C&#x5DE5;&#x7A0B;&#x4E3A;&#x4F8B;&#x5BF9;Makefile&#x8FDB;&#x884C;&#x8BB2;&#x89E3;&#xFF1A;  </p>
+<pre><code>.
+&#x251C;&#x2500;&#x2500; bar.c
+&#x251C;&#x2500;&#x2500; bar.h
+&#x251C;&#x2500;&#x2500; foo.c
+&#x251C;&#x2500;&#x2500; foo.h
+&#x251C;&#x2500;&#x2500; main.c
+&#x2514;&#x2500;&#x2500; Makefile
+</code></pre><p>&#x8BE5;&#x5DE5;&#x7A0B;&#x8BBE;&#x6709;&#x5934;&#x6587;&#x4EF6;&#x548C;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x4E2D;main.c&#x6587;&#x4EF6;&#x5305;&#x542B;&#x4E3B;&#x51FD;&#x6570;main&#xFF0C;&#x6700;&#x7EC8;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;a.out&#x3002;</p>
+<h3 id="5411-&#x57FA;&#x672C;&#x5F62;&#x5F0F;"><a name="5411-&#x57FA;&#x672C;&#x5F62;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#5411-&#x57FA;&#x672C;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.1.1 &#x57FA;&#x672C;&#x5F62;&#x5F0F;</h3>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;Makefile&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>a.out: main.c foo.c bar.c 
+    gcc main.c foo.c bar.c -o a.out
+</code></pre><p>&#x76EE;&#x6807;&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x4E8C;&#x8FDB;&#x5236;a.out&#xFF0C;&#x4F9D;&#x8D56;&#x4E3A;&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x547D;&#x4EE4;&#x662F;&#x4E00;&#x6761;&#x5B8C;&#x6574;&#x7684;&#x7F16;&#x8BD1;&#xFF08;&#x53CA;&#x94FE;&#x63A5;&#xFF09;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5C06;&#x7F16;&#x8BD1;&#x548C;&#x94FE;&#x63A5;&#x5206;&#x5F00;&#xFF0C;&#x53D8;&#x6210;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#xFF1A;  </p>
+<pre><code>a.out: main.o foo.o bar.o 
+    gcc main.o foo.o bar.o -o a.out
+
+main.o: main.c
+    gcc -c main.c
+
+foo.o: foo.c
+    gcc -c foo.c
+
+bar.o: bar.c
+    gcc -c bar.c
+</code></pre><p>&#x524D;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5C06;.o&#x6587;&#x4EF6;&#x94FE;&#x63A5;&#x751F;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x540E;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x4F9D;&#x6B21;&#x5BF9;&#x6E90;&#x7801;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002;  </p>
+<h3 id="5412-&#x89C4;&#x5219;&#x521D;&#x73B0;"><a name="5412-&#x89C4;&#x5219;&#x521D;&#x73B0;" class="anchor-navigation-ex-anchor" href="#5412-&#x89C4;&#x5219;&#x521D;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.1.2 &#x89C4;&#x5219;&#x521D;&#x73B0;</h3>
+<ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;  </li>
+</ul>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x4F7F;&#x7528;<code>$</code>&#x6807;&#x8BC6;&#xFF0C;&#x5F62;&#x5F0F;&#x4E3A;<code>$(var)</code>&#xFF0C;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x53EF;&#x968F;&#x610F;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x4E00;&#x822C;&#x6709;&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x6709;&#x4E9B;&#x4E3A;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x4E5F;&#x53EF;&#x8986;&#x76D6;&#x8D4B;&#x503C;&#x3002;&#x5217;&#x4E3E;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x53D8;&#x91CF;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>&#x6700;&#x540E;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x5E93;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>CROSS_COMPILE</td>
+<td>&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x7F00;&#xFF0C;&#x975E;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x60C5;&#x51B5;&#x4FDD;&#x7559;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td>CC</td>
+<td>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;gcc&#x6216;cc&#xFF0C;C&#x7F16;&#x8BD1;&#x5668;&#xFF0C; &#x5F88;&#x591A;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x4F7F;&#x7528;<code>$(CROSS_COMPILE)gcc</code>&#x5F62;&#x5F0F;</td>
+</tr>
+<tr>
+<td>CXX</td>
+<td>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;g++&#xFF0C;C++&#x7F16;&#x8BD1;&#x5668;</td>
+</tr>
+<tr>
+<td>AR</td>
+<td>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;ar&#xFF0C;&#x6253;&#x5305;&#x5DE5;&#x5177;&#xFF0C;&#x751F;&#x6210;&#x9759;&#x6001;&#x5E93;</td>
+</tr>
+<tr>
+<td>RM</td>
+<td>&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;rm -f&#xFF0C;&#x5F3A;&#x5236;&#x5220;&#x9664;</td>
+</tr>
+<tr>
+<td>CFLAGS</td>
+<td>C&#x7F16;&#x8BD1;&#x9009;&#x9879;</td>
+</tr>
+<tr>
+<td>CXXFLAGS</td>
+<td>C++&#x7F16;&#x8BD1;&#x9009;&#x9879;</td>
+</tr>
+<tr>
+<td>LDFLAGS</td>
+<td>&#x94FE;&#x63A5;&#x9009;&#x9879;</td>
+</tr>
+<tr>
+<td>LIBS</td>
+<td>&#x5E93;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>SRCS</td>
+<td>&#x6E90;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>OBJS</td>
+<td>&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;.o&#x6587;&#x4EF6;&#xFF09;</td>
+</tr>
+<tr>
+<td>&#x5176;&#x5B83;</td>
+<td>&#x5176;&#x5B83;&#x53D8;&#x91CF;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x5B9A;&#x4E49;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x53D8;&#x91CF;&#x7684;&#x8D4B;&#x503C;&#x6709;&#x51E0;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>&#x6700;&#x57FA;&#x672C;&#x7684;&#x8D4B;&#x503C;</td>
+</tr>
+<tr>
+<td>?=</td>
+<td>&#x5982;&#x672A;&#x8D4B;&#x503C;&#xFF0C;&#x5219;&#x8D4B;&#x503C;&#x4E4B;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</td>
+</tr>
+<tr>
+<td>:=</td>
+<td>&#x8986;&#x76D6;&#x4E4B;&#x524D;&#x8D4B;&#x7684;&#x503C;</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>&#x8FFD;&#x52A0;&#x8D4B;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x81EA;&#x52A8;&#x53D8;&#x91CF;  </li>
+</ul>
+<p>&#x9664;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x5916;&#xFF0C;Makefile&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5185;&#x7F6E;&#x7684;&#x81EA;&#x52A8;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x4E9B;&#x81EA;&#x52A8;&#x53D8;&#x91CF;&#x65E0;&#x987B;&#x8D4B;&#x503C;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5373;&#x53EF;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x53D8;&#x91CF;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$@</td>
+<td>&#x76EE;&#x6807;&#x96C6;&#x5408;</td>
+</tr>
+<tr>
+<td>$%</td>
+<td>&#x5F53;&#x76EE;&#x6807;&#x662F;&#x51FD;&#x6570;&#x5E93;&#x6587;&#x4EF6;&#x65F6;, &#x8868;&#x793A;&#x5176;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x540D;</td>
+</tr>
+<tr>
+<td>$&lt;</td>
+<td>&#x7B2C;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x76EE;&#x6807;. &#x5982;&#x679C;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x662F;&#x591A;&#x4E2A;, &#x9010;&#x4E2A;&#x8868;&#x793A;&#x4F9D;&#x8D56;&#x76EE;&#x6807;</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>&#x6BD4;&#x76EE;&#x6807;&#x65B0;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#xFF0C;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;</td>
+</tr>
+<tr>
+<td>$^</td>
+<td>&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;, &#x4F1A;&#x53BB;&#x9664;&#x91CD;&#x590D;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;</td>
+</tr>
+<tr>
+<td>$+</td>
+<td>&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;, &#x4E0D;&#x4F1A;&#x53BB;&#x9664;&#x91CD;&#x590D;&#x7684;&#x4F9D;&#x8D56;&#x76EE;&#x6807;</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>&#x8FD9;&#x4E2A;&#x662F;GNU make&#x7279;&#x6709;&#x7684;, &#x5176;&#x5B83;&#x7684;make&#x7A0B;&#x5E8F;&#x4E0D;&#x4E00;&#x5B9A;&#x652F;&#x6301;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x9690;&#x542B;&#x89C4;&#x5219;  </li>
+</ul>
+<p>&#x4E3A;&#x7B80;&#x5316;&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;&#xFF0C;Makefile&#x5F15;&#x5165;&#x4E86;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x9690;&#x542B;&#x89C4;&#x5219;&#x5C31;&#x662F;Makefile&#x5728;&#x80CC;&#x540E;&#x6839;&#x636E;&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x81EA;&#x52A8;&#x5E2E;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x67D0;&#x4E9B;&#x4E8B;&#xFF0C;&#x5982;&#x628A;.c&#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x6210;.o&#x6587;&#x4EF6;&#xFF0C;&#x7F16;&#x8BD1;&#x7684;&#x547D;&#x4EE4;&#x4E3A;<code>gcc -c xx.c</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7684;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code>a.out: foo.o bar.o 
+    gcc &#x2013;o a.out foo.o bar.o $(CFLAGS) $(LDFLAGS)
+</code></pre><p>&#x8FD9;&#x91CC;&#x5E76;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x5F97;&#x5230;foo.o&#x548C;bar.o&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x6709;&#x4E86;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x5728;&#x6267;&#x884C;make&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x5E2E;&#x6211;&#x4EEC;&#x63A8;&#x5BFC;&#x51FA;&#x5982;&#x4F55;&#x5F97;&#x5230;&#xFF08;&#x7F16;&#x8BD1;&#xFF09;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x63A8;&#x5BFC;&#x89C4;&#x5219;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x9002;&#x5408;&#x6240;&#x6709;&#x7684;&#x5E94;&#x7528;&#x573A;&#x5408;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x624B;&#x52A8;&#x6307;&#x5B9A;&#x4E00;&#x4E9B;&#x89C4;&#x5219;&#x7684;&#x3002;  </p>
+<p>&#x4E86;&#x89E3;&#x8FD9;&#x4E9B;&#x77E5;&#x8BC6;&#x540E;&#xFF0C;Makefile&#x53D8;&#x6210;&#xFF1A;  </p>
+<pre><code>target=a.out
+SRCS=main.c foo.c bar.c 
+OBJS=main.o foo.o bar.o 
+
+$(target):$(OBJS)
+    $(CC) $^ -o $@
+
+# &#x6CE8;&#x610F;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x5F97;&#x5230;$(OBJS)&#x6587;&#x4EF6;
+</code></pre><h3 id="5413-&#x6761;&#x4EF6;&#x5224;&#x65AD;"><a name="5413-&#x6761;&#x4EF6;&#x5224;&#x65AD;" class="anchor-navigation-ex-anchor" href="#5413-&#x6761;&#x4EF6;&#x5224;&#x65AD;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.1.3 &#x6761;&#x4EF6;&#x5224;&#x65AD;</h3>
+<p>Makefile&#x652F;&#x6301;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x53D8;&#x91CF;&#x503C;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4EE5;ifeq&#x4E3A;&#x4F8B;&#xFF0C;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>ifeq (arg1, arg2)  
+    text-if-true
+else
+    text-if-false
+endif
+</code></pre><p>&#x6BD4;&#x8F83;arg1&#x548C;arg2&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5426;&#x76F8;&#x540C;&#xFF0C;&#x5982;&#x662F;&#x4E3A;&#x771F;&#xFF0C;&#x6267;&#x884C;text-if-true&#x90E8;&#x5206;&#x8BED;&#x53E5;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#xFF0C;&#x6267;&#x884C;text-if-false&#x90E8;&#x5206;&#x8BED;&#x53E5;&#x3002;<br>&#x4E0B;&#x8868;&#x5217;&#x51FA;&#x56DB;&#x79CD;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x6BCF;&#x4E00;&#x79CD;&#x5747;&#x6709;else&#x548C;endif&#xFF0C;&#x5224;&#x65AD;&#x903B;&#x8F91;&#x4EA6;&#x76F8;&#x4F3C;&#x3002;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x53D8;&#x91CF;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ifeq (arg1, arg2)</td>
+<td>&#x6BD4;&#x8F83;arg1&#x548C;arg2&#x53C2;&#x6570;&#x7684;&#x503C;&#x662F;&#x5426;&#x76F8;&#x540C;&#x3002;&#x5982;&#x662F;&#x4E3A;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#x3002;&#x53E6;&#x5916;&#x8FD8;&#x6709;<code>ifeq &apos;arg1&apos; &apos;arg2&apos;</code>&#xFF0C;<code>ifeq &quot;arg1&quot; &quot;arg2&quot;</code>&#x7B49;&#x5F62;&#x5F0F;&#xFF0C;&#x6B64;&#x5904;&#x53EA;&#x53D6;&#x4E00;&#x79CD;&#xFF0C;&#x4E0B;&#x540C;</td>
+</tr>
+<tr>
+<td>ifneq (arg1, arg2)</td>
+<td>&#x6BD4;&#x8F83;arg1&#x548C;arg2&#x53C2;&#x6570;&#x7684;&#x503C;&#x662F;<strong>&#x4E0D;&#x76F8;&#x540C;</strong>&#x3002;&#x5982;&#x662F;&#x4E3A;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#x3002;</td>
+</tr>
+<tr>
+<td>ifdef variable-name</td>
+<td>&#x5982;&#x679C;&#x5B9A;&#x4E49;variable-name&#xFF08;&#x5373;&#x503C;&#x4E3A;&#x975E;&#x7A7A;&#xFF09;&#xFF0C;&#x5219;&#x4E3A;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#x3002;</td>
+</tr>
+<tr>
+<td>ifndef variable-name</td>
+<td><strong>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;</strong>variable-name&#xFF08;&#x503C;&#x4E3A;&#x7A7A;&#xFF09;&#xFF0C;&#x5219;&#x4E3A;&#x771F;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x5047;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x4F9D;&#x7136;&#x5C5E;&#x4E8E;&#x8D4B;&#x503C;&#x9636;&#x6BB5;&#xFF0C;&#x8BED;&#x53E5;&#x524D;&#x9762;&#x53EF;&#x4F7F;&#x7528;&#x7A7A;&#x683C;&#x952E;&#xFF0C;&#x4F46;<strong>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;Tab&#x952E;</strong>&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x547D;&#x4EE4;&#x3002;  </p>
+<p>&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code># &#x4F8B;1&#xFF1A;&#x5224;&#x65AD;$(CC)&#x53D8;&#x91CF;&#x662F;&#x5426;&#x201C;gcc&#x201D;&#xFF0C;&#x5982;&#x662F;&#x5219;&#x4F7F;&#x7528;GNU&#x5E93;&#x3002;
+libs_for_gcc = -lgnu
+normal_libs =
+ifeq ($(CC),gcc)
+  libs=$(libs_for_gcc)
+else
+  libs=$(normal_libs)
+endif
+foo: $(objects)
+    $(CC) -o foo $(objects) $(libs)
+
+# &#x4F8B;2&#xFF1A;&#x5982;&#x679C;foo&#x88AB;&#x8D4B;&#x503C;&#xFF0C;&#x5219;aa&#x4E3A;yes&#xFF0C;&#x5982;&#x672A;&#x8D4B;&#x503C;&#xFF0C;&#x5219;&#x4E3A;no  
+foo = helloworld
+ifdef foo 
+aa = yes 
+else 
+aa = no 
+endif 
+
+# &#x4F8B;3&#xFF1A;&#x5982;&#x679C;foo&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;aa&#x4E3A;yes&#xFF0C;&#x5982;&#x88AB;&#x8D4B;&#x503C;&#xFF0C;&#x5219;&#x4E3A;no  
+foo = 
+ifndef foo 
+aa = yes 
+else 
+aa = no 
+endif 
+
+# &#x4F8B;4&#xFF1A;&#x6B64;&#x4E3A;&#x7279;&#x6B8A;&#x793A;&#x4F8B;&#xFF0C;&#x7531;&#x4E8E;foo&#x5DF2;&#x7ECF;&#x88AB;&#x8D4B;&#x503C;&#x4E86;&#xFF08;&#x5373;&#x4F7F;bar&#x4E3A;&#x7A7A;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;aa&#x7ED3;&#x679C;&#x4E3A;yes
+bar = 
+foo = $(bar)
+ifdef foo 
+aa = yes 
+else 
+aa = no 
+endif
+</code></pre><h3 id="5414-&#x5185;&#x7F6E;&#x51FD;&#x6570;"><a name="5414-&#x5185;&#x7F6E;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#5414-&#x5185;&#x7F6E;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.1.4 &#x5185;&#x7F6E;&#x51FD;&#x6570;</h3>
+<p>Makefile&#x652F;&#x6301;&#x5F88;&#x591A;&#x6709;&#x7528;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x540C;&#x6837;&#x662F;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x5904;&#x7406;&#x7684;&#x6D41;&#x7A0B;&#x3002;&#x4E0E;&#x53D8;&#x91CF;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E5F;&#x662F;&#x4F7F;&#x7528;<code>$</code>&#x6807;&#x8BC6;&#x3002;&#x8BED;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>$(&lt;&#x51FD;&#x6570;&#x540D;&gt; &lt;&#x53C2;&#x6570;&gt;) 
+${&lt;&#x51FD;&#x6570;&#x540D;&gt; &lt;&#x53C2;&#x6570;&gt;}
+</code></pre><p>&#x53C2;&#x6570;&#x95F4;&#x4EE5;&#x82F1;&#x6587;&#x9017;&#x53F7;&#x201C;,&#x201D;&#x9694;&#x5F00;&#xFF0C;&#x800C;&#x51FD;&#x6570;&#x540D;&#x548C;&#x53C2;&#x6570;&#x4E4B;&#x95F4;&#x4EE5;&#x201C;&#x7A7A;&#x683C;&#x201D;&#x5206;&#x9694;&#x3002;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x51FD;&#x6570;&#x3002;  </p>
+<ul>
+<li><p>&#x6269;&#x5C55;&#x901A;&#x914D;&#x7B26;&#x51FD;&#x6570;&#xFF1A;wildcard<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(wildcard &lt;pattern...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x67E5;&#x627E;&#x7B26;&#x5408;pattern&#x7684;&#x5BF9;&#x8C61;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x5339;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>SRCS=$(wildcard ./*.c)</code>&#x67E5;&#x627E;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x6240;&#x6709;&#x7684;C&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x8D4B;&#x503C;&#x4E3A;SRCS&#x3002;  </p>
+</li>
+<li><p>&#x6A21;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x51FD;&#x6570;&#xFF1A;patsubst
+&#x8BED;&#x6CD5;&#xFF1A;<code>$(patsubst &lt;pattern&gt;,&lt;replacement&gt;,&lt;text&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x67E5;&#x627E;text&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#xFF08;&#x5355;&#x8BCD;&#x4EE5;&#x201C;&#x7A7A;&#x683C;&#x201D;&#x3001;&#x201C;Tab&#x201D;&#x6216;&#x201C;&#x56DE;&#x8F66;&#x201D;&#x201C;&#x6362;&#x884C;&#x201D;&#x5206;&#x9694;&#xFF09;&#x662F;&#x5426;&#x7B26;&#x5408;&#x6A21;&#x5F0F;pattern&#xFF0C;&#x5982;&#x679C;&#x5339;&#x914D;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x4EE5;replacement&#x66FF;&#x6362;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x88AB;&#x66FF;&#x6362;&#x8FC7;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>OBJS=$(patsubst ./%.c, ./%.o, $(SRCS))</code>&#x5C06;SRCS&#x76EE;&#x5F55;&#x7684;.c&#x6587;&#x4EF6;&#x66FF;&#x6362;&#x6210;.o&#x6587;&#x4EF6;&#xFF1A;</p>
+</li>
+<li><p>&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x51FD;&#x6570;&#xFF1A;subst<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(subst &lt;from&gt;,&lt;to&gt;,&lt;text&gt;)</code>&#x3002; 
+&#x529F;&#x80FD;&#xFF1A;&#x628A;&#x5B57;&#x4E32;text&#x4E2D;&#x7684;from&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;&#x6210;to&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x88AB;&#x66FF;&#x6362;&#x8FC7;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>$(subst foo,bar,foot on the street)</code>&#x5C06;foot&#x66FF;&#x6362;&#x4E3A;bart&#x3002;</p>
+</li>
+<li><p>&#x8FC7;&#x6EE4;&#x51FD;&#x6570;&#xFF1A;filter<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(filter &lt;pattern...&gt;,&lt;text&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x4EE5;pattern&#x6A21;&#x5F0F;&#x8FC7;&#x6EE4;text&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x4FDD;&#x7559;&#x7B26;&#x5408;&#x6A21;&#x5F0F;pattern&#x7684;&#x5355;&#x8BCD;&#x3002;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6A21;&#x5F0F;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x5B57;&#x4E32;&#x3002;  </p>
+</li>
+<li><p>&#x83B7;&#x53D6;&#x76EE;&#x5F55;&#x51FD;&#x6570;&#xFF1A;dir<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(dir &lt;names...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;names&#x4E2D;&#x53D6;&#x51FA;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x76EE;&#x5F55;&#x3002;&#x5982;&#x679C;&#x53C2;&#x6570;&#x4E0D;&#x5E26;&#x76EE;&#x5F55;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>$(dir src/foo.c bar.c)</code>&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x201C;src/ ./&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x53D6;&#x6587;&#x4EF6;&#x51FD;&#x6570;&#xFF1A;notdir<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(notdir &lt;names...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;names&#x4E2D;&#x53D6;&#x51FA;&#x975E;&#x76EE;&#x5F55;&#x90E8;&#x5206;&#xFF0C;&#x4EA6;&#x5373;&#x6587;&#x4EF6;&#x540D;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;
+&#x793A;&#x4F8B;&#xFF1A;<code>$(notdir src/foo.c bar.c)</code>&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x201C;foo.c bar.c&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x53D6;&#x540E;&#x7F00;&#x51FD;&#x6570;&#xFF1A;suffix<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(suffix &lt;names...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;names&#x4E2D;&#x53D6;&#x51FA;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x540E;&#x7F00;&#x540D;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D;&#xFF0C;&#x5982;&#x65E0;&#x8FD4;&#x56DE;&#x4E3A;&#x7A7A;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>$(suffix src/foo.c bar.o myfile)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F;&#x201C;.c .o&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x53D6;&#x524D;&#x7F00;&#x51FD;&#x6570;&#xFF1A;basename<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(basename &lt;names...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x4ECE;&#x6587;&#x4EF6;names&#x4E2D;&#x53D6;&#x51FA;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x524D;&#x7F00;&#x90E8;&#x5206;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x6587;&#x4EF6;names&#x7684;&#x524D;&#x7F00;&#xFF08;&#x53BB;&#x5E74;&#x540E;&#x7F00;&#x540D;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#xFF0C;&#x542B;&#x76EE;&#x5F55;&#x8FFD;&#xFF09;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>$(basename src/foo.c bar.o myfile)</code> &#x8FD4;&#x56DE;&#x503C;&#x662F;&#x201C;src/foo bar myfile&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x8FFD;&#x52A0;&#x540E;&#x7F00;&#x51FD;&#x6570;&#xFF1A;addsuffix<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(addsuffix &lt;suffix&gt;,&lt;names...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x628A;&#x540E;&#x7F00;suffix&#x52A0;&#x5230;names&#x4E2D;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x540E;&#x9762;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x6DFB;&#x52A0;&#x4E86;&#x540E;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>$(addsuffix .c, src/foo bar myfile)</code>&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x201C;src/foo.c bar.c myfile.c&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x52A0;&#x524D;&#x7F00;&#x51FD;&#x6570;&#x2014;&#x2014;addprefix 
+&#x8BED;&#x6CD5;&#xFF1A;<code>$(addprefix &lt;prefix&gt;,&lt;names...&gt;)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x628A;&#x524D;&#x7F00;prefix&#x52A0;&#x5230;names&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x524D;&#x9762;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x52A0;&#x8FC7;&#x524D;&#x7F00;&#x7684;&#x6587;&#x4EF6;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;<code>$(addprefix src/, foo bar myfile)</code>&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x201C;src/foo src/bar src/myfile&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x5FAA;&#x73AF;&#x51FD;&#x6570;&#xFF1A;foreach<br>&#x8BED;&#x6CD5;&#xFF1A;<code>$(foreach var,list,text)</code>&#x3002;<br>&#x529F;&#x80FD;&#xFF1A;&#x7C7B;&#x578B;for&#x8BED;&#x53E5;&#xFF0C;&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x3002;<br>&#x8FD4;&#x56DE;&#xFF1A;&#x6587;&#x4EF6;names&#x7684;&#x524D;&#x7F00;&#x5E8F;&#x5217;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;  </p>
+<pre><code>names = a b c d  
+files = $(foreach n,$(names),$(n).o)
+</code></pre><p>&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x201C;a.o b.o c.o d.o&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x5224;&#x65AD;&#x51FD;&#x6570;&#xFF1A;if
+&#x8BED;&#x6CD5;&#xFF1A;<code>$(if condition,then-part[,else-part])</code><br>&#x529F;&#x80FD;&#xFF1A;&#x7C7B;&#x4F3C;if&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#xFF0C;&#x6267;&#x884C;then-part&#x90E8;&#x5206;&#xFF0C;&#x5426;&#x5219;&#x6267;&#x884C;else-part&#xFF08;&#x8BE5;&#x90E8;&#x5206;&#x53EF;&#x6CA1;&#x6709;&#xFF09;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;  </p>
+<pre><code>SRC = $(if $(SRC_DIR) $(SRC_DIR),/usr/src)
+</code></pre><p>&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;SRC_DIR&#x5219;&#x8FD4;&#x56DE;&#x4E4B;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x201C;/usr/src&#x201D;&#x3002;</p>
+</li>
+<li><p>&#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF1A;call
+&#x8BED;&#x6CD5;&#xFF1A;<code>$(call variable,param,param,&#x2026;)</code><br>&#x529F;&#x80FD;&#xFF1A;&#x6839;&#x636E;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF08;&#x53EF;&#x7406;&#x89E3;&#x4E3A;&#x67D0;&#x79CD;&#x5F62;&#x5F0F;&#x7684;&#x51FD;&#x6570;&#xFF09;&#x548C;&#x53C2;&#x6570;&#xFF08;&#x53CA;&#x4F4D;&#x7F6E;&#xFF09;&#x6765;&#x8C03;&#x7528;&#x3002;<br>&#x793A;&#x4F8B;&#xFF1A;  </p>
+<pre><code>reverse = $(2) $(1) # &#x6CE8;&#x610F;&#x53C2;&#x6570;&#x4F4D;&#x7F6E;
+foo = $(call reverse,a,b)
+</code></pre><p>&#x8FD4;&#x56DE;&#x503C;foo&#x4E3A;&#x201C;b a&#x201D;&#x3002;  </p>
+</li>
+</ul>
+<h3 id="5415-&#x7EC8;&#x6781;&#x7248;&#x672C;"><a name="5415-&#x7EC8;&#x6781;&#x7248;&#x672C;" class="anchor-navigation-ex-anchor" href="#5415-&#x7EC8;&#x6781;&#x7248;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.1.5 &#x7EC8;&#x6781;&#x7248;&#x672C;</h3>
+<p>&#x6700;&#x7EC8;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A; </p>
+<pre><code>target=a.out
+
+OBJS=$(patsubst ./%.c, ./%.o, $(SRCS))
+
+$(target):$(OBJS)
+    $(CC) $^ -o $@
+
+%.o: %.c
+    $(CC) -c $&lt; -o $@
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;Makefile&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x5177;&#x4F53;&#x7684;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x53EA;&#x8981;&#x7B26;&#x5408;&#x4E86;&#x8981;&#x6C42;&#xFF08;&#x5982;&#x5305;&#x542B;&#x4E86;main&#x51FD;&#x6570;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#xFF0C;&#x5934;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x5C31;&#x80FD;&#x7F16;&#x8BD1;&#x51FA;&#x6700;&#x7EC8;&#x7684;&#x53EF;&#x6267;&#x884C;&#x4E8C;&#x8FDB;&#x5236;a.out&#x6587;&#x4EF6;&#x3002;  </p>
+<p><span id="ch542"></span></p>
+<h2 id="542-&#x5728;makefile&#x4E2D;&#x6267;&#x884C;shell&#x547D;&#x4EE4;"><a name="542-&#x5728;makefile&#x4E2D;&#x6267;&#x884C;shell&#x547D;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#542-&#x5728;makefile&#x4E2D;&#x6267;&#x884C;shell&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.2 &#x5728;Makefile&#x4E2D;&#x6267;&#x884C;shell&#x547D;&#x4EE4;</h2>
+<p>&#x5728;Makefile&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;shell&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;&#x6765;&#x5B8C;&#x6210;&#x60F3;&#x8981;&#x7684;&#x5DE5;&#x4F5C;&#x3002;Makefile&#x4E2D;&#x7684;shell&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x52A0;&#x4E24;&#x79CD;&#x524D;&#x7F00;&#xFF1A;<code>@</code>&#x548C;<code>-</code>&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x524D;&#x7F00;&#x3002;&#x5B83;&#x4EEC;&#x533A;&#x522B;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x524D;&#x7F00;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x65E0;</td>
+<td>&#x8F93;&#x51FA;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x53CA;&#x5176;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x51FA;&#x9519;&#x5219;&#x505C;&#x6B62;&#x6267;&#x884C;</td>
+</tr>
+<tr>
+<td>@</td>
+<td>&#x53EA;&#x8F93;&#x51FA;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x51FA;&#x9519;&#x5219;&#x505C;&#x6B62;&#x6267;&#x884C;</td>
+</tr>
+<tr>
+<td>-</td>
+<td>&#x8F93;&#x51FA;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x53CA;&#x5176;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x51FA;&#x9519;&#x4EA6;&#x7EE7;&#x7EED;&#x6267;&#x884C;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5728;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x4E00;&#x822C;&#x547D;&#x4EE4;&#x90FD;&#x4F7F;&#x7528;<code>@</code>&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x56E0;&#x4E3A;&#x91CD;&#x70B9;&#x662F;&#x770B;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5F53;&#x5BF9;Makefile&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x5173;&#x6CE8;&#x547D;&#x4EE4;&#x672C;&#x8EAB;&#x548C;&#x5176;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;  </p>
+<p>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x7684;.cpp&#x6587;&#x4EF6;&#x548C;.c&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x8D4B;&#x503C;&#x7ED9;SRCS&#x53D8;&#x91CF;&#xFF1A;  </p>
+<pre><code>SRCS := $(shell find $(SRC_DIRS) -name &apos;*.cpp&apos; -or -name &apos;*.c&apos;)
+</code></pre><p>&#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF08;&#x53CA;&#x5B50;&#x76EE;&#x5F55;&#xFF09;&#x4E0B;&#x6240;&#x6709;.o&#x6587;&#x4EF6;&#x548C;.d&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>@find . -iname &apos;*.o&apos; -o -iname &apos;*.d&apos; | xargs rm -f
+</code></pre><p><span id="ch543"></span></p>
+<h2 id="543-&#x4F7F;&#x7528;make&#x7F16;&#x8BD1;makefile"><a name="543-&#x4F7F;&#x7528;make&#x7F16;&#x8BD1;makefile" class="anchor-navigation-ex-anchor" href="#543-&#x4F7F;&#x7528;make&#x7F16;&#x8BD1;makefile"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.3 &#x4F7F;&#x7528;make&#x7F16;&#x8BD1;Makefile</h2>
+<p>Makefile&#x7531;make&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x3001;&#x89E3;&#x6790;&#x3001;&#x6267;&#x884C;&#x3002;make&#x7684;&#x53C2;&#x6570;&#x6709;&#x5F88;&#x591A;, &#x5E38;&#x7528;&#x7684;&#x6709;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-f FILE, --file=FILE</td>
+<td>&#x6307;&#x5B9A;Makefile&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;Makefile&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-j --jobs</td>
+<td>&#x540C;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x4E2A;&#x6570;, &#x4E5F;&#x5C31;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;Makefile</td>
+</tr>
+<tr>
+<td>-r --no-builtin-rules</td>
+<td>&#x7981;&#x6B62;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x9690;&#x542B;&#x89C4;&#x5219;</td>
+</tr>
+<tr>
+<td>-R --no-builtin-variabes</td>
+<td>&#x7981;&#x6B62;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x4F5C;&#x7528;&#x4E8E;&#x53D8;&#x91CF;&#x4E0A;&#x7684;&#x9690;&#x542B;&#x89C4;&#x5219;</td>
+</tr>
+<tr>
+<td>-B --always-make</td>
+<td>&#x5047;&#x8BBE;&#x6240;&#x6709;&#x76EE;&#x6807;&#x90FD;&#x6709;&#x66F4;&#x65B0;, &#x5373;&#x5F3A;&#x5236;&#x91CD;&#x7F16;&#x8BD1;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5728;Makefile&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x6267;&#x884C;make&#x65F6;&#x5C06;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x5230;Makefile&#x4E2D;&#x3002;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x4E86;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x7F00;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x4E3A;&#x975E;&#x8C03;&#x8BD5;&#x7248;&#x672C;&#xFF1A;  </p>
+<pre><code>$ make CROSS_COMPILE=arm-unknown-linux-gnueabihf- debug=n
+</code></pre><p>make&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x4F1A;&#x8986;&#x76D6;Makefile&#x7684;&#x53D8;&#x91CF;&#x3002;&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C;Makefile&#x7684;&#x901A;&#x5E38;&#x6027;&#x5C06;&#x4F1A;&#x589E;&#x5927;&#xFF0C;&#x5373;&#x540C;&#x4E00;&#x4EFD;Makefile&#xFF0C;&#x4F20;&#x9012;&#x4E0D;&#x540C;&#x53C2;&#x6570;&#x8FBE;&#x5230;&#x4E0D;&#x540C;&#x76EE;&#x6807;&#xFF0C;&#x800C;&#x65E0;&#x987B;&#x4FEE;&#x6539;Makefile&#x6587;&#x4EF6;&#x3002;  </p>
+<p>&#x5F85;&#x5199;&#xFF1A;Makefile&#x8981;&#x624B;&#x52A8;&#x66F4;&#x65B0;main&#x6240;&#x5728;&#x6587;&#x4EF6;&#xFF1F;
+&#x4F9D;&#x8D56;&#x6587;&#x4EF6;</p>
+<p><span id="ch544"></span></p>
+<h2 id="544-makefile&#x6A21;&#x677F;&#x5B9E;&#x4F8B;"><a name="544-makefile&#x6A21;&#x677F;&#x5B9E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#544-makefile&#x6A21;&#x677F;&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.4 Makefile&#x6A21;&#x677F;&#x5B9E;&#x4F8B;</h2>
+<p>&#x5229;&#x7528;&#x9690;&#x542B;&#x89C4;&#x5219;&#xFF0C;&#x7ED3;&#x5408;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#x548C;shell&#x547D;&#x4EE4;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;make&#x4F20;&#x9012;&#x53C2;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x6BD4;&#x8F83;&#x901A;&#x7528;&#x7684;&#x5B9E;&#x7528;Makefile&#x6A21;&#x677F;&#x4E86;<sup><a href="#fn_&#x6CE8;3" id="reffn_&#x6CE8;3">&#x6CE8;3</a></sup>&#x3002;  </p>
+<p>Makefile&#x6A21;&#x677F;&#x53EF;&#x5206;&#x51E0;&#x5927;&#x90E8;&#x5206;&#xFF1A;  </p>
+<ul>
+<li>1&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x7684;&#x6307;&#x5B9A;&#x6216;&#x8D4B;&#x503C;&#xFF0C;&#x5305;&#x62EC;&#x7F16;&#x8BD1;&#x5668;&#x548C;&#x94FE;&#x63A5;&#x5668;&#x53CA;&#x5176;&#x6807;&#x5FD7;&#xFF0C;&#x5982;CC&#x3001;CXX&#x3001;CFLAGS&#x3001;LDFLAGS&#x7B49;&#x7B49;&#x3002;  </li>
+<li>2&#x3001;&#x6307;&#x5B9A;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;INCDIRS&#x3001;&#x6E90;&#x7801;&#x8DEF;&#x5F84;SRC_DIRS&#x3002;&#x6B64;&#x90E8;&#x5206;&#x8981;&#x7ED3;&#x5408;&#x9879;&#x76EE;&#x6E90;&#x7801;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x7F16;&#x7801;&#x89C4;&#x8303;&#x7AE0;&#x8282;&#x4E2D;&#x6D89;&#x53CA;&#x3002;  <ul>
+<li>&#x624B;&#x52A8;&#x6307;&#x5B9A;&#x5404;&#x4E2A;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x53EA;&#x6307;&#x5B9A;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x3002;  </li>
+<li>&#x4F7F;&#x7528;find&#x547D;&#x4EE4;&#x67E5;&#x627E;&#x76EE;&#x5F55;&#x3002;  </li>
+</ul>
+</li>
+<li>3&#x3001;&#x6307;&#x5B9A;&#x6E90;&#x7801;&#x6587;&#x4EF6;SRCS&#x3002;<ul>
+<li>&#x4F7F;&#x7528;&#x5185;&#x7F6E;wildcard&#x51FD;&#x6570;&#x5339;&#x914D;&#x3002;  </li>
+<li>&#x4F7F;&#x7528;find&#x547D;&#x4EE4;&#x67E5;&#x627E;&#x5339;&#x914D;&#x6E90;&#x7801;&#x540E;&#x7F00;&#x3002;</li>
+</ul>
+</li>
+<li>4&#x3001;&#x6307;&#x5B9A;&#x76EE;&#x6807;&#x6587;&#x4EF6;OBJS&#xFF08;.o&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x5185;&#x7F6E;patsubst&#x5339;&#x914D;&#x3002;  </li>
+<li>5&#x3001;&#x786E;&#x5B9A;&#x7F16;&#x8BD1;&#x89C4;&#x5219;&#x3002;<ul>
+<li>.o&#x6587;&#x4EF6;&#xFF1A;&#x6839;&#x636E;&#x6E90;&#x7801;&#x4E0D;&#x540C;&#xFF0C;&#x4F7F;&#x7528;CC&#x6216;CXX&#x7F16;&#x8BD1;&#x3002;</li>
+<li>&#x4E8C;&#x8FDB;&#x5236;&#xFF1A;&#x4F7F;&#x7528;CC&#x6216;CXX&#x751F;&#x6210;&#x3002;&#x5982;&#x662F;C&#x3001;C++&#x6DF7;&#x5408;&#x7F16;&#x7A0B;&#xFF0C;&#x5219;&#x4F7F;&#x7528;CXX&#x3002;</li>
+<li>&#x52A8;&#x6001;&#x5E93;&#xFF1A;&#x4F7F;&#x7528;CXX&#x751F;&#x6210;&#x3002;</li>
+<li>&#x9759;&#x6001;&#x5E93;&#xFF1A;&#x4F7F;&#x7528;AR&#x5F52;&#x6863;&#x3002;</li>
+</ul>
+</li>
+<li>6&#x3001;&#x6E05;&#x9664;&#x9879;&#x76EE;&#x3002;&#x5220;&#x9664;&#x4E2D;&#x95F4;&#x751F;&#x6210;&#x6587;&#x4EF6;&#x3001;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x7EC8;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7B49;&#x7B49;&#x3002;</li>
+</ul>
+<h3 id="5441-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;"><a name="5441-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;" class="anchor-navigation-ex-anchor" href="#5441-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.4.1 &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6A21;&#x677F;</h3>
+<pre><code>  1    # (C) Copyleft 2011 2012 2013 2014 2015 2016 2017 2018
+  2    # Late Lee(li@latelee.org) from http://www.latelee.org
+  3    # 
+  4    # A simple Makefile for *ONE* project(c or/and cpp file) in *ONE* or *MORE* directory
+  5    #
+  6    # note: 
+  7    # you can put head file(s) in &apos;include&apos; directory, so it looks 
+  8    # a little neat.
+  9    #
+ 10    # usage: 
+ 11    #  $ make
+ 12    #  $ make V=1  # verbose ouput
+ 13    #  $ make CROSS_COMPILE=arm-arago-linux-gnueabi-  # cross compile for ARM, etc.
+ 14    #  $ make debug=y # debug
+ 15    #
+ 16    # log
+ 17    # 2013-05-14 sth about debug...
+ 18    # 2016-02-29 sth for c/c++ multi diretory
+ 19    # 2017-04-17 -s for .a/.so if no debug
+ 20    # 2017-05-05 Add V for verbose ouput
+ 21    ###############################################################################
+ 22    
+ 23    # !!!=== cross compile...
+ 24    CROSS_COMPILE ?= 
+ 25    
+ 26    MKDIR_P ?= mkdir -p
+ 27    
+ 28    CC  = $(CROSS_COMPILE)gcc
+ 29    CXX = $(CROSS_COMPILE)g++
+ 30    AR  = $(CROSS_COMPILE)ar
+ 31    
+ 32    # !!!===
+ 33    # in case all .c/.cpp need g++, specify CC=CXX...
+ 34    # CC = $(CXX)
+ 35    
+ 36    ARFLAGS = -cr
+ 37    RM  = -rm -rf
+ 38    MAKE= make
+ 39    
+ 40    # !!!===
+ 41    # target executable file or .a or .so
+ 42    target = a.out
+ 43    
+ 44    # !!!===
+ 45    # compile flags
+ 46    CFLAGS += -Wall -MMD
+ 47    
+ 48    # !!!=== pkg-config here
+ 49    #CFLAGS += $(shell pkg-config --cflags --libs glib-2.0 gattlib)
+ 50    #LDFLAGS += $(shell pkg-config --cflags --libs glib-2.0 gattlib)
+ 51    
+ 52    #****************************************************************************
+ 53    # debug can be set to y to include debugging info, or n otherwise
+ 54    debug  = y
+ 55    
+ 56    #****************************************************************************
+ 57    
+ 58    ifeq ($(debug), y)
+ 59     CFLAGS += -ggdb -rdynamic
+ 60    else
+ 61     CFLAGS += -O2 -s
+ 62    endif
+ 63    
+ 64    # !!!===
+ 65    # Macros define here
+ 66    DEFS += -DJIMKENT
+ 67    
+ 68    # !!! compile flags define here...
+ 69    CFLAGS  += $(DEFS)
+ 70    # !!! c++ flags
+ 71    CXXFLAGS = $(CFLAGS)
+ 72    # !!! library here...
+ 73    LIBS += 
+ 74    # !!! gcc/g++ link flags here
+ 75    LDFLAGS += $(LIBS) -lpthread -lrt
+ 76    
+ 77    # !!!===
+ 78    # include head file directory here
+ 79    INC = ./ ./inc
+ 80    # or try this
+ 81    #INC := $(shell find $(INC) -type d)
+ 82    
+ 83    # !!!===
+ 84    # build directory
+ 85    BUILD_DIR ?= #./build/
+ 86    
+ 87    # !!!===
+ 88    # source file(s), including ALL c file(s) or cpp file(s)
+ 89    # just need the directory.
+ 90    SRC_DIRS = . 
+ 91    # or try this
+ 92    #SRC_DIRS = . ../outbox
+ 93    
+ 94    # !!!===
+ 95    # gcc/g++ compile flags
+ 96    CFLAGS += $(INCDIRS)
+ 97    CXXFLAGS += -std=c++11
+ 98    
+ 99    # dynamic library build flags
+100    DYNC_FLAGS += -fpic -shared
+101    
+102    # include directory(s)
+103    INCDIRS := $(addprefix -I, $(INC))
+104    
+105    # source file(s)
+106    SRCS := $(shell find $(SRC_DIRS) -maxdepth 1 -name &apos;*.cpp&apos; -or -name &apos;*.c&apos;)
+107    # or try this
+108    #SRCS := $(shell find $(SRC_DIRS) -name &apos;*.cpp&apos; -or -name &apos;*.c&apos;)
+109    
+110    OBJS = $(patsubst %.c,$(BUILD_DIR)%.o, $(patsubst %.cpp,$(BUILD_DIR)%.o, $(SRCS))) 
+111    
+112    # depend files(.d)
+113    DEPS := $(OBJS:.o=.d)
+114    
+115    ifeq ($(V),1)
+116    Q=
+117    NQ=true
+118    else
+119    Q=@
+120    NQ=echo
+121    endif
+122    
+123    ###############################################################################
+124    
+125    all: $(BUILD_DIR)$(target)
+126    
+127    $(BUILD_DIR)$(target): $(OBJS)
+128    
+129    ifeq ($(suffix $(target)), .so)
+130        @$(NQ) &quot;Generating dynamic lib file...&quot; $(notdir $(target))
+131        $(Q)$(CXX) $(CXXFLAGS) $^ -o $(target) $(LDFLAGS) $(DYNC_FLAGS)
+132    else ifeq ($(suffix $(target)), .a)
+133        @$(NQ) &quot;Generating static lib file...&quot; $(notdir $(target))
+134        $(Q)$(AR) $(ARFLAGS) -o $(target) $^
+135    else
+136        @$(NQ) &quot;Generating executable file...&quot; $(notdir $(target))
+137        $(Q)$(CXX) $(CXXFLAGS) $^ -o $(target) $(LDFLAGS)
+138    endif
+139    
+140    # make all .c or .cpp
+141    $(BUILD_DIR)%.o: %.c
+142        @$(MKDIR_P) $(dir $@)
+143        @$(NQ) &quot;Compiling: &quot; $(basename $(notdir $@)).c
+144        $(Q)$(CC) $(CFLAGS) -c $&lt; -o $@
+145    
+146    $(BUILD_DIR)%.o: %.cpp
+147        @$(MKDIR_P) $(dir $@)
+148        @$(NQ) &quot;Compiling: &quot; $(basename $(notdir $@)).cpp
+149        $(Q)$(CXX) $(CXXFLAGS) -c $&lt; -o $@
+150    
+151    clean:
+152        @$(NQ) &quot;Cleaning...&quot;
+153        $(Q)$(RM) $(OBJS) $(target) $(DEPS)
+154    # delete build directory if needed
+155    ifneq ($(BUILD_DIR),)
+156        $(Q)$(RM) $(BUILD_DIR)
+157    endif
+158    # use &apos;grep -v soapC.o&apos; to skip the file
+159        @find . -iname &apos;*.o&apos; -o -iname &apos;*.bak&apos; -o -iname &apos;*.d&apos; | xargs rm -f
+160    
+161    .PHONY: all clean
+162    
+163    -include $(DEPS)
+</code></pre><p>&#x8BE5;&#x6A21;&#x677F;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x76EE;&#x5F55;&#x591A;&#x6587;&#x4EF6;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x80FD;&#x7F16;&#x8BD1;C&#x3001;C++&#x6E90;&#x7801;&#xFF0C;&#x65E0;&#x987B;&#x4FEE;&#x6539;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x3002;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<ul>
+<li>L24&#x6307;&#x5B9A;&#x4E86;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x7F00;&#xFF0C;&#x5982;&#x975E;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#xFF0C;&#x4FDD;&#x7559;&#x4E3A;&#x7A7A;&#x5373;&#x53EF;&#x3002;  </li>
+<li>L28~L38&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x3001;&#x94FE;&#x63A5;&#x5668;&#x7B49;&#x7684;&#x5B9A;&#x4E49;&#x3002;  </li>
+<li>L42&#x6307;&#x5B9A;&#x53EF;&#x6267;&#x884C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;a.out&#xFF0C;&#x53EF;&#x4FEE;&#x6539;&#x4E3A;&#x5176;&#x5B83;&#x540D;&#x79F0;&#x3002;  </li>
+<li>L46&#x7684;CFLAGS&#xFF0C;&#x6307;&#x5B9A;&#x7F16;&#x8BD1;&#x9009;&#x9879;&#xFF0C;&#x7F16;&#x8BD1;&#x9009;&#x9879;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x589E;&#x5220;&#x3002;  </li>
+<li>L53~L62&#x4E3A;&#x8C03;&#x8BD5;&#x3001;&#x975E;&#x8C03;&#x8BD5;&#x7248;&#x672C;&#x7684;&#x9009;&#x62E9;&#x548C;&#x5224;&#x65AD;&#x3002;  </li>
+<li>L73~L75&#x6307;&#x5B9A;&#x9759;&#x6001;&#x5E93;&#x548C;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x6B64;&#x5904;&#x53EA;&#x4F7F;&#x7528;&#x6700;&#x57FA;&#x672C;&#x7684;&#x7EBF;&#x7A0B;&#x5E93;&#xFF08;-lrt&#xFF09;&#x548C;&#x8FD0;&#x884C;&#x65F6;&#x5E93;&#xFF08;-lrt&#xFF09;&#x3002;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x589E;&#x5220;&#x3002;  </li>
+<li>L79~L81&#x6307;&#x5B9A;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x53EF;&#x624B;&#x52A8;&#x5206;&#x522B;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x901A;&#x8FC7;find&#x547D;&#x4EE4;&#x5C06;&#x6240;&#x6709;&#x7684;&#x76EE;&#x5F55;&#x4F5C;&#x4E3A;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;  </li>
+<li>L90&#x6307;&#x5B9A;&#x6E90;&#x7801;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x5728;L105~L108&#x901A;&#x8FC7;find&#x7684;&#x53C2;&#x6570;&#x6765;&#x67E5;&#x627E;&#x6E90;&#x7801;&#x3002;&#x53EF;&#x7528;-name&#x8FC7;&#x6EE4;&#x6E90;&#x7801;&#x7C7B;&#x578B;&#xFF0C;&#x7528;-maxdepth&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x6DF1;&#x5EA6;&#x3002;    </li>
+<li>L96&#x6307;&#x5B9A;&#x4E86;C&#x7F16;&#x8BD1;&#x5668;&#x9009;&#x9879;&#xFF0C;L97&#x6307;&#x5B9A;C++&#x7F16;&#x8BD1;&#x5668;&#x9009;&#x9879;&#x3002;  </li>
+<li>L110&#x901A;&#x8FC7;&#x901A;&#x914D;&#x7B26;&#x6765;&#x83B7;&#x53D6;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;.o&#x6587;&#x4EF6;&#xFF09;&#x3002;  </li>
+<li>L113&#x6307;&#x5B9A;&#x4E86;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x67D0;&#x4E00;&#x6587;&#x4EF6;&#x88AB;&#x4FEE;&#x6539;&#x65F6;&#xFF0C;&#x6240;&#x4EE5;&#x4F9D;&#x8D56;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;&#x3002;  (&#x5F85;&#x5199;&#xFF1A;&#x4E0D;&#x4FEE;&#x6539;main&#x6587;&#x4EF6;&#x4F1A;&#x5982;&#x4F55;&#xFF1F;)</li>
+<li>L127~L138&#x4E3A;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x8BD1;&#x89C4;&#x5219;&#xFF0C;&#x6B64;&#x5904;&#x901A;&#x8FC7;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D;&#x81EA;&#x9002;&#x5E94;&#x4E86;&#x9759;&#x6001;&#x5E93;&#x3001;&#x52A8;&#x6001;&#x5E93;&#x548C;&#x53EF;&#x6267;&#x884C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x3002;  </li>
+<li>L140~L149&#x4E3A;C&#x3001;C++&#x6E90;&#x7801;&#x7684;&#x7F16;&#x8BD1;&#x89C4;&#x5219;&#x3002;  </li>
+<li>L151~L160&#x4E3A;&#x6E05;&#x9664;&#x9879;&#x76EE;&#x89C4;&#x5219;<sup><a href="#fn_&#x6CE8;4" id="reffn_&#x6CE8;4">&#x6CE8;4</a></sup>&#x3002;  </li>
+</ul>
+<h3 id="5442-&#x9A71;&#x52A8;&#x6A21;&#x677F;"><a name="5442-&#x9A71;&#x52A8;&#x6A21;&#x677F;" class="anchor-navigation-ex-anchor" href="#5442-&#x9A71;&#x52A8;&#x6A21;&#x677F;"><i class="fa fa-link" aria-hidden="true"></i></a>5.4.4.2 &#x9A71;&#x52A8;&#x6A21;&#x677F;</h3>
+<pre><code>  1    #################################################################
+  2    # (C) Copyleft 2010 2011 2013 2015 2016 2017 2018
+  3    # by Late Lee&lt;li@latelee.org&gt; from www.latelee.org
+  4    # 
+  5    # A simple Makefile for linux driver
+  6    #
+  7    # make CROSS_COMPILE=arm-linux-
+  8    # usage: 
+  9    #  $ make
+ 10    #  $ make V=1  # verbose ouput
+ 11    #  $ make CROSS_COMPILE=arm-linux-  # cross compile for ARM, etc.
+ 12    #  $ make debug=y # debug
+ 13    #################################################################
+ 14    
+ 15    CLEAN_BEGIN=@echo &quot;Cleaning up ...&quot;
+ 16    CLEAN_END=@echo &quot;[Done.]&quot;
+ 17    
+ 18    MAKE_BEGIN=@echo &quot;Compiling ...&quot;
+ 19    MAKE_DONE=&quot;  [Job done!]&quot;;
+ 20    MAKE_ERR=&quot;  [Oops!Error occurred]&quot;;
+ 21    ### nothing end
+ 22    
+ 23    # !!!=== for cross compile
+ 24    CROSS_COMPILE = arm-linux-
+ 25    
+ 26    CC := $(CROSS_COMPILE)gcc
+ 27    LD := $(CROSS_COMPILE)ld
+ 28    
+ 29    
+ 30    # !!!=== for debug
+ 31    #DEBUG = y
+ 32    
+ 33    ifeq ($(DEBUG), y)
+ 34        DEBFLAGS = -O -g
+ 35    else
+ 36        DEBFLAGS = -O1
+ 37    endif
+ 38    
+ 39    # CFLAGS += $(DEBFLAGS) -I$(LDDINCDIR)
+ 40    
+ 41    # !!!=== module name here
+ 42    MODULE = GotoHell
+ 43    
+ 44    SRC = $(wildcard *.c *.cpp)
+ 45    OBJ = $(patsubst %.c,%.o, $(patsubst %.cpp,%.o, $(SRC)))
+ 46    
+ 47    ifeq ($(V),1)
+ 48    Q=
+ 49    NQ=true
+ 50    else
+ 51    Q=
+ 52    NQ=echo
+ 53    endif
+ 54    
+ 55    # obj-m = module
+ 56    # obj-y = into kernel
+ 57    # foo.o -&gt; foo.ko
+ 58    ifneq ($(KERNELRELEASE), )
+ 59        obj-m := $(MODULE).o
+ 60    
+ 61    # !!!=== your obj file(s) here
+ 62        $(MODULE)-objs := come.o on.o
+ 63    
+ 64    else
+ 65     # !!!=== change to your linux kernel path
+ 66        #KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+ 67        KERNELDIR ?= /home/latelee/linux_ebook/linux
+ 68        PWD := $(shell pwd)
+ 69    
+ 70     
+ 71    all:
+ 72        $(MAKE_BEGIN)
+ 73        @echo 
+ 74        @if \
+ 75        $(MAKE) -C $(KERNELDIR) M=$(PWD) modules;\
+ 76        then echo $(MAKE_DONE)\
+ 77        else \
+ 78        echo  $(MAKE_ERR)\
+ 79        exit 1; \
+ 80        fi
+ 81    endif
+ 82    
+ 83    clean:
+ 84        $(CLEAN_BEGIN)
+ 85        rm -rf *.cmd *.o *.ko *.mod.c *.symvers *.order *.markers \
+ 86        .tmp_versions .*.cmd *~
+ 87        $(CLEAN_END)
+ 88    
+ 89    install:
+ 90        @echo &quot; Note:&quot;
+ 91        @echo &quot;To install or not install,that is a question.&quot;
+ 92    
+ 93    modules:
+ 94        @echo &quot;Do not need to do this.&quot;
+ 95    
+ 96    modules_install:
+ 97        @echo &quot;Do not need to do this.&quot;
+ 98    love:
+ 99        @echo &quot;To make or not to make, that is also a question.&quot;
+100    
+101    .PHONY:all clean install love modules modules_install
+</code></pre><p>&#x8BE5;&#x6A21;&#x677F;&#x9002;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x6838;&#x9A71;&#x52A8;&#x9879;&#x76EE;&#xFF0C;&#x5373;&#x8131;&#x79BB;&#x5185;&#x6838;&#x6E90;&#x7801;&#x76EE;&#x5F55;&#x5F00;&#x53D1;&#x9A71;&#x52A8;&#xFF0C;&#x7531;&#x4E8E;&#x9700;&#x8981;&#x5185;&#x6838;&#x5934;&#x6587;&#x4EF6;&#x53CA;&#x5176;&#x5B83;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5FC5;&#x987B;&#x624B;&#x52A8;&#x6307;&#x5B9A;&#x5185;&#x6838;&#x6E90;&#x7801;&#x76EE;&#x5F55;&#x3002;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<ul>
+<li>L17~L21&#x4E3A;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#x5B9A;&#x4E49;&#x3002;  </li>
+<li>L24&#x6307;&#x5B9A;&#x4E86;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x7F00;&#xFF0C;&#x4E0D;&#x540C;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#x5668;&#x4F7F;&#x7528;&#x524D;&#x7F00;&#x533A;&#x5206;&#x3002;&#x5982;&#x975E;&#x4EA4;&#x53C9;&#x7F16;&#x8BD1;&#xFF0C;&#x4FDD;&#x7559;&#x4E3A;&#x7A7A;&#x5373;&#x53EF;&#x3002;   </li>
+<li>L31~L37&#x4E3A;&#x8C03;&#x8BD5;&#x3001;&#x6B63;&#x5F0F;&#x7248;&#x672C;&#x7684;&#x9009;&#x62E9;&#x548C;&#x5224;&#x65AD;&#x3002;  </li>
+<li>L42&#x6307;&#x5B9A;&#x4E86;&#x9A71;&#x52A8;&#x6A21;&#x5757;&#x540D;&#x79F0;&#x3002;  </li>
+<li>L62&#x6307;&#x5B9A;&#x4E86;&#x9A71;&#x52A8;&#x6E90;&#x7801;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;*.o&#x6587;&#x4EF6;&#xFF09;&#x3002;  </li>
+<li>L67&#x6307;&#x5B9A;&#x4E86;&#x5185;&#x6838;&#x6E90;&#x7801;&#x76EE;&#x5F55;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8BE5;&#x5185;&#x6838;&#x5FC5;&#x987B;&#x4E0E;&#x76EE;&#x6807;&#x677F;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x81F4;&#x3002;  </li>
+</ul>
+<hr>
+<blockquote id="fn_&#x6CE8;1">
+<sup>&#x6CE8;1</sup>. Makefile&#x8BED;&#x6CD5;&#x8BF7;&#x53C2;&#x8003;&#x5B98;&#x7F51;&#x8BF4;&#x660E;&#xFF1A;<a href="http://www.gnu.org/software/make/manual/make.html" target="_blank">http://www.gnu.org/software/make/manual/make.html</a>&#x3002;  <a href="#reffn_&#x6CE8;1" title="Jump back to footnote [&#x6CE8;1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;2">
+<sup>&#x6CE8;2</sup>. &#x6709;&#x4E00;&#x4E9B;&#x7F51;&#x7EDC;&#x9875;&#x9762;&#xFF0C;&#x56E0;&#x4E3A;tab&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x4E3A;&#x7F8E;&#x5316;&#x7248;&#x9762;&#xFF0C;&#x5C06;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A;4&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x8FD9;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x3002;  <a href="#reffn_&#x6CE8;2" title="Jump back to footnote [&#x6CE8;2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;3">
+<sup>&#x6CE8;3</sup>. &#x6B64;&#x5904;&#x7684;Makefile&#x6A21;&#x677F;&#x4F9D;&#x7136;&#x4E3A;&#x521D;&#x7EA7;&#x7684;&#xFF0C;&#x5BF9;&#x591A;&#x76EE;&#x5F55;&#x590D;&#x6742;&#x7684;&#x5927;&#x578B;&#x9879;&#x76EE;&#x6765;&#x8BF4;&#xFF0C;&#x8FD8;&#x65E0;&#x6CD5;&#x9002;&#x7528;&#x3002;  <a href="#reffn_&#x6CE8;3" title="Jump back to footnote [&#x6CE8;3] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;4">
+<sup>&#x6CE8;4</sup>. &#x5982;&#x679C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF08;.o&#x6587;&#x4EF6;&#xFF09;&#x65E0;&#x987B;&#x4FEE;&#x6539;&#xFF0C;&#x4F46;&#x53C8;&#x5FC5;&#x987B;&#x7F16;&#x8BD1;&#x4E14;&#x7F16;&#x8BD1;&#x8F83;&#x8017;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>grep -v XXX.o</code>&#x8FC7;&#x6EE4;&#x6389;&#x4E0D;&#x5220;&#x9664;&#xFF0C;&#x5178;&#x578B;&#x7684;&#x6709;ONVIF&#x534F;&#x8BAE;&#x6587;&#x4EF6;<code>soapC.o</code>&#x3002;  <a href="#reffn_&#x6CE8;4" title="Jump back to footnote [&#x6CE8;4] in the text."> &#x21A9;</a>
+</blockquote>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Late Lee 2018-2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"> Last update: 
+2019-12-17 17:27:25
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch05.3.html#ch537" class="navigation navigation-prev " aria-label="Previous page: 5.3.7 交叉编译器小知识">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ch05.4.html#ch541" class="navigation navigation-next " aria-label="Next page: 5.4.1 Makefile基础知识">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.4 Makefile","level":"2.5.4","depth":2,"next":{"title":"5.4.1 Makefile基础知识","level":"2.5.4.1","depth":3,"anchor":"#ch541","path":"ch05/ch05.4.md","ref":"ch05/ch05.4.md#ch541","articles":[]},"previous":{"title":"5.3.7 交叉编译器小知识","level":"2.5.3.7","depth":3,"anchor":"#ch537","path":"ch05/ch05.3.md","ref":"ch05/ch05.3.md#ch537","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","favicon","include-codeblock@^3.0.2","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","anchor-navigation-ex@0.1.8","splitter","donate"],"root":".","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Late Lee 2018-2019","modify_label":" Last update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["wqy-zenhei"],"github":{"url":"https://github.com/cststudio/"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://raw.githubusercontent.com/latelee/public/master/alipay_240.png","alipayText":"支付宝","button":"欢迎捐赠","title":"","wechat":"https://raw.githubusercontent.com/latelee/public/master/wepay_240.png","wechatText":"微信"},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"wqy-zenhei","size":2},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"李迟 <li@latelee.org>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《嵌入式Linux入门与实践》 by 李迟","language":"zh-hans","output.name":"site","links":{"sidebar":{"返回主页":"https://www.cststudio.com.cn","返回书目":"https://www.cststudio.com.cn/book/ellp"}},"gitbook":"*","description":"《嵌入式Linux入门与实践》，带领进入嵌入式Linux大门"},"file":{"path":"ch05/ch05.4.md","mtime":"2019-12-17T09:27:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T09:30:35.253Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

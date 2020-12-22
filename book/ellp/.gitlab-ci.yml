@@ -1,0 +1,38 @@
+send_job:
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq software-properties-common
+    - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+    - echo "install nodejs"
+    - apt-get update -qq && apt-get install -y -qq nodejs calibre
+    - export TZ='Asia/Shanghai' # 更改时区
+    - export LANG='en_US.UTF-8'
+    - export LC_ALL='en_US.UTF-8'
+    - export LANGUAGE='en_US.UTF-8'
+    - cp wqy-zenhei.ttc /usr/share/fonts/truetype
+    - npm install gitbook -g
+    - npm install gitbook-cli -g
+    - npm install ebook-convert -g
+    - gitbook install
+  script:
+    - gitbook build # 生成书籍
+    - mv _book /tmp
+    - gitbook pdf . ellp.pdf
+    - mv ellp.pdf /tmp
+  after_script:
+    - cd /tmp/
+    - git clone https://${github_you_dont_need_to_know}
+    - cd cststudio.github.io
+    - rm book/ellp/ -rf
+    - rm book/ep/ -rf
+    - cp -a /tmp/_book/ book/ep
+    - cp -a /tmp/ellp.pdf book/ep
+    - mv /tmp/_book/ book/ellp/
+    - mv /tmp/ellp.pdf book/ellp
+    - git config user.name  "Late Lee"
+    - git config user.email "li@latelee.org"
+    - git add .
+    - git add -u .
+    - git commit -m "CI auto update ellp book"
+    - git push --force --quiet "https://${TravisCIToken}@${github_you_dont_need_to_know}" master:master
+  only:
+    - master

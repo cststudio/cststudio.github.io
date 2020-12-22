@@ -1,0 +1,26 @@
+language: node_js # 设置语言
+node_js: stable # 设置相应版本
+cache:
+    apt: true
+    directories:
+        - node_modules # 缓存不经常更改的内容
+before_install:
+    - export TZ='Asia/Shanghai' # 更改时区
+    - npm install gitbook -g
+    - npm install gitbook-cli -g
+install:
+    - gitbook install
+script:
+    - gitbook build # 生成书籍
+    - mv _book /tmp
+after_script:
+    - cd /tmp/
+    - git clone https://${github_you_dont_need_to_know}
+    - cd cststudio.github.io
+    - mv /tmp/_book/* book/ellp/
+    - git config user.name  "Late Lee"
+    - git config user.email "li@latelee.org"
+    - git add .
+    - git add -u .
+    - git commit -m "CI auto update"
+    - git push --force --quiet "https://${TravisCIToken}@${github_you_dont_need_to_know}" master:master

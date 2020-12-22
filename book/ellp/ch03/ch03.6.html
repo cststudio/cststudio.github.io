@@ -1,0 +1,3434 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.6 系统配置 · 《嵌入式Linux入门与实践》 by 李迟</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李迟 <li@latelee.org>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ch03.7.html" />
+    
+    
+    <link rel="prev" href="ch03.5.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.cststudio.com.cn" target="_blank" class="custom-link">返回主页</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.cststudio.com.cn/book/ellp" target="_blank" class="custom-link">返回书目</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分 Linux系统使用篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../ch01/">
+            
+                <a href="../ch01/">
+            
+                    
+                    第1章 嵌入式Linux基础概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch11">
+            
+                    
+                    1.1 嵌入式Linux是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch12">
+            
+                    
+                    1.2 嵌入式Linux由哪些部分组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch13">
+            
+                    
+                    1.3 如何学习嵌入式Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch14">
+            
+                    
+                    1.4 其它知识点补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch15">
+            
+                    
+                    1.5 本书代码示例说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch16">
+            
+                    
+                    1.6 本书实验平台说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch17">
+            
+                    
+                    1.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../ch02/">
+            
+                <a href="../ch02/">
+            
+                    
+                    第2章 Ubuntu系统安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch21">
+            
+                    
+                    2.1 使用虚拟机VMware Workstation安装Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch22">
+            
+                    
+                    2.2 安装Ubuntu后要做的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch23">
+            
+                    
+                    2.3 虚拟机Ubuntu的访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch24">
+            
+                    
+                    2.4 拓展思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch25">
+            
+                    
+                    2.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="ch03.html">
+            
+                <a href="ch03.html">
+            
+                    
+                    第3章 Linux系统使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="ch03.1.html">
+            
+                <a href="ch03.1.html">
+            
+                    
+                    3.1 UNIX哲学准则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="ch03.2.html">
+            
+                <a href="ch03.2.html">
+            
+                    
+                    3.2 “一切皆文件”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="ch03.3.html">
+            
+                <a href="ch03.3.html">
+            
+                    
+                    3.3 Linux系统目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="ch03.4.html">
+            
+                <a href="ch03.4.html">
+            
+                    
+                    3.4 Linux命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="ch03.5.html">
+            
+                <a href="ch03.5.html">
+            
+                    
+                    3.5 shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.6" data-path="ch03.6.html">
+            
+                <a href="ch03.6.html">
+            
+                    
+                    3.6 系统配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="ch03.7.html">
+            
+                <a href="ch03.7.html">
+            
+                    
+                    3.7 软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="ch03.8.html">
+            
+                <a href="ch03.8.html">
+            
+                    
+                    3.8 更新Linux内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="ch03.9.html">
+            
+                <a href="ch03.9.html">
+            
+                    
+                    3.9 自定义构建Linux系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="ch03.10.html">
+            
+                <a href="ch03.10.html">
+            
+                    
+                    3.10 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../ch04/ch04.html">
+            
+                <a href="../ch04/ch04.html">
+            
+                    
+                    第4章 嵌入式Linux开发环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../ch04/ch04.1.html">
+            
+                <a href="../ch04/ch04.1.html">
+            
+                    
+                    4.1 嵌入式Linux开发概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html">
+            
+                    
+                    4.2 Windows系统所需工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch421">
+            
+                    
+                    4.2.1 综合类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch422">
+            
+                    
+                    4.2.2 编辑类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch423">
+            
+                    
+                    4.2.3 连接工类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html">
+            
+                    
+                    4.3 Linux系统所需服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.3.1" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch431">
+            
+                    
+                    4.3.1 SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.2" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch432">
+            
+                    
+                    4.3.2 Samba
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.3" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch433">
+            
+                    
+                    4.3.3 NFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.4" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch434">
+            
+                    
+                    4.3.4 FTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.5" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch435">
+            
+                    
+                    4.3.5 Telnet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../ch04/ch04.4.html">
+            
+                <a href="../ch04/ch04.4.html">
+            
+                    
+                    4.4 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../ch05/ch05.html">
+            
+                <a href="../ch05/ch05.html">
+            
+                    
+                    第5章 自动化编译和Makefile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html">
+            
+                    
+                    5.1 Linux系统源码编译方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1.1" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch511">
+            
+                    
+                    5.1.1 下载源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.2" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch512">
+            
+                    
+                    5.1.2 手动解压
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.3" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch513">
+            
+                    
+                    5.1.3 编译安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.4" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch514">
+            
+                    
+                    5.1.4 编译实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html">
+            
+                    
+                    5.2 安装交叉编译器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch521">
+            
+                    
+                    5.2.1 获取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch522">
+            
+                    
+                    5.2.2 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.3" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch523">
+            
+                    
+                    5.2.3 验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.4" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch524">
+            
+                    
+                    5.2.4 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html">
+            
+                    
+                    5.3 自制交叉编译器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.3.1" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch531">
+            
+                    
+                    5.3.1 安装必备工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.2" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch532">
+            
+                    
+                    5.3.2 下载源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch533">
+            
+                    
+                    5.3.3 编译安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.4" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch534">
+            
+                    
+                    5.3.4 配置交叉编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.5" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch535">
+            
+                    
+                    5.3.5 构建交叉编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.6" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch536">
+            
+                    
+                    5.3.6 设置PATH环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.7" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch537">
+            
+                    
+                    5.3.7 交叉编译器小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html">
+            
+                    
+                    5.4 Makefile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.4.1" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch541">
+            
+                    
+                    5.4.1 Makefile基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.2" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch542">
+            
+                    
+                    5.4.2 在Makefile中执行shell命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.3" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch543">
+            
+                    
+                    5.4.3 使用make编译Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.4" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch544">
+            
+                    
+                    5.4.4 Makefile模板实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../ch05/ch05.5.html">
+            
+                <a href="../ch05/ch05.5.html">
+            
+                    
+                    5.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../ch06/ch06.html">
+            
+                <a href="../ch06/ch06.html">
+            
+                    
+                    第6章 程序的编译、链接和运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../ch06/ch06.1.html">
+            
+                <a href="../ch06/ch06.1.html">
+            
+                    
+                    6.1 探究helloworld——程序编译
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1.1" >
+            
+                <span>
+            
+                    
+                    预编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.2" >
+            
+                <span>
+            
+                    
+                    编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.3" >
+            
+                <span>
+            
+                    
+                    汇编
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.4" >
+            
+                <span>
+            
+                    
+                    链接
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../ch06/ch06.2.html">
+            
+                <a href="../ch06/ch06.2.html">
+            
+                    
+                    6.2 Linux二进制工具(Binutils)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" >
+            
+                <span>
+            
+                    
+                    ar
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" >
+            
+                <span>
+            
+                    
+                    nm
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" >
+            
+                <span>
+            
+                    
+                    strings
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" >
+            
+                <span>
+            
+                    
+                    strip
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" >
+            
+                <span>
+            
+                    
+                    objcopy
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.6" >
+            
+                <span>
+            
+                    
+                    objdump
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.7" >
+            
+                <span>
+            
+                    
+                    readelf
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.8" >
+            
+                <span>
+            
+                    
+                    size
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.9" >
+            
+                <span>
+            
+                    
+                    ld
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../ch06/ch06.3.html">
+            
+                <a href="../ch06/ch06.3.html">
+            
+                    
+                    6.3 目标文件格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.3.1" >
+            
+                <span>
+            
+                    
+                    目标文件格式分类
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.2" >
+            
+                <span>
+            
+                    
+                    ELF格式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.3" >
+            
+                <span>
+            
+                    
+                    符号修饰
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.4" >
+            
+                <span>
+            
+                    
+                    静态库
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.5" >
+            
+                <span>
+            
+                    
+                    动态库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../ch06/ch06.4.html">
+            
+                <a href="../ch06/ch06.4.html">
+            
+                    
+                    6.4 探究helloworld——程序运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.4.1" >
+            
+                <span>
+            
+                    
+                    进程空间
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.2" >
+            
+                <span>
+            
+                    
+                    栈
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.3" >
+            
+                <span>
+            
+                    
+                    堆
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.4" >
+            
+                <span>
+            
+                    
+                    Linux装载ELF文件过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../ch06/ch06.5.html">
+            
+                <a href="../ch06/ch06.5.html">
+            
+                    
+                    6.5 探究helloworld——库到内核
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.5.1" >
+            
+                <span>
+            
+                    
+                    glibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5.2" >
+            
+                <span>
+            
+                    
+                    Linux系统调用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5.3" >
+            
+                <span>
+            
+                    
+                    硬件输出
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../ch06/ch06.6.html">
+            
+                <a href="../ch06/ch06.6.html">
+            
+                    
+                    6.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../ch07/ch07.html">
+            
+                <a href="../ch07/ch07.html">
+            
+                    
+                    第7章 应用程序开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../ch07/ch07.1.html">
+            
+                <a href="../ch07/ch07.1.html">
+            
+                    
+                    7.1 编程规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1.1" >
+            
+                <span>
+            
+                    
+                    编码风格
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.1.2" >
+            
+                <span>
+            
+                    
+                    编程原则
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../ch07/ch07.2.html">
+            
+                <a href="../ch07/ch07.2.html">
+            
+                    
+                    7.2 C标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../ch07/ch07.3.html">
+            
+                <a href="../ch07/ch07.3.html">
+            
+                    
+                    7.3 C++标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../ch07/ch07.4.html">
+            
+                <a href="../ch07/ch07.4.html">
+            
+                    
+                    7.4 Linux应用层模块分类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.4.1" >
+            
+                <span>
+            
+                    
+                    文件IO编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.2" >
+            
+                <span>
+            
+                    
+                    多进程编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.3" >
+            
+                <span>
+            
+                    
+                    多线程编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.4" >
+            
+                <span>
+            
+                    
+                    信号处理编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.5" >
+            
+                <span>
+            
+                    
+                    串口编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../ch07/ch07.5.html">
+            
+                <a href="../ch07/ch07.5.html">
+            
+                    
+                    7.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../ch08/ch08.html">
+            
+                <a href="../ch08/ch08.html">
+            
+                    
+                    第8章 调试方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ch08/ch08.1.html">
+            
+                <a href="../ch08/ch08.1.html">
+            
+                    
+                    8.1 关于“调试”的说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html">
+            
+                    
+                    8.2 消除gcc编译警告
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.2.1" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html#ch821">
+            
+                    
+                    8.2.1 gcc编译警告选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2.2" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html#ch822">
+            
+                    
+                    8.2.2 gcc常见编译警告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ch08/ch08.3.html">
+            
+                <a href="../ch08/ch08.3.html">
+            
+                    
+                    8.3 C/C++代码静态检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ch08/ch08.4.html">
+            
+                <a href="../ch08/ch08.4.html">
+            
+                    
+                    8.4 使用printf打印跟踪流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ch08/ch08.4.html">
+            
+                <a href="../ch08/ch08.4.html">
+            
+                    
+                    8.5 gdb调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ch08/ch08.5.html">
+            
+                <a href="../ch08/ch08.5.html">
+            
+                    
+                    8.6 利用coredump文件调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.6.1" >
+            
+                <span>
+            
+                    
+                    生成coredump文件前置条件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6.2" >
+            
+                <span>
+            
+                    
+                    段错误调试实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6.3" >
+            
+                <span>
+            
+                    
+                    嵌入式设备上coredump调试经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ch08/ch08.6.html">
+            
+                <a href="../ch08/ch08.6.html">
+            
+                    
+                    8.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分 嵌入式Linux系统移植篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ch09/ch09.html">
+            
+                <a href="../ch09/ch09.html">
+            
+                    
+                    第9章 嵌入式Linux移植总览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../ch09/ch09.1.html">
+            
+                <a href="../ch09/ch09.1.html">
+            
+                    
+                    9.1 嵌入式Linux移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" >
+            
+                <span>
+            
+                    
+                    bootloader移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" >
+            
+                <span>
+            
+                    
+                    Linux内核移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.3" >
+            
+                <span>
+            
+                    
+                    根文件系统移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../ch09/ch09.2.html">
+            
+                <a href="../ch09/ch09.2.html">
+            
+                    
+                    9.2 宿主机与目标板共享的几种方式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" >
+            
+                <span>
+            
+                    
+                    NFS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" >
+            
+                <span>
+            
+                    
+                    SSH
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" >
+            
+                <span>
+            
+                    
+                    FTP
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" >
+            
+                <span>
+            
+                    
+                    硬件介质：U盘和SD卡
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../ch09/ch09.3.html">
+            
+                <a href="../ch09/ch09.3.html">
+            
+                    
+                    9.3 qemu模拟环境
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" >
+            
+                <span>
+            
+                    
+                    qemu介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" >
+            
+                <span>
+            
+                    
+                    qemu选项介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../ch09/ch09.4.html">
+            
+                <a href="../ch09/ch09.4.html">
+            
+                    
+                    9.4 嵌入式Linux开发实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" >
+            
+                <span>
+            
+                    
+                    嵌入式Linux移植实践经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" >
+            
+                <span>
+            
+                    
+                    嵌入式Linux应用开发实践经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" >
+            
+                <span>
+            
+                    
+                    如何阅读芯片手册
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.4" >
+            
+                <span>
+            
+                    
+                    如何阅读开源代码
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../ch09/ch09.5.html">
+            
+                <a href="../ch09/ch09.5.html">
+            
+                    
+                    9.5 几种嵌入式Linux平台的开发环境介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.5.1" >
+            
+                <span>
+            
+                    
+                    三星s3c2440(samsung)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.2" >
+            
+                <span>
+            
+                    
+                    德州仪器dm8127(TI)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.3" >
+            
+                <span>
+            
+                    
+                    瑞芯微rk8188(rockchip)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.4" >
+            
+                <span>
+            
+                    
+                    赛灵思zed board(Xilinx)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.5" >
+            
+                <span>
+            
+                    
+                    x86工控机
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../ch09/ch09.6.html">
+            
+                <a href="../ch09/ch09.6.html">
+            
+                    
+                    9.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ch10/ch10.html">
+            
+                <a href="../ch10/ch10.html">
+            
+                    
+                    第10章 bootloader移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../ch10/ch10.1.html">
+            
+                <a href="../ch10/ch10.1.html">
+            
+                    
+                    10.1 u-boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" >
+            
+                <span>
+            
+                    
+                    u-boot概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" >
+            
+                <span>
+            
+                    
+                    u-boot目录说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.3" >
+            
+                <span>
+            
+                    
+                    u-boot编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.4" >
+            
+                <span>
+            
+                    
+                    u-boot在qemu环境的启动
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.5" >
+            
+                <span>
+            
+                    
+                    u-boot启动流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.6" >
+            
+                <span>
+            
+                    
+                    在u-boot中新加命令
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.7" >
+            
+                <span>
+            
+                    
+                    u-boot进程空间
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../ch10/ch10.2.html">
+            
+                <a href="../ch10/ch10.2.html">
+            
+                    
+                    10.2 coreboot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" >
+            
+                <span>
+            
+                    
+                    coreboot概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" >
+            
+                <span>
+            
+                    
+                    coreboot目录说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" >
+            
+                <span>
+            
+                    
+                    coreboot编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.4" >
+            
+                <span>
+            
+                    
+                    coreboot在qemu环境的启动
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.5" >
+            
+                <span>
+            
+                    
+                    coreboot启动u-boot
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.6" >
+            
+                <span>
+            
+                    
+                    coreboot启动流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../ch10/ch10.3.html">
+            
+                <a href="../ch10/ch10.3.html">
+            
+                    
+                    10.3 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ch11/ch11.html">
+            
+                <a href="../ch11/ch11.html">
+            
+                    
+                    第11章 Linux内核移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../ch11/ch11.1.html">
+            
+                <a href="../ch11/ch11.1.html">
+            
+                    
+                    11.1 内核目录说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../ch11/ch11.2.html">
+            
+                <a href="../ch11/ch11.2.html">
+            
+                    
+                    11.2 内核配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../ch11/ch11.3.html">
+            
+                <a href="../ch11/ch11.3.html">
+            
+                    
+                    11.3 内核配置编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../ch11/ch11.4.html">
+            
+                <a href="../ch11/ch11.4.html">
+            
+                    
+                    11.4 helloworld设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../ch11/ch11.5.html">
+            
+                <a href="../ch11/ch11.5.html">
+            
+                    
+                    11.5 内核启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../ch11/ch11.6.html">
+            
+                <a href="../ch11/ch11.6.html">
+            
+                    
+                    11.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../ch12/ch12.html">
+            
+                <a href="../ch12/ch12.html">
+            
+                    
+                    第12章 根文件系统移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../ch12/ch12.1.html">
+            
+                <a href="../ch12/ch12.1.html">
+            
+                    
+                    12.1 busybox
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1.1" >
+            
+                <span>
+            
+                    
+                    [busybox介绍]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.1.2" >
+            
+                <span>
+            
+                    
+                    [busybox编译]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../ch12/ch12.2.html">
+            
+                <a href="../ch12/ch12.2.html">
+            
+                    
+                    12.2 构建Linux根文件系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.2.1" >
+            
+                <span>
+            
+                    
+                    构建/bin目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.2" >
+            
+                <span>
+            
+                    
+                    构建/lib目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.3" >
+            
+                <span>
+            
+                    
+                    构建/etc目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../ch12/ch12.3.html">
+            
+                <a href="../ch12/ch12.3.html">
+            
+                    
+                    12.3 其它构建方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../ch12/ch12.4.html">
+            
+                <a href="../ch12/ch12.4.html">
+            
+                    
+                    12.4 根文件系统启动流程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.4.1" >
+            
+                <span>
+            
+                    
+                    系统级别启动过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4.2" >
+            
+                <span>
+            
+                    
+                    用户级别启动过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../ch12/ch12.5.html">
+            
+                <a href="../ch12/ch12.5.html">
+            
+                    
+                    12.5 制作ramdisk镜像文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="../ch12/ch12.6.html">
+            
+                <a href="../ch12/ch12.6.html">
+            
+                    
+                    12.6 在qemu挂载rootfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.7" data-path="../ch12/ch12.7.html">
+            
+                <a href="../ch12/ch12.7.html">
+            
+                    
+                    12.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../ch13/ch13.html">
+            
+                <a href="../ch13/ch13.html">
+            
+                    
+                    第13章 Linux驱动开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../ch13/ch13.1.html">
+            
+                <a href="../ch13/ch13.1.html">
+            
+                    
+                    13.1 驱动分类概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../ch13/ch13.2.html">
+            
+                <a href="../ch13/ch13.2.html">
+            
+                    
+                    13.2 驱动实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../ch13/ch13.3.html">
+            
+                <a href="../ch13/ch13.3.html">
+            
+                    
+                    13.3 用户空间与内核空间的交互方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../ch13/ch13.4.html">
+            
+                <a href="../ch13/ch13.4.html">
+            
+                    
+                    13.4 驱动分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../ch13/ch13.5.html">
+            
+                <a href="../ch13/ch13.5.html">
+            
+                    
+                    13.5 Linux驱动常见错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../ch13/ch13.6.html">
+            
+                <a href="../ch13/ch13.6.html">
+            
+                    
+                    13.6 Linux驱动学习建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.7" data-path="../ch13/ch13.7.html">
+            
+                <a href="../ch13/ch13.7.html">
+            
+                    
+                    13.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../appendix/参考文献.html">
+            
+                <a href="../appendix/参考文献.html">
+            
+                    
+                    参考文献
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../postscript.html">
+            
+                <a href="../postscript.html">
+            
+                    
+                    后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.6 系统配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#36-&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;">3.6 &#x7CFB;&#x7EDF;&#x914D;&#x7F6E;</a></li><ul><li><a href="#&#x7EC8;&#x7AEF;">&#x7EC8;&#x7AEF;</a></li><li><a href="#&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;">&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;</a></li><li><a href="#&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;</a></li><li><a href="#&#x65F6;&#x533A;">&#x65F6;&#x533A;</a></li><li><a href="#&#x5B57;&#x7B26;&#x96C6;">&#x5B57;&#x7B26;&#x96C6;</a></li><li><a href="#&#x767B;&#x9646;&#x4FE1;&#x606F;">&#x767B;&#x9646;&#x4FE1;&#x606F;</a></li><li><a href="#home&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF;&#x6587;&#x4EF6;">HOME&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF;&#x6587;&#x4EF6;</a></li></ul></ul></div><a href="#36-&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="36-&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;"><a name="36-&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#36-&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>3.6 &#x7CFB;&#x7EDF;&#x914D;&#x7F6E;</h1>
+<p>&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;/etc&#x76EE;&#x5F55;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3001;&#x7528;&#x6237;HOME&#x76EE;&#x5F55;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x90E8;&#x5206;&#x547D;&#x4EE4;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x6240;&#x6D89;&#x53CA;&#x5185;&#x5BB9;&#x8F83;&#x591A;&#xFF0C;&#x672C;&#x5C0F;&#x8282;&#x5217;&#x51FA;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<h2 id="&#x7EC8;&#x7AEF;"><a name="&#x7EC8;&#x7AEF;" class="anchor-navigation-ex-anchor" href="#&#x7EC8;&#x7AEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC8;&#x7AEF;</h2>
+<p>Unix/Linux&#x7EC8;&#x7AEF;&#x7C7B;&#x578B;&#x5F88;&#x591A;&#xFF0C;&#x6DF1;&#x7A76;&#x8D77;&#x6765;&#x4E5F;&#x590D;&#x6742;<sup><a href="#fn_&#x6CE8;1" id="reffn_&#x6CE8;1">&#x6CE8;1</a></sup>&#x3002;&#x6B64;&#x5904;&#x672C;&#x7740;&#x5E94;&#x7528;&#x7684;&#x76EE;&#x7684;&#x6765;&#x4E86;&#x89E3;&#x7EC8;&#x7AEF;&#x7684;&#x4E00;&#x4E9B;&#x77E5;&#x8BC6;&#xFF0C;&#x7EC8;&#x7AEF;&#x540D;&#x79F0;&#x53EF;&#x7528;<code>tty</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x3002;&#x4E3A;&#x884C;&#x6587;&#x65B9;&#x4FBF;&#xFF0C;&#x8FD9;&#x91CC;&#x5047;&#x5B9A;&#x6709;2&#x79CD;&#x7EC8;&#x7AEF;&#xFF1A;  </p>
+<ul>
+<li><p>tty&#x7EC8;&#x7AEF;<br>&#x64CD;&#x4F5C;&#x771F;&#x5B9E;Linux&#x7CFB;&#x7EDF;&#xFF08;&#x6216;&#x865A;&#x62DF;&#x673A;Linux&#x7CFB;&#x7EDF;&#xFF09;&#x673A;&#x5668;&#x7684;&#xFF0C;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x7684;&#x662F;&#x56FE;&#x5F62;&#x754C;&#x9762;&#xFF0C;&#x4F7F;&#x7528;Ctrl+Alt+F1~F6&#x5207;&#x6362;&#x5230;&#x5B57;&#x7B26;&#x754C;&#x9762;&#x3002;&#x5176;&#x4E2D;&#xFF0C;Ctrl+Alt+F1&#x5207;&#x6362;&#x5230;&#x7B2C;1&#x4E2A;&#x5B57;&#x7B26;&#x754C;&#x9762;&#xFF0C;&#x7EC8;&#x7AEF;&#x4E3A;tty1&#xFF0C;Ctrl+Alt+F2&#x4E3A;&#x7B2C;2&#x4E2A;&#xFF0C;&#x7EC8;&#x7AEF;&#x4E3A;tty2&#xFF0C;&#x4F9D;&#x6B64;&#x7C7B;&#x63A8;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4EA6;&#x6709;&#x7EC8;&#x7AEF;&#x6982;&#x5FF5;&#xFF0C;&#x5176;&#x7EC8;&#x7AEF;&#x4E3A;tty7&#xFF08;Ctrl+Alt+F7&#x5207;&#x6362;&#xFF09;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4E2D;&#x6253;&#x5F00;&#x7EC8;&#x7AEF;&#xFF08;Ubuntu&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x4E3A;GNOME&#x7EC8;&#x7AEF;&#xFF09;&#xFF0C;&#x5176;&#x7EC8;&#x7AEF;&#x540D;&#x4E3A;pts&#x3002;</p>
+</li>
+<li><p>pts&#x7EC8;&#x7AEF;
+&#x4F7F;&#x7528;telnet&#x6216;&#x8005;ssh&#x8FDC;&#x7A0B;&#x767B;&#x5F55;Linux&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x7EC8;&#x7AEF;&#x4E3A;pts&#x7EC8;&#x7AEF;&#x3002;</p>
+</li>
+</ul>
+<p>&#xFF08;&#x5F85;&#x5199;&#xFF1A;&#x4E32;&#x53E3;&#x7EC8;&#x7AEF;&#x4E5F;&#x8981;&#x5E26;&#x4E00;&#x5E26;&#xFF09;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;SecureCRT&#x8FDE;&#x63A5;2&#x6B21;Linux&#xFF0C;&#x6253;&#x5F00;2&#x4E2A;&#x5B57;&#x7B26;&#x754C;&#x9762;&#xFF08;Ctrl+Alt+F1/F2&#xFF09;&#xFF0C;&#x518D;&#x5728;&#x6253;&#x5F00;&#x56FE;&#x5F62;&#x754C;&#x9762;&#x7684;&#x7EC8;&#x7AEF;&#xFF08;Ctrl+Alt+F7&#x5207;&#x6362;&#xFF09;&#x3002;&#x63A5;&#x7740;&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>who</code>&#x67E5;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>$ who
+latelee  pts/8        2019-10-04 18:56 (172.18.18.1)
+latelee  pts/9        2019-10-04 18:57 (172.18.18.1)
+latelee  tty1         2019-10-04 19:01
+latelee  tty7         2019-10-04 19:04 (:0)
+latelee  tty2         2019-10-04 19:02
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x884C;&#x90FD;&#x6709;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x7EC8;&#x7AEF;&#x540D;&#xFF0C;&#x767B;&#x9646;&#x65F6;&#x95F4;&#xFF0C;&#x4F7F;&#x7528;ssh&#x8FDE;&#x63A5;&#xFF0C;&#x8FD8;&#x6709;&#x5E26;IP&#x5730;&#x5740;&#x4FE1;&#x606F;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5373;&#x4F7F;&#x6253;&#x5F00;GNOME&#x7EC8;&#x7AEF;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x770B;&#x5230;&#x7EC8;&#x7AEF;&#x540D;&#xFF0C;&#x56E0;&#x4E3A;GNOME&#x5F52;&#x5C5E;&#x5230;tty7&#x4E2D;&#x3002;  </p>
+<h2 id="&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;"><a name="&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;</h2>
+<p>&#x767B;&#x5F55;&#x7CFB;&#x7EDF;&#x540E;&#xFF0C;&#x7B2C;&#x4E00;&#x773C;&#x770B;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x662F;&#xFF1A;</p>
+<pre><code>[latelee@localhost ~]$
+</code></pre><p>&#x5982;&#x679C;&#x4F7F;&#x7528;root&#x7528;&#x6237;&#x767B;&#x9646;&#xFF0C;&#x5219;&#x53D8;&#x6210;&#xFF1A;</p>
+<pre><code>[root@localhost ~]#
+</code></pre><p>&#x540C;&#x65F6;&#x5149;&#x6807;&#x5728;&#x95EA;&#x70C1;&#xFF0C;&#x7B49;&#x5F85;&#x7528;&#x6237;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x3002;</p>
+<p>&#x8FD9;&#x5C31;&#x662F;Linux&#x7CFB;&#x7EDF;&#x7684;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x3002;&#x4E0B;&#x9762;&#x5206;&#x6790;&#x51FA;&#x73B0;&#x7684;&#x5B57;&#x7B26;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x7B26;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[]</td>
+<td>&#x63D0;&#x793A;&#x7B26;&#x7684;&#x5206;&#x9694;&#x7B26;&#x53F7;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x4FE1;&#x606F;&#x533A;&#x5206;&#x5F00;</td>
+</tr>
+<tr>
+<td>root&#x6216;latelee</td>
+<td>&#x5F53;&#x524D;&#x767B;&#x9646;&#x7528;&#x6237;</td>
+</tr>
+<tr>
+<td>@</td>
+<td>&#x7528;&#x6237;&#x4E0E;&#x4E3B;&#x673A;&#x540D;&#x7684;&#x5206;&#x9694;&#x7B26;&#x53F7;</td>
+</tr>
+<tr>
+<td>localhost</td>
+<td>&#x4E3B;&#x673A;&#x540D;</td>
+</tr>
+<tr>
+<td>~</td>
+<td>&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x9996;&#x6B21;&#x8FDB;&#x5165;&#x7684;&#x76EE;&#x5F55;&#x4E3A;~&#xFF08;&#x5373;HOME&#x76EE;&#x5F55;&#xFF09;&#xFF0C;&#x5982;&#x5207;&#x6362;&#x5176;&#x5B83;&#x76EE;&#x5F55;&#xFF0C;&#x5219;&#x663E;&#x793A;&#x76F8;&#x5E94;&#x7684;&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td>#&#x6216;$</td>
+<td>&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF0C;root&#x6743;&#x9650;&#xFF08;&#x5305;&#x62EC;root&#x7528;&#x6237;&#x4EE5;&#x53CA;sudo&#x5207;&#x6362;&#x7684;root&#x6743;&#x9650;&#xFF09;&#x4E3A;#&#xFF0C;&#x666E;&#x901A;&#x7528;&#x6237;&#x4E3A;$</td>
+</tr>
+</tbody>
+</table>
+<p>&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x7684;&#x683C;&#x5F0F;&#x7531;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>$PS1</code>&#x786E;&#x5B9A;&#xFF0C;&#x4E0D;&#x540C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x503C;&#x4E0D;&#x540C;&#xFF0C;&#x5982;Ubuntu&#x4E3A;<code>${debian_chroot:+($debian_chroot)}\u@\h:\w\$</code>&#xFF0C;CentOS&#x4E3A;<code>[\u@\h \W]\$</code>&#x3002;&#x53EF;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x5176;&#x503C;&#x81EA;&#x5B9A;&#x4E49;&#x663E;&#x793A;&#x7684;&#x683C;&#x5F0F;<sup><a href="#fn_&#x6CE8;2" id="reffn_&#x6CE8;2">&#x6CE8;2</a></sup>&#x3002;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>&#x663E;&#x793A;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td>\h</td>
+<td>&#x663E;&#x793A;&#x4E3B;&#x673A;&#x540D;&#xFF0C;&#x5728;/etc/hostname&#x5B9A;&#x4E49;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;localhost</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>&#x663E;&#x793A;24&#x5C0F;&#x65F6;&#x5236;&#x65F6;&#x95F4;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;HH:MM:SS</td>
+</tr>
+<tr>
+<td>\T</td>
+<td>&#x663E;&#x793A;12&#x5C0F;&#x65F6;&#x5236;&#x65F6;&#x95F4;&#xFF0C;&#x683C;&#x5F0F;&#x540C;&#x4E0A;</td>
+</tr>
+<tr>
+<td>\A</td>
+<td>&#x663E;&#x793A;24&#x5C0F;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;HH:MM</td>
+</tr>
+<tr>
+<td>\u</td>
+<td>&#x663E;&#x793A;&#x7528;&#x6237;&#x540D;</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>&#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x5728;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>&#x663E;&#x793A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF08;&#x4EC5;&#x76EE;&#x5F55;&#xFF09;</td>
+</tr>
+<tr>
+<td>\#</td>
+<td>&#x663E;&#x793A;&#x6267;&#x884C;&#x4E86;&#x591A;&#x5C11;&#x6761;&#x547D;&#x4EE4;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;root&#x6743;&#x9650;&#x7684;&#x63D0;&#x793A;&#x7B26;<code>#</code></td>
+</tr>
+<tr>
+<td>\$</td>
+<td>&#x63D0;&#x793A;&#x7B26;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x4E3A;root&#x6743;&#x9650;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x53D8;&#x4E3A;<code>#</code></td>
+</tr>
+</tbody>
+</table>
+<p>&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>$ export PS1=&quot;[\u@\h:\w]\$ &quot;</code>&#x547D;&#x4EE4;&#x89C2;&#x5BDF;&#x6548;&#x679C;&#xFF0C;&#x8BE5;&#x547D;&#x4EE4;&#x5373;&#x65F6;&#x751F;&#x6548;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x4E34;&#x65F6;&#x8BBE;&#x7F6E;<code>PS1</code>&#x7684;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x5BF9;&#x539F;&#x6709;&#x503C;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#x3002;&#x4E0B;&#x9762;&#x7ED9;&#x51FA;&#x90E8;&#x5206;&#x6F14;&#x793A;&#x6548;&#x679C;&#xFF1A;  </p>
+<pre><code>$ export PS1=&quot;[\u@\h:\W]\$ &quot;
+--&gt; [latelee@ubuntu:Etc]$ 
+
+export PS1=&quot;[\u@\h:\W]\$ my shell test &gt;&quot;
+--&gt; [latelee@ubuntu:Etc]$ my shell test &gt;
+
+$ export PS1=&quot;[\u@\h:\w]\$ &quot;
+--&gt; [latelee@localhost:/usr/share/zoneinfo/Etc]$ 
+
+$ export PS1=&quot;[\d \A \# \u@\H:\W]\$ &quot;
+--&gt; [Fri Oct 04 16:43 22 latelee@localhost:Etc]$
+</code></pre><h2 id="&#x73AF;&#x5883;&#x53D8;&#x91CF;"><a name="&#x73AF;&#x5883;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#&#x73AF;&#x5883;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<p>Linux&#x6709;&#x5F88;&#x591A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5F88;&#x591A;&#x7A0B;&#x5E8F;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x7528;&#x547D;&#x4EE4;<code>env</code>&#x53EF;&#x663E;&#x793A;&#x51FA;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x53CA;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TERM=vt100</td>
+<td>&#x7EC8;&#x7AEF;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>SHELL=/bin/bash</td>
+<td>shell&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>SSH_CLIENT=172.18.18.2 63903 22</td>
+<td>ssh&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>SSH_CONNECTION=172.18.18.2 63903 172.18.18.8 22</td>
+<td>ssh&#x8FDE;&#x63A5;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>SSH_TTY=/dev/pts/8</td>
+<td>ssh&#x8FDE;&#x63A5;&#x4F7F;&#x7528;&#x7684;&#x4F2A;&#x7EC8;&#x7AEF;</td>
+</tr>
+<tr>
+<td>USER=latelee</td>
+<td>&#x5F53;&#x524D;&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>LOGNAME=latelee</td>
+<td>&#x767B;&#x9646;&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>PWD=/home/latelee</td>
+<td>&#x5F53;&#x524D;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF0C;&#x4E0E;&#x547D;&#x4EE4;<code>pwd</code>&#x7B49;&#x6548;</td>
+</tr>
+<tr>
+<td>OLDPWD=/home</td>
+<td>&#x4E0A;&#x4E00;&#x6B21;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x7528;<code>cd -</code>&#x8FD4;&#x56DE;&#x8BE5;&#x76EE;&#x5F55;</td>
+</tr>
+<tr>
+<td>LANG=en_US.UTF-8</td>
+<td>&#x7CFB;&#x7EDF;&#x5B57;&#x7B26;&#x7F16;&#x7801;</td>
+</tr>
+<tr>
+<td>_=/usr/bin/env</td>
+<td>&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x540D;&#x79F0;&#xFF0C;&#x53EF;&#x7528;<code>echo $_</code>&#x67E5;&#x770B;</td>
+</tr>
+<tr>
+<td>PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</td>
+<td>&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>PS1</td>
+<td>&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x73AF;&#x5883;&#x53D8;&#x91CF;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x53EF;&#x76F4;&#x63A5;&#x5728;shell&#x6216;&#x5176;&#x5B83;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x524D;&#x9762;&#x6DFB;&#x52A0;<code>$</code>&#x5373;&#x53EF;&#xFF0C;&#x5982;<code>$PWD</code>&#x3001;<code>$PATH</code>&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E3A;<code>$PATH</code>&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x6307;&#x5B9A;&#x4E86;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x5C06;/sbin&#x3001;/bin&#x3001;/usr/sbin&#x3001;/usr/bin&#x3001;/usr/local/sbin&#x3001;/usr/local/bin&#x8FD9;&#x51E0;&#x4E2A;&#x76EE;&#x5F55;&#x90FD;&#x8BBE;&#x7F6E;&#x5230;<code>$PATH</code>&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x4E9B;&#x76EE;&#x5F55;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x76EE;&#x5F55;&#x4E2D;&#x6267;&#x884C;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;&#x5230;&#x8BE5;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x3002;&#x7B14;&#x8005;&#x559C;&#x6B22;&#x5728;&#x81EA;&#x5DF1;&#x7684;HOME&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;bin&#x76EE;&#x5F55;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5404;&#x79CD;&#x4E34;&#x65F6;&#x7684;&#x5C0F;&#x5DE5;&#x5177;&#x3002;&#x5176;&#x76EE;&#x5F55;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x4E3A;<code>/home/latelee/bin</code>&#xFF0C;&#x4E0B;&#x9762;&#x770B;&#x770B;&#x6709;&#x54EA;&#x4E9B;&#x6DFB;&#x52A0;&#x7684;&#x65B9;&#x5F0F;&#x3002; </p>
+<ul>
+<li><p>&#x4E34;&#x65F6;&#x65B9;&#x5F0F;<br>&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>$ export PATH=&quot;$PATH:/home/latelee/bin&quot;
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x53EA;&#x80FD;&#x5728;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x751F;&#x6548;&#xFF0C;&#x5207;&#x6362;&#x7EC8;&#x7AEF;&#x3001;&#x9000;&#x51FA;&#x7EC8;&#x7AEF;&#x6216;&#x91CD;&#x542F;&#x7CFB;&#x7EDF;&#x5747;&#x5931;&#x6548;&#x3002;&#x9002;&#x7528;&#x4E8E;&#x4E34;&#x65F6;&#x6D4B;&#x8BD5;&#x6240;&#x7528;&#x3002;  </p>
+</li>
+<li><p>&#x4E2A;&#x4EBA;&#x7528;&#x6237;<br>&#x7F16;&#x8F91;&#x6587;&#x4EF6;<code>~/.bashrc</code>&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#xFF1A;  </p>
+<pre><code>export PATH=/home/latelee/bin:$PATH
+</code></pre><p>&#x8BE5;&#x65B9;&#x5F0F;&#x9002;&#x7528;&#x4E8E;&#x4E2A;&#x4EBA;&#x7528;&#x6237;&#xFF0C;&#x80FD;&#x6C38;&#x4E45;&#x751F;&#x6548;&#x4E14;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x5B83;&#x7528;&#x6237;&#x3002;  </p>
+</li>
+<li><p>&#x5168;&#x5C40;&#x751F;&#x6548;<br>&#x7F16;&#x8F91;&#x6587;&#x4EF6;<code>/etc/profile</code>&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#xFF1A;  </p>
+<pre><code>export PATH=/home/latelee/bin:$PATH
+</code></pre><p>&#x8BE5;&#x65B9;&#x5F0F;&#x9488;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E0D;&#x6B63;&#x786E;&#x53EF;&#x80FD;&#x4F1A;&#x5F71;&#x54CD;&#x4ED6;&#x4EBA;&#x4F7F;&#x7528;&#xFF0C;&#x6240;&#x4EE5;<strong>&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;</strong>&#x3002;</p>
+</li>
+</ul>
+<p><code>$PATH</code>&#x7684;&#x8BBE;&#x7F6E;&#x5EFA;&#x8BAE;&#x9010;&#x4E2A;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;&#xFF0C;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#x3002; &#x6CE8;&#x610F;&#xFF0C;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;<code>$</code>&#x5343;&#x4E07;&#x4E0D;&#x53EF;&#x5C11;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x4E25;&#x91CD;&#x540E;&#x679C;&#x3002;&#x4EE5;&#x4E34;&#x65F6;&#x65B9;&#x5F0F;&#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x5C06;&#x547D;&#x4EE4;&#x4FEE;&#x6539;&#x4E3A;<code>$ export PATH=&quot;PATH:/home/latelee/bin&quot;</code>&#xFF08;&#x5404;&#x4F4D;&#x8BFB;&#x8005;&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x7EC6;&#x5C0F;&#x5DEE;&#x5F02;&#xFF09;&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x5DF2;&#x5B58;&#x5728;&#x7684;<code>$PATH</code>&#x76EE;&#x5F55;&#x5C06;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5219;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x4EE5;<code>$ ls</code>&#x4E3A;&#x4F8B;&#xFF0C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>Command &apos;ls&apos; is available in &apos;/bin/ls&apos;
+The command could not be located because &apos;/bin&apos; is not included in the PATH environment variable.
+ls: command not found
+</code></pre><h2 id="&#x65F6;&#x533A;"><a name="&#x65F6;&#x533A;" class="anchor-navigation-ex-anchor" href="#&#x65F6;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65F6;&#x533A;</h2>
+<p>Linux&#x65F6;&#x95F4;&#x4F7F;&#x7528;&#x7684;&#x662F;UTC&#x65F6;&#x95F4;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x65F6;&#x533A;&#xFF0C;&#x624D;&#x662F;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x65F6;&#x53D8;&#x66F4;&#x65F6;&#x533A;&#xFF0C;&#x4ECE;&#x800C;&#x5F97;&#x5230;&#x771F;&#x5B9E;&#x7684;&#x672C;&#x5730;&#x65F6;&#x95F4;&#x3002;&#x65F6;&#x533A;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;&#x76EE;&#x5F55;<code>/usr/share/zoneinfo</code>&#x4E2D;&#xFF0C;&#x8BE5;&#x76EE;&#x5F55;&#x6216;&#x6309;&#x5927;&#x6D32;&#x5206;&#x7C7B;&#xFF08;&#x5982;&#x4E9A;&#x6D32;&#x3001;&#x975E;&#x6D32;&#xFF09;&#xFF0C;&#x6216;&#x6309;&#x56FD;&#x5BB6;&#x5730;&#x533A;&#x5206;&#x7C7B;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;<code>Etc</code>&#x76EE;&#x5F55;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x6587;&#x4EF6;&#x6309;&#x65F6;&#x533A;&#x5206;&#x7C7B;<sup><a href="#fn_&#x6CE8;3" id="reffn_&#x6CE8;3">&#x6CE8;3</a></sup>&#x3002;&#x800C;&#x6587;&#x4EF6;<code>/etc/localtime</code>&#x5B58;&#x50A8;&#x7684;&#x662F;&#x65F6;&#x533A;&#x4FE1;&#x606F;&#xFF0C;&#x5C06;&#x5176;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x4E3A;&#x6240;&#x9700;&#x7684;&#x65F6;&#x533A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5373;&#x53EF;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;  </p>
+<pre><code>$ date    # &#x5F53;&#x524D;&#x4E3A;PDT&#x65F6;&#x533A;&#xFF08;&#x5373;&#x592A;&#x5E73;&#x6D0B;&#x590F;&#x4EE4;&#x65F6;&#xFF09;
+Sat Sep 14 09:10:00 PDT 2019
+$ sudo cp /usr/share/zoneinfo/Etc/GMT-8 /etc/localtime   # &#x65F6;&#x533A;&#x6587;&#x4EF6;&#x4E3A;GMT-8
+$ date    # &#x5F53;&#x524D;&#x4E3A;&#x4E1C;8&#x65F6;&#x533A;
+Sun Sep 15 00:11:10 +08 2019
+$ sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime   # &#x65F6;&#x533A;&#x6587;&#x4EF6;&#x4E3A;Shanghai
+$ date    # &#x5F53;&#x524D;&#x4E3A;CST&#x65F6;&#x533A;&#xFF08;&#x5373;&#x4E2D;&#x56FD;&#x6807;&#x51C6;&#x65F6;&#x533A;&#xFF0C;&#x4E1C;8&#x533A;&#xFF09;
+Sun Sep 15 00:11:30 CST 2019
+</code></pre><p>&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;GMT&#x65F6;&#x95F4;&#x548C;UTC&#x65F6;&#x95F4;&#x3002;<br>GMT(Greenwich Mean Time&#xFF0C;&#x683C;&#x6797;&#x5A01;&#x6CBB;&#x6807;&#x51C6;&#x65F6;&#x95F4;)&#x662F;&#x6307;&#x4F4D;&#x4E8E;&#x82F1;&#x56FD;&#x4F26;&#x6566;&#x90CA;&#x533A;&#x7684;&#x7687;&#x5BB6;&#x683C;&#x6797;&#x5C3C;&#x6CBB;&#x5929;&#x6587;&#x53F0;&#x7684;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#x3002;&#x56E0;&#x4E3A;&#x672C;&#x521D;&#x5B50;&#x5348;&#x7EBF;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x5728;&#x901A;&#x8FC7;&#x90A3;&#x91CC;&#x7684;&#x7ECF;&#x7EBF;&#x3002;<br>UTC&#xFF08;&#x82F1;&#x6587;Coordinated Universal Time&#x548C;&#x6CD5;&#x8BED;Temp Universelle Coordinee&#x7684;&#x6DF7;&#x5408;&#x4F53;&#x3002;&#x901A;&#x5E38;&#x8BB0;&#x4F5C;Universal Time Coordinated&#x3002;&#x4E2D;&#x6587;&#x4E3A;&#x534F;&#x8C03;&#x4E16;&#x754C;&#x65F6;&#xFF0C;&#x53C8;&#x79F0;&#x4E16;&#x754C;&#x7EDF;&#x4E00;&#x65F6;&#x95F4;&#xFF0C;&#x4E16;&#x754C;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#xFF0C;&#x56FD;&#x9645;&#x534F;&#x8C03;&#x65F6;&#x95F4;&#xFF09;&#x662F;&#x7ECF;&#x8FC7;&#x5E73;&#x5747;&#x592A;&#x9633;&#x65F6;(&#x4EE5;&#x683C;&#x6797;&#x5A01;&#x6CBB;&#x65F6;&#x95F4;GMT&#x4E3A;&#x51C6;)&#x3001;&#x5730;&#x8F74;&#x8FD0;&#x52A8;&#x4FEE;&#x6B63;&#x540E;&#x7684;&#x65B0;&#x65F6;&#x6807;&#x4EE5;&#x53CA;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x56FD;&#x9645;&#x539F;&#x5B50;&#x65F6;&#x6240;&#x7EFC;&#x5408;&#x7CBE;&#x7B97;&#x800C;&#x6210;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x76F8;&#x5F53;&#x4E25;&#x8C28;&#x7CBE;&#x5BC6;&#xFF0C;GMT&#x5929;&#x6587;&#x4E0A;&#x7684;&#x6982;&#x5FF5;&#xFF0C;UTC&#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x539F;&#x5B50;&#x949F;&#xFF0C;&#x56E0;&#x6B64;&#x82E5;&#x4EE5;&#x4E16;&#x754C;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;UTC&#x6BD4;GMT&#x6765;&#x5F97;&#x66F4;&#x52A0;&#x7CBE;&#x51C6;&#x3002;<br>&#x5728;&#x65E5;&#x5E38;&#x4EA4;&#x6D41;&#x4E2D;&#xFF0C;&#x79F0;UTC&#x6216;GMT&#x8FD8;&#x6709;&#x4E00;&#x5B9A;&#x4E89;&#x8BAE;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x4E25;&#x683C;&#x4F7F;&#x7528;&#x7CBE;&#x786E;&#x7684;&#x65F6;&#x95F4;&#x7684;&#x8BDD;&#xFF0C;&#x7B14;&#x8005;&#x8BA4;&#x4E3A;&#x4E0D;&#x5FC5;&#x7EA0;&#x7ED3;&#x4E8E;&#x8FD9;&#x4E9B;&#x79F0;&#x547C;&#x3002;&#x4E00;&#x822C;&#x8BA4;&#x4E3A;GMT&#x548C;UTC&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x90FD;&#x548C;&#x82F1;&#x56FD;&#x4F26;&#x6566;&#x7684;&#x672C;&#x5730;&#x65F6;&#x95F4;&#x76F8;&#x540C;&#x3002;  </p>
+<p>&#xFF08;&#x5F85;&#x5199;&#xFF1A;&#x6709;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;UTC&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#xFF0C;/etc/default/rcS&#x5C06;UTC=yes&#x6539;&#x6210;UTC=no&#xFF0C;&#x4F46;ubuntu&#x65B0;&#x7248;&#x672C;&#x6CA1;&#x6709;&#x4E86;&#xFF09;</p>
+<h2 id="&#x5B57;&#x7B26;&#x96C6;"><a name="&#x5B57;&#x7B26;&#x96C6;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x96C6;</h2>
+<p>&#x6240;&#x8C13;&#x5B57;&#x7B26;&#xFF0C;&#x5C31;&#x662F;&#x5404;&#x79CD;&#x6587;&#x5B57;&#x548C;&#x7B26;&#x53F7;&#x7684;&#x603B;&#x79F0;&#xFF0C;&#x5305;&#x62EC;&#x5404;&#x56FD;&#x7684;&#x6587;&#x5B57;&#x3001;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x3001;&#x56FE;&#x5F62;&#x7B26;&#x53F7;&#x3001;&#x6570;&#x5B57;&#x7B49;&#x7B49;&#x3002;&#x5B57;&#x7B26;&#x96C6;&#xFF08;Character set&#xFF09;&#x662F;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5B57;&#x7B26;&#x96C6;&#x79CD;&#x7C7B;&#x8F83;&#x591A;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x96C6;&#x5305;&#x542B;&#x7684;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x5E38;&#x89C1;&#x5B57;&#x7B26;&#x96C6;&#x540D;&#x79F0;&#xFF1A;ASCII&#x5B57;&#x7B26;&#x96C6;&#xFF08;&#x6700;&#x901A;&#x7528;&#x7684;&#x5355;&#x5B57;&#x8282;&#x7F16;&#x7801;&#x7CFB;&#x7EDF;&#xFF09;&#x3001;GB2312&#x5B57;&#x7B26;&#x96C6;&#xFF08;1981&#x5E74;5&#x6708;1&#x65E5;&#x5B9E;&#x65BD;&#xFF0C;&#x5F88;&#x591A;&#x751F;&#x50FB;&#x5B57;&#x6CA1;&#x6709;&#x6536;&#x5F55;&#xFF09;&#x3001;BIG5&#x5B57;&#x7B26;&#x96C6;&#xFF08;1984&#x5E74;&#x521B;&#x7ACB;&#xFF0C;&#x7E41;&#x4F53;&#x4E2D;&#x6587;&#xFF09;&#x3001; GB18030&#x5B57;&#x7B26;&#x96C6;&#xFF08;2000&#x5E74;3&#x6708;17&#x65E5;&#x53D1;&#x5E03;&#xFF0C;&#x6700;&#x65B0;&#x7684;&#x6C49;&#x5B57;&#x7F16;&#x7801;&#x56FD;&#x5BB6;&#x6807;&#x51C6;&#xFF0C;&#x517C;&#x5BB9;GB2312&#xFF09;&#x3001;Unicode&#x5B57;&#x7B26;&#x96C6;&#xFF08;1994&#x5E74;&#x6B63;&#x5F0F;&#x516C;&#x5E03;&#xFF0C;UTF-32&#x3001;UTF-16&#x548C; UTF-8 &#x662F;Unicode&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x65B9;&#x6848;&#xFF09;&#x7B49;&#x3002;  </p>
+<p>&#x5728;Linux&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;<code>locale -a</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#xFF1A;  </p>
+<pre><code>$ locale -a
+C
+C.UTF-8
+en_AG
+en_AG.utf8
+en_AU.utf8
+en_BW.utf8
+en_CA.utf8
+en_DK.utf8
+en_GB.utf8
+en_HK.utf8
+en_IE.utf8
+en_IN
+en_IN.utf8
+en_NG
+en_NG.utf8
+en_NZ.utf8
+en_PH.utf8
+en_SG.utf8
+en_US.utf8
+en_ZA.utf8
+en_ZM
+en_ZM.utf8
+en_ZW.utf8
+POSIX
+</code></pre><p>&#x4F7F;&#x7528;<code>locale</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#xFF1A;  </p>
+<pre><code>$ locale
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE=&quot;en_US.UTF-8&quot;
+LC_NUMERIC=&quot;en_US.UTF-8&quot;
+LC_TIME=&quot;en_US.UTF-8&quot;
+LC_COLLATE=&quot;en_US.UTF-8&quot;
+LC_MONETARY=&quot;en_US.UTF-8&quot;
+LC_MESSAGES=&quot;en_US.UTF-8&quot;
+LC_PAPER=&quot;en_US.UTF-8&quot;
+LC_NAME=&quot;en_US.UTF-8&quot;
+LC_ADDRESS=&quot;en_US.UTF-8&quot;
+LC_TELEPHONE=&quot;en_US.UTF-8&quot;
+LC_MEASUREMENT=&quot;en_US.UTF-8&quot;
+LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;
+LC_ALL=
+</code></pre><p>&#x4E0A;&#x9762;&#x663E;&#x793A;&#x4E86;&#x8BB8;&#x591A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x5173;&#x7CFB;&#x662F;&#xFF1A;<code>LC_ALL</code> &gt; <code>LC_*</code> &gt; <code>LANG</code>&#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x7CFB;&#x7EDF;&#x5B57;&#x7B26;&#x96C6;&#x4E00;&#x81F4;&#xFF0C;&#x8FD9;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6700;&#x597D;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x4ECE;&#x5B57;&#x7B26;&#x96C6;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x53F0;Linux&#x7CFB;&#x7EDF;&#x53EA;&#x6709;&#x82F1;&#x6587;UTF8&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x7B2C;&#x4E8C;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x4E86;&#x6700;&#x7B80;&#x5B89;&#x88C5;&#xFF0C;&#x6240;&#x4EE5;&#x9ED8;&#x8BA4;&#x662F;&#x82F1;&#x6587;&#x73AF;&#x5883;&#x3002;&#x8FD9;&#x8868;&#x793A;&#xFF0C;&#x7CFB;&#x7EDF;&#x754C;&#x9762;&#x4FE1;&#x606F;&#x3001;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x7B49;&#x5747;&#x4E3A;&#x82F1;&#x6587;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E2D;&#x6587;&#x3002;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>$ ls &#x4E2D;&#x6587;&#x6587;&#x4EF6;
+ls: cannot access &apos;&#x4E2D;&#x6587;&#x6587;&#x4EF6;&apos;: No such file or directory
+latelee@ubuntu:~$ echo &quot;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&quot; &gt; &#x4E2D;&#x6587;&#x6587;&#x4EF6;
+latelee@ubuntu:~$ ls &#x4E2D;&#x6587;&#x6587;&#x4EF6;
+&#x4E2D;&#x6587;&#x6587;&#x4EF6;
+latelee@ubuntu:~$ cat &#x4E2D;&#x6587;&#x6587;&#x4EF6;
+&#x4E2D;&#x6587;&#x5B57;&#x7B26;
+</code></pre><p>&#x4ECE;&#x793A;&#x4F8B;&#x770B;&#x5230;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E2D;&#x6587;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;&#x4E2D;&#x6587;&#x6587;&#x672C;&#x3002;  </p>
+<p>&#x4E0B;&#x9762;&#x5B89;&#x88C5;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x96C6;&#xFF1A;</p>
+<pre><code>$ sudo apt-get install -y language-pack-zh-hans # &#x5B89;&#x88C5;&#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x5305;zh_CN
+$ sudo apt-get install -y language-pack-zh-hant # &#x5B89;&#x88C5;&#x7E41;&#x4F53;&#x4E2D;&#x6587;&#x5305;zh_HK&#x3001;zh_TW
+$ sudo /usr/share/locales/install-language-pack zh_CN # &#x5B89;&#x88C5;zh_CN&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x4E5F;&#x53EF;&#x5B89;&#x88C5;zh_TW
+</code></pre><p>&#x5B89;&#x88C5;&#x540E;&#xFF0C;&#x4F7F;&#x7528;<code>locale -a</code>&#x67E5;&#x770B;&#x53D1;&#x73B0;&#x65B0;&#x52A0;&#x5982;&#x4E0B;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#xFF1A;</p>
+<pre><code>zh_CN.utf8
+zh_HK.utf8
+zh_SG.utf8
+zh_TW.utf8
+</code></pre><p>&#x5C06;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x96C6;&#x66F4;&#x6539;&#x4E3A;&#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x6216;&#x7E41;&#x4F53;&#x4E2D;&#x6587;&#x3002;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code>$ export LANG=&quot;zh_CN.utf8&quot; LC_ALL=&quot;zh_CN.utf8&quot; LANGUAGE=&quot;zh_CN&quot;
+$ export LANG=&quot;zh_TW.utf8&quot; LC_ALL=&quot;zh_TW.utf8&quot; LANGUAGE=&quot;zh_TW&quot;
+</code></pre><p>&#x4E3A;&#x4E0D;&#x5F71;&#x54CD;&#x7CFB;&#x7EDF;&#xFF0C;&#x6B64;&#x5904;&#x4EC5;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x3002;  </p>
+<p>&#x5B89;&#x88C5;&#x4E86;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x96C6;&#x540E;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C31;&#x53D8;&#x6210;&#x4E2D;&#x6587;&#x7248;&#x672C;&#x4E86;&#xFF0C;&#x5373;&#x754C;&#x9762;&#x4FE1;&#x606F;&#xFF0C;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x5747;&#x4E3A;&#x4E2D;&#x6587;&#x3002;&#x4F46;&#x662F;&#xFF0C;Linux&#x7CFB;&#x7EDF;&#x672C;&#x8EAB;&#x4E3A;&#x82F1;&#x6587;&#xFF0C;&#x5176;&#x5B83;&#x56FD;&#x5BB6;&#x6216;&#x5730;&#x533A;&#x8BED;&#x8A00;&#x9700;&#x8981;&#x9760;&#x8BED;&#x8A00;&#x6587;&#x4EF6;&#x624D;&#x80FD;&#x6B63;&#x5E38;&#x663E;&#x793A;&#x76F8;&#x5E94;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x5426;&#x5219;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x82F1;&#x6587;&#x4FE1;&#x606F;<sup><a href="#fn_&#x6CE8;5" id="reffn_&#x6CE8;5">&#x6CE8;5</a></sup>&#x3002;<br>&#x7B14;&#x8005;&#x5728;&#x6D4B;&#x8BD5;&#x65F6;&#x53D1;&#x73B0;&#xFF0C;&#x8BBE;&#x7F6E;&#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x540E;&#xFF0C;<code>man man</code>&#x53EF;&#x51FA;&#x73B0;&#x4E2D;&#x6587;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;<code>man fopen</code>&#x4F9D;&#x65E7;&#x662F;&#x82F1;&#x6587;&#x3002;&#x800C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7E41;&#x4F53;&#x4E2D;&#x6587;&#xFF0C;&#x4E24;&#x8005;&#x5747;&#x4E3A;&#x82F1;&#x6587;&#x3002; </p>
+<p>&#x4E0B;&#x9762;&#x770B;&#x4E00;&#x4E0B;&#x4E0D;&#x540C;&#x5B57;&#x7B26;&#x96C6;&#x7684;&#x63D0;&#x793A;&#x4FE1;&#x606F;<sup><a href="#fn_&#x6CE8;6" id="reffn_&#x6CE8;6">&#x6CE8;6</a></sup>&#xFF1A;  </p>
+<pre><code>$ export LC_ALL=&quot;POSIX&quot; ## POSIX&#x73AF;&#x5883;&#xFF0C;&#x4E2D;&#x6587;&#x65E0;&#x6CD5;&#x663E;&#x793A;&#xFF0C;&#x63D0;&#x793A;&#x8BED;&#x4E3A;&#x82F1;&#x6587;
+$ &#x4E2D;&#x6587;&#x547D;&#x4EE4;
+\udce4\udcb8\udcad\udce6\udc96\udc87\udce5\udc91\udcbd\udce4\udcbb\udca4: command not found
+
+$ export LC_ALL=&quot;en_US.utf8&quot; ## utf8&#x82F1;&#x6587;&#x73AF;&#x5883;&#xFF0C;&#x4E2D;&#x6587;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x63D0;&#x793A;&#x8BED;&#x4E3A;&#x82F1;&#x6587;
+$ &#x4E2D;&#x6587;&#x547D;&#x4EE4;
+&#x4E2D;&#x6587;&#x547D;&#x4EE4;: command not found
+
+$ export LC_ALL=&quot;zh_CN.utf8&quot; ## utf8&#x7B80;&#x4F53;&#x4E2D;&#x6587;&#x73AF;&#x5883;&#xFF0C;&#x4E2D;&#x6587;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x63D0;&#x793A;&#x8BED;&#x4E3A;&#x7B80;&#x4F53;&#x4E2D;&#x6587;
+$ &#x4E2D;&#x6587;&#x547D;&#x4EE4;
+&#x4E2D;&#x6587;&#x547D;&#x4EE4;&#xFF1A;&#x672A;&#x627E;&#x5230;&#x547D;&#x4EE4;
+
+$ export LC_ALL=&quot;zh_TW.utf8&quot; ## utf8&#x7E41;&#x4F53;&#x4E2D;&#x6587;&#x73AF;&#x5883;&#xFF0C;&#x4E2D;&#x6587;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C;&#x63D0;&#x793A;&#x8BED;&#x4E3A;&#x7E41;&#x4F53;&#x4E2D;&#x6587;
+$ &#x4E2D;&#x6587;&#x547D;&#x4EE4;
+&#x4E2D;&#x6587;&#x547D;&#x4EE4;&#xFF1A;&#x7121;&#x6B64;&#x6307;&#x4EE4;
+</code></pre><blockquote>
+<p>&#x4E2D;&#x6587;&#x4E71;&#x7801;&#x95EE;&#x9898;<br>&#x5728;&#x7F16;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x4E2D;&#x6587;&#x4E71;&#x7801;&#x95EE;&#x9898;&#xFF0C;&#x6B64;&#x5904;&#x6309;&#x6E90;&#x7801;&#x7AEF;&#x3001;&#x663E;&#x793A;&#x7AEF;&#xFF0C;&#x8FDE;&#x63A5;&#x7AEF;&#x4E09;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;&#xFF0C;&#x53EA;&#x8981;&#x4FDD;&#x8BC1;&#x8FD9;&#x4E09;&#x8005;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x4E00;&#x81F4;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x4E71;&#x7801;&#x3002;&#x4EE5;UTF8&#x4E3A;&#x4F8B;&#x3002;<br>1&#x3001;&#x6E90;&#x7801;&#x7AEF;&#x3002;&#x9700;&#x8981;&#x5C06;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A;UTF8&#x3002;&#x5728;VS Code&#x6216;Notepad++&#x4E2D;&#x53EF;&#x4FEE;&#x6539;&#x3002;<br>2&#x3001;&#x663E;&#x793A;&#x7AEF;&#x3002;Linux&#x7EC8;&#x7AEF;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x5B57;&#x7B26;&#x4E3A;UTF8&#x3002;en_US.UTF-8&#x6216;zh_US.UTF-8&#x5747;&#x53EF;&#x3002;<br>3&#x3001;&#x8FDE;&#x63A5;&#x7AEF;&#x3002;&#x4EE5;SecureCRT&#x4E3A;&#x4F8B;&#xFF0C;&#x5728;<strong>&#x9009;&#x9879;</strong>-&gt;<strong>&#x4F1A;&#x8BDD;&#x9009;&#x9879;</strong>-&gt;<strong>&#x7EC8;&#x7AEF;</strong>-&gt;<strong>&#x5916;&#x89C2;</strong>-&gt;<strong>&#x5B57;&#x7B26;&#x7F16;&#x7801;</strong>&#x5904;&#xFF0C;&#x9009;&#x62E9;&#x8FD9;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x4E3A;&#x201C;UTF-8&#x201D;&#x3002;    </p>
+</blockquote>
+<h2 id="&#x767B;&#x9646;&#x4FE1;&#x606F;"><a name="&#x767B;&#x9646;&#x4FE1;&#x606F;" class="anchor-navigation-ex-anchor" href="#&#x767B;&#x9646;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x767B;&#x9646;&#x4FE1;&#x606F;</h2>
+<p>Linux&#x7CFB;&#x7EDF;&#x767B;&#x9646;&#x524D;&#x540E;&#xFF08;&#x65E0;&#x8BBA;&#x54EA;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF09;&#x90FD;&#x4F1A;&#x663E;&#x793A;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x4E0A;&#x6B21;&#x767B;&#x9646;&#x65F6;&#x95F4;&#xFF0C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x662F;&#x5426;&#x53EF;&#x5347;&#x7EA7;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x81F3;&#x4E8E;&#x7531;&#x54EA;&#x4E9B;&#x5DE5;&#x5177;&#x4EE5;&#x53CA;&#x4F55;&#x79CD;&#x673A;&#x5236;&#x89E6;&#x53D1;&#xFF0C;&#x6211;&#x4EEC;&#x6682;&#x65F6;&#x4E0D;&#x8FDB;&#x884C;&#x7814;&#x7A76;&#x3002;  </p>
+<ul>
+<li>/etc/issue<br>&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;&#x663E;&#x793A;&#x4E8E;&#x767B;&#x9646;&#x524D;&#xFF0C;&#x5728;&#x5B57;&#x7B26;&#x754C;&#x9762;&#x4E2D;&#x751F;&#x6548;&#x3002;  </li>
+<li>/etc/issue.net<br>&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;&#x663E;&#x793A;&#x4E8E;&#x767B;&#x9646;&#x524D;&#xFF0C;&#x5728;&#x8FDC;&#x7A0B;&#x767B;&#x9646;&#xFF08;&#x5982;Telnet&#x3001;ssh&#xFF09;&#x751F;&#x6548;&#x3002;&#x6CE8;&#x610F;&#xFF0C;ssh&#x9ED8;&#x8BA4;&#x4E0D;&#x663E;&#x793A;&#xFF0C;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;<code>/etc/ssh/sshd_config</code>&#x6587;&#x4EF6;&#xFF0C;&#x53BB;&#x6389;<code>Banner /etc/issue.net</code>&#x524D;&#x7684;&#x6CE8;&#x91CA;&#x7B26;&#x53F7;&#xFF0C;&#x518D;&#x91CD;&#x542F;ssh&#x670D;&#x52A1;&#x5373;&#x53EF;&#x3002;      </li>
+<li>/etc/update-motd.d/<br>Ubuntu&#x65B0;&#x7248;&#x672C;&#xFF08;16.04&#x53CA;&#x4EE5;&#x4E0A;&#xFF09;&#x4E2D;&#xFF0C;&#x542F;&#x7528;&#x4E86;&#x52A8;&#x6001;motd&#xFF0C;&#x767B;&#x9646;&#x663E;&#x793A;&#x7684;&#x4FE1;&#x606F;&#x7531;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x63A7;&#x5236;&#xFF0C;&#x5982;<code>00-header</code>&#x6587;&#x4EF6;&#x4E3A;&#x7B2C;&#x4E00;&#x884C;&#x4FE1;&#x606F;&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;<code>Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.8.0-36-generic x86_64)</code>&#xFF0C;<code>10-help-text</code>&#x6587;&#x4EF6;&#x4E3A;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x548C;&#x6280;&#x672F;&#x652F;&#x6301;&#x7684;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#xFF0C;&#x5176;&#x5B83;&#x7C7B;&#x4F3C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x6216;&#x5220;&#x9664;&#x8FD9;&#x4E9B;&#x811A;&#x672C;&#x8FBE;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x7684;<sup><a href="#fn_&#x6CE8;4" id="reffn_&#x6CE8;4">&#x6CE8;4</a></sup>&#x3002;</li>
+</ul>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x4E8B;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x8BB0;&#x5F55;&#x4E86;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x540D;&#x79F0;&#x548C;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x6CC4;&#x6F0F;&#x7CFB;&#x7EDF;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#x8D77;&#x89C1;&#xFF0C;&#x5728;&#x516C;&#x5171;&#x73AF;&#x5883;&#xFF08;&#x5982;&#x516C;&#x7F51;&#x4E2D;&#xFF09;&#x4E2D;&#x5EFA;&#x8BAE;&#x5C06;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x53BB;&#x9664;&#x3002;  </p>
+<h2 id="home&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF;&#x6587;&#x4EF6;"><a name="home&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#home&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>HOME&#x76EE;&#x5F55;&#x7684;&#x9690;&#x85CF;&#x6587;&#x4EF6;</h2>
+<p>&#x7528;&#x6237;&#x7684;HOME&#x76EE;&#x5F55;&#x6709;&#x8BB8;&#x591A;&#x9690;&#x85CF;&#x7684;&#x76EE;&#x5F55;&#x6216;&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x6709;&#x8F83;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#xFF0C;&#x8FD9;&#x91CC;&#x4F5C;&#x4E3A;&#x6269;&#x5C55;&#x77E5;&#x8BC6;&#x7A0D;&#x5FAE;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x3002;</p>
+<h4 id="ssh&#x914D;&#x7F6E;"><a name="ssh&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#ssh&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>.ssh&#x914D;&#x7F6E;</h4>
+<p>&#x719F;&#x6089;ssh&#x5728;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x4E2D;&#x6709;&#x5F88;&#x5927;&#x7684;&#x4FBF;&#x5229;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x516C;&#x94A5;&#x3001;&#x79C1;&#x94A5;&#xFF0C;&#x4E0E;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x514D;&#x5BC6;&#x8BBF;&#x95EE;&#x6216;&#x514D;&#x5BC6;&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x3002;<br>&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>ssh-keygen -t rsa -C &quot;li@latelee.org&quot;</code>&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;<code>~/.ssh</code>&#x76EE;&#x5F55;&#xFF0C;&#x5176;&#x4E2D;<code>~/.ssh/id_rsa</code>&#x4E3A;&#x79C1;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;<code>~/.ssh/id_rsa.pub</code>&#x4E3A;&#x516C;&#x94A5;&#x6587;&#x4EF6;&#x3002;<code>~/.ssh/authorized_keys</code>&#x4E3A;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x7684;&#x673A;&#x5668;&#x7684;&#x516C;&#x94A5;&#x3002;</p>
+<h4 id="git&#x914D;&#x7F6E;"><a name="git&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#git&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>.git&#x914D;&#x7F6E;</h4>
+<p>&#x5982;&#x679C;&#x5728;Linux&#x4E0A;&#x4F7F;&#x7528;git&#x8FDB;&#x884C;&#x7248;&#x672C;&#x7BA1;&#x7406;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;git&#x7684;&#x7528;&#x6237;&#x4E0E;&#x90AE;&#x7BB1;&#xFF08;&#x53EF;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x9488;&#x5BF9;&#x4ED3;&#x5E93;&#x8BBE;&#x7F6E;&#xFF0C;&#x8FD9;&#x91CC;&#x6F14;&#x793A;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#xFF09;&#xFF0C;&#x8BBE;&#x7F6E;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>git config --global user.name &quot;Late Lee&quot;   
+git config --global user.email &quot;li@latelee.org&quot;
+</code></pre><p>&#x6267;&#x884C;&#x540E;&#xFF0C;&#x5C06;&#x5728;HOME&#x76EE;&#x5F55;&#x751F;&#x6210;<code>.gitconfig</code>&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>$ cat ~/.gitconfig 
+[user]
+        email = li@latelee.org
+        name = &#x674E;&#x8FDF;
+</code></pre><h4 id="&#x5176;&#x5B83;"><a name="&#x5176;&#x5B83;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x5B83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x5B83;</h4>
+<p>&#x4E0B;&#x9762;&#x518D;&#x7F57;&#x5217;&#x4E00;&#x4E0B;&#x5176;&#x5B83;&#x7684;&#x914D;&#x7F6E;&#x76EE;&#x5F55;&#x53CA;&#x4F5C;&#x7528;&#x3002;</p>
+<p>docker&#xFF08;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x5BB9;&#x5668;&#x5F15;&#x64CE;&#xFF09;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;<code>~/.docker/config.json</code>&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x53EF;&#x6307;&#x5B9A;&#x52A0;&#x901F;&#x5668;&#x5730;&#x5740;&#x3002;  </p>
+<p>pm2&#xFF08;&#x4E00;&#x4E2A;nodejs&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF09;&#x7684;&#x914D;&#x7F6E;&#x76EE;&#x5F55;&#x4E3A;<code>~/.pm2</code>&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x62EC;&#x4E86;pm2&#x7684;&#x65E5;&#x5FD7;&#x3001;&#x5B89;&#x88C5;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<p>pip&#xFF08;Python &#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF09;&#x7684;&#x914D;&#x7F6E;&#x76EE;&#x5F55;<code>~/.pip</code>&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x62EC;&#x4E86;&#x5305;&#x6E90;&#x5730;&#x5740;&#x3002;</p>
+<hr>
+<blockquote id="fn_&#x6CE8;1">
+<sup>&#x6CE8;1</sup>. &#x672C;&#x6587;&#x540E;&#x7EED;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x8DDF;&#x8E2A;&#x4E32;&#x53E3;&#x7EC8;&#x7AEF;&#x3002;  <a href="#reffn_&#x6CE8;1" title="Jump back to footnote [&#x6CE8;1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;2">
+<sup>&#x6CE8;2</sup>. &#x4E0D;&#x540C;&#x7CFB;&#x7EDF;&#x7684;PS1&#x503C;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x6709;&#x7684;&#x7CFB;&#x7EDF;&#x6CA1;&#x6709;<code>[]</code>&#xFF0C;&#x6709;&#x7684;&#x7CFB;&#x7EDF;&#x663E;&#x793A;&#x5B8C;&#x6574;&#x76EE;&#x5F55;&#xFF0C;&#x6709;&#x7684;&#x663E;&#x793A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF0C;&#x4E3A;&#x4FDD;&#x8BC1;&#x547D;&#x4EE4;&#x793A;&#x4F8B;&#x7684;&#x901A;&#x7528;&#x6027;&#xFF0C;&#x672C;&#x4E66;&#x547D;&#x4EE4;&#x793A;&#x4F8B;&#x4ECE;<code>$</code>&#x6216;<code>#</code>&#x5F00;&#x59CB;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x8FD8;&#x6709;PS2&#x3001;PS3&#x3001;PS4&#x7B49;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x8BFB;&#x8005;&#x53EF;&#x81EA;&#x884C;&#x4E86;&#x89E3;&#x3002;    <a href="#reffn_&#x6CE8;2" title="Jump back to footnote [&#x6CE8;2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;3">
+<sup>&#x6CE8;3</sup>. Etc&#x76EE;&#x5F55;&#x7684;&#x65F6;&#x533A;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x4E0E;&#x6211;&#x4EEC;&#x7406;&#x89E3;&#x7684;&#x7A0D;&#x6709;&#x4E0D;&#x540C;&#xFF0C;&#x5982;<code>GMT-8</code>&#x662F;&#x6307;&#x4E1C;&#x516B;&#x533A;&#x65F6;&#x533A;&#xFF0C;&#x540D;&#x79F0;&#x683C;&#x5F0F;&#x4E3A;&#x201C;GMT&#x52A0;&#x4E0A;&#x4E0E;UTC&#x7684;&#x504F;&#x79FB;&#x503C;(&#x65F6;&#x95F4;&#x5DEE;)&#x201D;&#xFF0C;&#x5982;&#x679C;&#x65F6;&#x95F4;&#x5DEE;&#x4E3A;&#x6B63;&#x6570;&#xFF0C;&#x5219;&#x65F6;&#x533A;&#x4F4D;&#x4E8E;&#x672C;&#x521D;&#x5B50;&#x5348;&#x7EBF;(Prime Meridian)&#x4E4B;&#x897F;(&#x5373;&#x897F;&#x51E0;&#x533A;)&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x5219;&#x65F6;&#x533A;&#x4F4D;&#x4E8E;&#x672C;&#x521D;&#x5B50;&#x5348;&#x7EBF;&#x4E4B;&#x4E1C;(&#x5373;&#x4E1C;&#x51E0;&#x533A;)&#xFF0C;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;&#x53EF;&#x4EE5;&#x53C2;&#x9605;<code>man tzset</code>&#x7684;&#x8BF4;&#x660E;&#x3002;  <a href="#reffn_&#x6CE8;3" title="Jump back to footnote [&#x6CE8;3] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;4">
+<sup>&#x6CE8;4</sup>. &#x5982;&#x56E2;&#x961F;&#x4E2D;&#x5171;&#x7528;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x5C06;&#x901A;&#x77E5;&#x4FE1;&#x606F;&#x3001;&#x5DE5;&#x5177;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;&#x5E2E;&#x52A9;&#x7B49;&#x4FE1;&#x606F;&#x5728;&#x5404;&#x6210;&#x5458;&#x6BCF;&#x6B21;&#x767B;&#x9646;&#x65F6;&#x5747;&#x663E;&#x793A;&#x51FA;&#x6765;&#x3002;  <a href="#reffn_&#x6CE8;4" title="Jump back to footnote [&#x6CE8;4] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;5">
+<sup>&#x6CE8;5</sup>. &#x53EF;&#x67E5;&#x9605;gettext&#x5DE5;&#x5177;&#xFF0C;&#x4EE5;&#x53CA;po&#x3001;pot&#x3001;mo&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x3002;  <a href="#reffn_&#x6CE8;5" title="Jump back to footnote [&#x6CE8;5] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_&#x6CE8;6">
+<sup>&#x6CE8;6</sup>. &#x8BBE;&#x7F6E;&#x4E3A;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x96C6;&#x4F1A;&#x51FA;&#x73B0;&#x8B66;&#x544A;&#x4FE1;&#x606F;&#x201C;-bash: warning: setlocale: LC_ALL: cannot change locale (zh_CN.utf8)&#x201D;&#xFF0C;&#x4F46;&#x4E0D;&#x5F71;&#x54CD;&#x4F7F;&#x7528;&#x3002;&#x6D4B;&#x8BD5;&#x4F7F;&#x7528;SecureCRT&#x8F6F;&#x4EF6;&#x5E76;&#x4E14;&#x8BBE;&#x7F6E;&#x4E86;UTF8&#x5B57;&#x7B26;&#x96C6;&#x3002;   <a href="#reffn_&#x6CE8;6" title="Jump back to footnote [&#x6CE8;6] in the text."> &#x21A9;</a>
+</blockquote>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Late Lee 2018-2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"> Last update: 
+2019-12-17 17:27:25
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch03.5.html" class="navigation navigation-prev " aria-label="Previous page: 3.5 shell脚本">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ch03.7.html" class="navigation navigation-next " aria-label="Next page: 3.7 软件安装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.6 系统配置","level":"2.3.6","depth":2,"next":{"title":"3.7 软件安装","level":"2.3.7","depth":2,"path":"ch03/ch03.7.md","ref":"ch03/ch03.7.md","articles":[]},"previous":{"title":"3.5 shell脚本","level":"2.3.5","depth":2,"path":"ch03/ch03.5.md","ref":"ch03/ch03.5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","favicon","include-codeblock@^3.0.2","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","anchor-navigation-ex@0.1.8","splitter","donate"],"root":".","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Late Lee 2018-2019","modify_label":" Last update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["wqy-zenhei"],"github":{"url":"https://github.com/cststudio/"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://raw.githubusercontent.com/latelee/public/master/alipay_240.png","alipayText":"支付宝","button":"欢迎捐赠","title":"","wechat":"https://raw.githubusercontent.com/latelee/public/master/wepay_240.png","wechatText":"微信"},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"wqy-zenhei","size":2},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"李迟 <li@latelee.org>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《嵌入式Linux入门与实践》 by 李迟","language":"zh-hans","output.name":"site","links":{"sidebar":{"返回主页":"https://www.cststudio.com.cn","返回书目":"https://www.cststudio.com.cn/book/ellp"}},"gitbook":"*","description":"《嵌入式Linux入门与实践》，带领进入嵌入式Linux大门"},"file":{"path":"ch03/ch03.6.md","mtime":"2019-12-17T09:27:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T09:30:35.253Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

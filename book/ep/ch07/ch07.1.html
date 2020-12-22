@@ -1,0 +1,3079 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.1 编程规范 · 《嵌入式Linux入门与实践》 by 李迟</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李迟 <li@latelee.org>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="ch07.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.cststudio.com.cn" target="_blank" class="custom-link">返回主页</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.cststudio.com.cn/book/ellp" target="_blank" class="custom-link">返回书目</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分 Linux系统使用篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../ch01/">
+            
+                <a href="../ch01/">
+            
+                    
+                    第1章 嵌入式Linux基础概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch11">
+            
+                    
+                    1.1 嵌入式Linux是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch12">
+            
+                    
+                    1.2 嵌入式Linux由哪些部分组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch13">
+            
+                    
+                    1.3 如何学习嵌入式Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch14">
+            
+                    
+                    1.4 其它知识点补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch15">
+            
+                    
+                    1.5 本书代码示例说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch16">
+            
+                    
+                    1.6 本书实验平台说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../ch01/ch01.html">
+            
+                <a href="../ch01/ch01.html#ch17">
+            
+                    
+                    1.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../ch02/">
+            
+                <a href="../ch02/">
+            
+                    
+                    第2章 Ubuntu系统安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch21">
+            
+                    
+                    2.1 使用虚拟机VMware Workstation安装Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch22">
+            
+                    
+                    2.2 安装Ubuntu后要做的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch23">
+            
+                    
+                    2.3 虚拟机Ubuntu的访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch24">
+            
+                    
+                    2.4 拓展思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../ch02/ch02.html">
+            
+                <a href="../ch02/ch02.html#ch25">
+            
+                    
+                    2.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../ch03/ch03.html">
+            
+                <a href="../ch03/ch03.html">
+            
+                    
+                    第3章 Linux系统使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../ch03/ch03.1.html">
+            
+                <a href="../ch03/ch03.1.html">
+            
+                    
+                    3.1 UNIX哲学准则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../ch03/ch03.2.html">
+            
+                <a href="../ch03/ch03.2.html">
+            
+                    
+                    3.2 “一切皆文件”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../ch03/ch03.3.html">
+            
+                <a href="../ch03/ch03.3.html">
+            
+                    
+                    3.3 Linux系统目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../ch03/ch03.4.html">
+            
+                <a href="../ch03/ch03.4.html">
+            
+                    
+                    3.4 Linux命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../ch03/ch03.5.html">
+            
+                <a href="../ch03/ch03.5.html">
+            
+                    
+                    3.5 shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../ch03/ch03.6.html">
+            
+                <a href="../ch03/ch03.6.html">
+            
+                    
+                    3.6 系统配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../ch03/ch03.7.html">
+            
+                <a href="../ch03/ch03.7.html">
+            
+                    
+                    3.7 软件安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../ch03/ch03.8.html">
+            
+                <a href="../ch03/ch03.8.html">
+            
+                    
+                    3.8 更新Linux内核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../ch03/ch03.9.html">
+            
+                <a href="../ch03/ch03.9.html">
+            
+                    
+                    3.9 自定义构建Linux系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../ch03/ch03.10.html">
+            
+                <a href="../ch03/ch03.10.html">
+            
+                    
+                    3.10 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../ch04/ch04.html">
+            
+                <a href="../ch04/ch04.html">
+            
+                    
+                    第4章 嵌入式Linux开发环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../ch04/ch04.1.html">
+            
+                <a href="../ch04/ch04.1.html">
+            
+                    
+                    4.1 嵌入式Linux开发概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html">
+            
+                    
+                    4.2 Windows系统所需工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch421">
+            
+                    
+                    4.2.1 综合类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch422">
+            
+                    
+                    4.2.2 编辑类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.3" data-path="../ch04/ch04.2.html">
+            
+                <a href="../ch04/ch04.2.html#ch423">
+            
+                    
+                    4.2.3 连接工类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html">
+            
+                    
+                    4.3 Linux系统所需服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.3.1" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch431">
+            
+                    
+                    4.3.1 SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.2" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch432">
+            
+                    
+                    4.3.2 Samba
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.3" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch433">
+            
+                    
+                    4.3.3 NFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.4" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch434">
+            
+                    
+                    4.3.4 FTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.5" data-path="../ch04/ch04.3.html">
+            
+                <a href="../ch04/ch04.3.html#ch435">
+            
+                    
+                    4.3.5 Telnet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../ch04/ch04.4.html">
+            
+                <a href="../ch04/ch04.4.html">
+            
+                    
+                    4.4 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../ch05/ch05.html">
+            
+                <a href="../ch05/ch05.html">
+            
+                    
+                    第5章 自动化编译和Makefile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html">
+            
+                    
+                    5.1 Linux系统源码编译方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1.1" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch511">
+            
+                    
+                    5.1.1 下载源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.2" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch512">
+            
+                    
+                    5.1.2 手动解压
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.3" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch513">
+            
+                    
+                    5.1.3 编译安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.4" data-path="../ch05/ch05.1.html">
+            
+                <a href="../ch05/ch05.1.html#ch514">
+            
+                    
+                    5.1.4 编译实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html">
+            
+                    
+                    5.2 安装交叉编译器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch521">
+            
+                    
+                    5.2.1 获取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch522">
+            
+                    
+                    5.2.2 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.3" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch523">
+            
+                    
+                    5.2.3 验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.4" data-path="../ch05/ch05.2.html">
+            
+                <a href="../ch05/ch05.2.html#ch524">
+            
+                    
+                    5.2.4 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html">
+            
+                    
+                    5.3 自制交叉编译器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.3.1" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch531">
+            
+                    
+                    5.3.1 安装必备工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.2" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch532">
+            
+                    
+                    5.3.2 下载源码包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch533">
+            
+                    
+                    5.3.3 编译安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.4" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch534">
+            
+                    
+                    5.3.4 配置交叉编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.5" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch535">
+            
+                    
+                    5.3.5 构建交叉编译器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.6" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch536">
+            
+                    
+                    5.3.6 设置PATH环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.7" data-path="../ch05/ch05.3.html">
+            
+                <a href="../ch05/ch05.3.html#ch537">
+            
+                    
+                    5.3.7 交叉编译器小知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html">
+            
+                    
+                    5.4 Makefile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.4.1" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch541">
+            
+                    
+                    5.4.1 Makefile基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.2" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch542">
+            
+                    
+                    5.4.2 在Makefile中执行shell命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.3" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch543">
+            
+                    
+                    5.4.3 使用make编译Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4.4" data-path="../ch05/ch05.4.html">
+            
+                <a href="../ch05/ch05.4.html#ch544">
+            
+                    
+                    5.4.4 Makefile模板实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../ch05/ch05.5.html">
+            
+                <a href="../ch05/ch05.5.html">
+            
+                    
+                    5.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../ch06/ch06.html">
+            
+                <a href="../ch06/ch06.html">
+            
+                    
+                    第6章 程序的编译、链接和运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../ch06/ch06.1.html">
+            
+                <a href="../ch06/ch06.1.html">
+            
+                    
+                    6.1 探究helloworld——程序编译
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1.1" >
+            
+                <span>
+            
+                    
+                    预编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.2" >
+            
+                <span>
+            
+                    
+                    编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.3" >
+            
+                <span>
+            
+                    
+                    汇编
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.1.4" >
+            
+                <span>
+            
+                    
+                    链接
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../ch06/ch06.2.html">
+            
+                <a href="../ch06/ch06.2.html">
+            
+                    
+                    6.2 Linux二进制工具(Binutils)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.2.1" >
+            
+                <span>
+            
+                    
+                    ar
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.2" >
+            
+                <span>
+            
+                    
+                    nm
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.3" >
+            
+                <span>
+            
+                    
+                    strings
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.4" >
+            
+                <span>
+            
+                    
+                    strip
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.5" >
+            
+                <span>
+            
+                    
+                    objcopy
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.6" >
+            
+                <span>
+            
+                    
+                    objdump
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.7" >
+            
+                <span>
+            
+                    
+                    readelf
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.8" >
+            
+                <span>
+            
+                    
+                    size
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2.9" >
+            
+                <span>
+            
+                    
+                    ld
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../ch06/ch06.3.html">
+            
+                <a href="../ch06/ch06.3.html">
+            
+                    
+                    6.3 目标文件格式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.3.1" >
+            
+                <span>
+            
+                    
+                    目标文件格式分类
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.2" >
+            
+                <span>
+            
+                    
+                    ELF格式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.3" >
+            
+                <span>
+            
+                    
+                    符号修饰
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.4" >
+            
+                <span>
+            
+                    
+                    静态库
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3.5" >
+            
+                <span>
+            
+                    
+                    动态库
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../ch06/ch06.4.html">
+            
+                <a href="../ch06/ch06.4.html">
+            
+                    
+                    6.4 探究helloworld——程序运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.4.1" >
+            
+                <span>
+            
+                    
+                    进程空间
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.2" >
+            
+                <span>
+            
+                    
+                    栈
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.3" >
+            
+                <span>
+            
+                    
+                    堆
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4.4" >
+            
+                <span>
+            
+                    
+                    Linux装载ELF文件过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../ch06/ch06.5.html">
+            
+                <a href="../ch06/ch06.5.html">
+            
+                    
+                    6.5 探究helloworld——库到内核
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.5.1" >
+            
+                <span>
+            
+                    
+                    glibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5.2" >
+            
+                <span>
+            
+                    
+                    Linux系统调用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5.3" >
+            
+                <span>
+            
+                    
+                    硬件输出
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../ch06/ch06.6.html">
+            
+                <a href="../ch06/ch06.6.html">
+            
+                    
+                    6.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="ch07.html">
+            
+                <a href="ch07.html">
+            
+                    
+                    第7章 应用程序开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.7.1" data-path="ch07.1.html">
+            
+                <a href="ch07.1.html">
+            
+                    
+                    7.1 编程规范
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1.1" >
+            
+                <span>
+            
+                    
+                    编码风格
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.1.2" >
+            
+                <span>
+            
+                    
+                    编程原则
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="ch07.2.html">
+            
+                <a href="ch07.2.html">
+            
+                    
+                    7.2 C标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="ch07.3.html">
+            
+                <a href="ch07.3.html">
+            
+                    
+                    7.3 C++标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="ch07.4.html">
+            
+                <a href="ch07.4.html">
+            
+                    
+                    7.4 Linux应用层模块分类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.4.1" >
+            
+                <span>
+            
+                    
+                    文件IO编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.2" >
+            
+                <span>
+            
+                    
+                    多进程编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.3" >
+            
+                <span>
+            
+                    
+                    多线程编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.4" >
+            
+                <span>
+            
+                    
+                    信号处理编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.5" >
+            
+                <span>
+            
+                    
+                    串口编程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="ch07.5.html">
+            
+                <a href="ch07.5.html">
+            
+                    
+                    7.5 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../ch08/ch08.html">
+            
+                <a href="../ch08/ch08.html">
+            
+                    
+                    第8章 调试方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ch08/ch08.1.html">
+            
+                <a href="../ch08/ch08.1.html">
+            
+                    
+                    8.1 关于“调试”的说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html">
+            
+                    
+                    8.2 消除gcc编译警告
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.2.1" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html#ch821">
+            
+                    
+                    8.2.1 gcc编译警告选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2.2" data-path="../ch08/ch08.2.html">
+            
+                <a href="../ch08/ch08.2.html#ch822">
+            
+                    
+                    8.2.2 gcc常见编译警告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ch08/ch08.3.html">
+            
+                <a href="../ch08/ch08.3.html">
+            
+                    
+                    8.3 C/C++代码静态检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ch08/ch08.4.html">
+            
+                <a href="../ch08/ch08.4.html">
+            
+                    
+                    8.4 使用printf打印跟踪流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ch08/ch08.4.html">
+            
+                <a href="../ch08/ch08.4.html">
+            
+                    
+                    8.5 gdb调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ch08/ch08.5.html">
+            
+                <a href="../ch08/ch08.5.html">
+            
+                    
+                    8.6 利用coredump文件调试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.6.1" >
+            
+                <span>
+            
+                    
+                    生成coredump文件前置条件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6.2" >
+            
+                <span>
+            
+                    
+                    段错误调试实例
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6.3" >
+            
+                <span>
+            
+                    
+                    嵌入式设备上coredump调试经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ch08/ch08.6.html">
+            
+                <a href="../ch08/ch08.6.html">
+            
+                    
+                    8.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分 嵌入式Linux系统移植篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ch09/ch09.html">
+            
+                <a href="../ch09/ch09.html">
+            
+                    
+                    第9章 嵌入式Linux移植总览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../ch09/ch09.1.html">
+            
+                <a href="../ch09/ch09.1.html">
+            
+                    
+                    9.1 嵌入式Linux移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" >
+            
+                <span>
+            
+                    
+                    bootloader移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" >
+            
+                <span>
+            
+                    
+                    Linux内核移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.3" >
+            
+                <span>
+            
+                    
+                    根文件系统移植
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../ch09/ch09.2.html">
+            
+                <a href="../ch09/ch09.2.html">
+            
+                    
+                    9.2 宿主机与目标板共享的几种方式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" >
+            
+                <span>
+            
+                    
+                    NFS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" >
+            
+                <span>
+            
+                    
+                    SSH
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" >
+            
+                <span>
+            
+                    
+                    FTP
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" >
+            
+                <span>
+            
+                    
+                    硬件介质：U盘和SD卡
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../ch09/ch09.3.html">
+            
+                <a href="../ch09/ch09.3.html">
+            
+                    
+                    9.3 qemu模拟环境
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" >
+            
+                <span>
+            
+                    
+                    qemu介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" >
+            
+                <span>
+            
+                    
+                    qemu选项介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../ch09/ch09.4.html">
+            
+                <a href="../ch09/ch09.4.html">
+            
+                    
+                    9.4 嵌入式Linux开发实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" >
+            
+                <span>
+            
+                    
+                    嵌入式Linux移植实践经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" >
+            
+                <span>
+            
+                    
+                    嵌入式Linux应用开发实践经验
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" >
+            
+                <span>
+            
+                    
+                    如何阅读芯片手册
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.4" >
+            
+                <span>
+            
+                    
+                    如何阅读开源代码
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../ch09/ch09.5.html">
+            
+                <a href="../ch09/ch09.5.html">
+            
+                    
+                    9.5 几种嵌入式Linux平台的开发环境介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.5.1" >
+            
+                <span>
+            
+                    
+                    三星s3c2440(samsung)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.2" >
+            
+                <span>
+            
+                    
+                    德州仪器dm8127(TI)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.3" >
+            
+                <span>
+            
+                    
+                    瑞芯微rk8188(rockchip)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.4" >
+            
+                <span>
+            
+                    
+                    赛灵思zed board(Xilinx)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.5" >
+            
+                <span>
+            
+                    
+                    x86工控机
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../ch09/ch09.6.html">
+            
+                <a href="../ch09/ch09.6.html">
+            
+                    
+                    9.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ch10/ch10.html">
+            
+                <a href="../ch10/ch10.html">
+            
+                    
+                    第10章 bootloader移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../ch10/ch10.1.html">
+            
+                <a href="../ch10/ch10.1.html">
+            
+                    
+                    10.1 u-boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" >
+            
+                <span>
+            
+                    
+                    u-boot概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" >
+            
+                <span>
+            
+                    
+                    u-boot目录说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.3" >
+            
+                <span>
+            
+                    
+                    u-boot编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.4" >
+            
+                <span>
+            
+                    
+                    u-boot在qemu环境的启动
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.5" >
+            
+                <span>
+            
+                    
+                    u-boot启动流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.6" >
+            
+                <span>
+            
+                    
+                    在u-boot中新加命令
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.7" >
+            
+                <span>
+            
+                    
+                    u-boot进程空间
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../ch10/ch10.2.html">
+            
+                <a href="../ch10/ch10.2.html">
+            
+                    
+                    10.2 coreboot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" >
+            
+                <span>
+            
+                    
+                    coreboot概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" >
+            
+                <span>
+            
+                    
+                    coreboot目录说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" >
+            
+                <span>
+            
+                    
+                    coreboot编译
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.4" >
+            
+                <span>
+            
+                    
+                    coreboot在qemu环境的启动
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.5" >
+            
+                <span>
+            
+                    
+                    coreboot启动u-boot
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.6" >
+            
+                <span>
+            
+                    
+                    coreboot启动流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../ch10/ch10.3.html">
+            
+                <a href="../ch10/ch10.3.html">
+            
+                    
+                    10.3 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ch11/ch11.html">
+            
+                <a href="../ch11/ch11.html">
+            
+                    
+                    第11章 Linux内核移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../ch11/ch11.1.html">
+            
+                <a href="../ch11/ch11.1.html">
+            
+                    
+                    11.1 内核目录说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../ch11/ch11.2.html">
+            
+                <a href="../ch11/ch11.2.html">
+            
+                    
+                    11.2 内核配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../ch11/ch11.3.html">
+            
+                <a href="../ch11/ch11.3.html">
+            
+                    
+                    11.3 内核配置编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../ch11/ch11.4.html">
+            
+                <a href="../ch11/ch11.4.html">
+            
+                    
+                    11.4 helloworld设备驱动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../ch11/ch11.5.html">
+            
+                <a href="../ch11/ch11.5.html">
+            
+                    
+                    11.5 内核启动过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../ch11/ch11.6.html">
+            
+                <a href="../ch11/ch11.6.html">
+            
+                    
+                    11.6 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../ch12/ch12.html">
+            
+                <a href="../ch12/ch12.html">
+            
+                    
+                    第12章 根文件系统移植
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../ch12/ch12.1.html">
+            
+                <a href="../ch12/ch12.1.html">
+            
+                    
+                    12.1 busybox
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1.1" >
+            
+                <span>
+            
+                    
+                    [busybox介绍]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.1.2" >
+            
+                <span>
+            
+                    
+                    [busybox编译]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../ch12/ch12.2.html">
+            
+                <a href="../ch12/ch12.2.html">
+            
+                    
+                    12.2 构建Linux根文件系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.2.1" >
+            
+                <span>
+            
+                    
+                    构建/bin目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.2" >
+            
+                <span>
+            
+                    
+                    构建/lib目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.3" >
+            
+                <span>
+            
+                    
+                    构建/etc目录
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../ch12/ch12.3.html">
+            
+                <a href="../ch12/ch12.3.html">
+            
+                    
+                    12.3 其它构建方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../ch12/ch12.4.html">
+            
+                <a href="../ch12/ch12.4.html">
+            
+                    
+                    12.4 根文件系统启动流程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.4.1" >
+            
+                <span>
+            
+                    
+                    系统级别启动过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4.2" >
+            
+                <span>
+            
+                    
+                    用户级别启动过程
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../ch12/ch12.5.html">
+            
+                <a href="../ch12/ch12.5.html">
+            
+                    
+                    12.5 制作ramdisk镜像文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="../ch12/ch12.6.html">
+            
+                <a href="../ch12/ch12.6.html">
+            
+                    
+                    12.6 在qemu挂载rootfs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.7" data-path="../ch12/ch12.7.html">
+            
+                <a href="../ch12/ch12.7.html">
+            
+                    
+                    12.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../ch13/ch13.html">
+            
+                <a href="../ch13/ch13.html">
+            
+                    
+                    第13章 Linux驱动开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../ch13/ch13.1.html">
+            
+                <a href="../ch13/ch13.1.html">
+            
+                    
+                    13.1 驱动分类概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../ch13/ch13.2.html">
+            
+                <a href="../ch13/ch13.2.html">
+            
+                    
+                    13.2 驱动实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../ch13/ch13.3.html">
+            
+                <a href="../ch13/ch13.3.html">
+            
+                    
+                    13.3 用户空间与内核空间的交互方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../ch13/ch13.4.html">
+            
+                <a href="../ch13/ch13.4.html">
+            
+                    
+                    13.4 驱动分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="../ch13/ch13.5.html">
+            
+                <a href="../ch13/ch13.5.html">
+            
+                    
+                    13.5 Linux驱动常见错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="../ch13/ch13.6.html">
+            
+                <a href="../ch13/ch13.6.html">
+            
+                    
+                    13.6 Linux驱动学习建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.7" data-path="../ch13/ch13.7.html">
+            
+                <a href="../ch13/ch13.7.html">
+            
+                    
+                    13.7 本章小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../appendix/参考文献.html">
+            
+                <a href="../appendix/参考文献.html">
+            
+                    
+                    参考文献
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../postscript.html">
+            
+                <a href="../postscript.html">
+            
+                    
+                    后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7.1 编程规范</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#71-&#x7F16;&#x7A0B;&#x89C4;&#x8303;">7.1 &#x7F16;&#x7A0B;&#x89C4;&#x8303;</a></li><ul><li><a href="#&#x7F16;&#x7801;&#x98CE;&#x683C;">&#x7F16;&#x7801;&#x98CE;&#x683C;</a></li><li><a href="#&#x7F16;&#x7A0B;&#x539F;&#x5219;">&#x7F16;&#x7A0B;&#x539F;&#x5219;</a></li></ul></ul></div><a href="#71-&#x7F16;&#x7A0B;&#x89C4;&#x8303;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="71-&#x7F16;&#x7A0B;&#x89C4;&#x8303;"><a name="71-&#x7F16;&#x7A0B;&#x89C4;&#x8303;" class="anchor-navigation-ex-anchor" href="#71-&#x7F16;&#x7A0B;&#x89C4;&#x8303;"><i class="fa fa-link" aria-hidden="true"></i></a>7.1 &#x7F16;&#x7A0B;&#x89C4;&#x8303;</h1>
+<h2 id="&#x7F16;&#x7801;&#x98CE;&#x683C;"><a name="&#x7F16;&#x7801;&#x98CE;&#x683C;" class="anchor-navigation-ex-anchor" href="#&#x7F16;&#x7801;&#x98CE;&#x683C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x7801;&#x98CE;&#x683C;</h2>
+<p>&#x9002;&#x5F53;&#x7A7A;&#x683C;</p>
+<h2 id="&#x7F16;&#x7A0B;&#x539F;&#x5219;"><a name="&#x7F16;&#x7A0B;&#x539F;&#x5219;" class="anchor-navigation-ex-anchor" href="#&#x7F16;&#x7A0B;&#x539F;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x7A0B;&#x539F;&#x5219;</h2>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Late Lee 2018-2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"> Last update: 
+2019-12-17 17:27:25
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch07.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第7章 应用程序开发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.1 编程规范","level":"2.7.1","depth":2,"next":{"title":"编码风格","level":"2.7.1.1","depth":3,"ref":"","articles":[]},"previous":{"title":"第7章 应用程序开发","level":"2.7","depth":1,"path":"ch07/ch07.md","ref":"ch07/ch07.md","articles":[{"title":"7.1 编程规范","level":"2.7.1","depth":2,"path":"ch07/ch07.1.md","ref":"ch07/ch07.1.md","articles":[{"title":"编码风格","level":"2.7.1.1","depth":3,"ref":"","articles":[]},{"title":"编程原则","level":"2.7.1.2","depth":3,"ref":"","articles":[]}]},{"title":"7.2 C标准库","level":"2.7.2","depth":2,"path":"ch07/ch07.2.md","ref":"ch07/ch07.2.md","articles":[]},{"title":"7.3 C++标准库","level":"2.7.3","depth":2,"path":"ch07/ch07.3.md","ref":"ch07/ch07.3.md","articles":[]},{"title":"7.4 Linux应用层模块分类","level":"2.7.4","depth":2,"path":"ch07/ch07.4.md","ref":"ch07/ch07.4.md","articles":[{"title":"文件IO编程","level":"2.7.4.1","depth":3,"ref":"","articles":[]},{"title":"多进程编程","level":"2.7.4.2","depth":3,"ref":"","articles":[]},{"title":"多线程编程","level":"2.7.4.3","depth":3,"ref":"","articles":[]},{"title":"信号处理编程","level":"2.7.4.4","depth":3,"ref":"","articles":[]},{"title":"串口编程","level":"2.7.4.5","depth":3,"ref":"","articles":[]}]},{"title":"7.5 本章小结","level":"2.7.5","depth":2,"path":"ch07/ch07.5.md","ref":"ch07/ch07.5.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","favicon","include-codeblock@^3.0.2","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","anchor-navigation-ex@0.1.8","splitter","donate"],"root":".","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Late Lee 2018-2019","modify_label":" Last update: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["wqy-zenhei"],"github":{"url":"https://github.com/cststudio/"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://raw.githubusercontent.com/latelee/public/master/alipay_240.png","alipayText":"支付宝","button":"欢迎捐赠","title":"","wechat":"https://raw.githubusercontent.com/latelee/public/master/wepay_240.png","wechatText":"微信"},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"wqy-zenhei","size":2},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"李迟 <li@latelee.org>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《嵌入式Linux入门与实践》 by 李迟","language":"zh-hans","output.name":"site","links":{"sidebar":{"返回主页":"https://www.cststudio.com.cn","返回书目":"https://www.cststudio.com.cn/book/ellp"}},"gitbook":"*","description":"《嵌入式Linux入门与实践》，带领进入嵌入式Linux大门"},"file":{"path":"ch07/ch07.1.md","mtime":"2019-12-17T09:27:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T09:30:35.253Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
