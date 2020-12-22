@@ -1,0 +1,244 @@
+<!--
+佛说：众生皆苦。
+须菩提，忍辱波罗密，如来说非忍辱波罗密，是名忍辱波罗密。
+过去心不可得，现在心不可得，未来心不可得
+
+开经偈：
+无上甚深微妙法，百千万劫难遭遇。
+我今见闻得受持，愿解如来真实义。     
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+
+<head><meta name="generator" content="Hexo 3.9.0"><link rel="manifest" href="/manifest.json">
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="author" content="CST研习舍">
+  <meta name="theme-color" content="#2f3241">
+<title>下载k8s镜像的一种方法 | CST研习舍</title>
+<meta name="description" content="部署 k8s 集群时，要使用众多来自 gcr.io 的镜像，但国内无法下载。需要使用镜像地址中转下载，最后重新改名，以保持与原始镜像一致。">
+<meta name="keywords" content="开源,迟思堂,迟思堂工作室,CST工作室,CST研习舍">
+
+  <base href="/">
+  <link rel="shortcut icon" href="image/favicon.ico">
+  <link rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://lib.baomitu.com/highlight.js/9.15.10/styles/dark.min.css">
+  <link rel="stylesheet" href="library/index.css">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .site-header-nav-item a:link {
+      text-decoration: none;
+    }
+  </style>
+  <script src="https://lib.baomitu.com/jquery/3.4.1/jquery.slim.min.js"></script>
+  <script src="https://lib.baomitu.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://lib.baomitu.com/highlight.js/9.15.10/highlight.min.js"></script>
+  <script src="common.js" defer async></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-header-logo no-underline-hover" href="."> <!-- 网站logo -->
+        <img class="site-header-icon" src="image/logo.png">
+        CST研习舍</a>
+      <nav class="site-header-nav"><!-- 标题导航 -->
+        
+          <div class="site-header-nav-item">
+            
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="Nav_0" href data-href-match>
+                资讯
+              </a>
+              <div class="dropdown-menu" aria-labelledby="Nav_0">
+                
+                  <a class="dropdown-item" href="/categories/Activity/">活动</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="site-header-nav-item">
+            
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="Nav_1" href data-href-match>
+                资源
+              </a>
+              <div class="dropdown-menu" aria-labelledby="Nav_1">
+                
+                  <a class="dropdown-item" href="/categories/Document">文档</a>
+                
+                  <a class="dropdown-item" href="/categories/Manual">手册</a>
+                
+              </div>
+            
+          </div>
+        
+          <div class="site-header-nav-item">
+            
+              <a role="button" href="/categories/Solution/" data-href-match>
+                案例
+              </a>
+            
+          </div>
+        
+          <div class="site-header-nav-item">
+            
+              <a role="button" href="/book" data-href-match>
+                书籍
+              </a>
+            
+          </div>
+        
+          <div class="site-header-nav-item">
+            
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="Nav_4" href data-href-match>
+                关于
+              </a>
+              <div class="dropdown-menu" aria-labelledby="Nav_4">
+                
+                  <a class="dropdown-item" href="/profile/license">版权声明</a>
+                
+                  <a class="dropdown-item" href="/profile/contact">联系我们</a>
+                
+                  <a class="dropdown-item" href="/profile/about">关于</a>
+                
+              </div>
+            
+          </div>
+         <!-- 导航结束 -->
+        <form action="search/" class="ais-search-box"> <!-- 搜索 -->
+          <input type="search" name="keyword" required placeholder="搜索" id="search-input" class="nav-search ais-search-box--input" aria-label="search-box" autocapitalize="off" autocorrect="off" role="textbox">
+        </form>
+        <a class="site-header-nav-item octicon" href="https://github.com/CSTStudio/" title="Github Organization">
+          <span class="mega-octicon octicon-mark-github vertical-middle"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  <style>
+  .blog-post hr:first-of-type {
+    display: block;
+  }
+</style>
+
+
+
+<section class="page-section blog-post">
+  <div class="container">
+    <h1>下载k8s镜像的一种方法</h1>
+
+    
+
+    
+
+<div class="blog-byline mt-2 mb-4 d-flex justify-content-between align-items-center">
+
+<!-- 暂时不显示时间和作者信息 -->
+  <span class="blog-index-time">2019-11-26 23:14:59</span>
+
+
+  <a class="author-link ml-3 text-center" href="https://github.com/latelee">
+    <img class="avatar mr-2" style="max-width: 2.25rem" src="https://github.com/latelee.png?size=36" alt="latelee">
+    latelee
+  </a>
+
+
+  <span>
+    
+      <a class="badge badge-primary" href="categories/Document/">
+        Document
+      </a>
+    
+      <a class="badge badge-primary" href="categories/Document/Docker/">
+        Docker
+      </a>
+    
+    
+  </span>
+</div>
+
+
+    
+
+    <!-- <details>
+      <summary>正文大纲</summary>
+      
+    </details> -->
+
+    <main><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>部署 k8s 集群时，要使用众多来自 gcr.io 的镜像，但国内无法下载。需要使用镜像地址中转下载，最后重新改名，以保持与原始镜像一致。</p>
+<a id="more"></a>
+
+<p>脚本内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/usr/bin/env bash</span><br><span class="line"><span class="meta">#</span> 脚本名称：pullk8s.sh</span><br><span class="line"><span class="meta">#</span> 使用：pullk8s.sh k8s.gcr.io/pause-amd64:3.0</span><br><span class="line"><span class="meta">#</span> 会自动转换地址，再修改镜像，保持与原来一致。</span><br><span class="line"><span class="meta">#</span> 来自：https://github.com/xuxinkun/littleTools/blob/master/azk8spull.sh</span><br><span class="line"><span class="meta">#</span> gcr.io也可以用阿里云的：registry.cn-hangzhou.aliyuncs.com/google_containers/</span><br><span class="line">image=$1</span><br><span class="line">if [ -z $image ]; then</span><br><span class="line">    echo "image name cannot be null."</span><br><span class="line">    exit;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">array=(`echo $image | tr '/' ' '` )</span><br><span class="line"></span><br><span class="line">domainName=""</span><br><span class="line">repoName=""</span><br><span class="line">imageName=""</span><br><span class="line"></span><br><span class="line">if [ $&#123;#array[*]&#125; -eq 3 ]; then</span><br><span class="line">    repoName=$&#123;array[1]&#125;</span><br><span class="line">    imageName=$&#123;array[2]&#125;</span><br><span class="line">    if [ "$&#123;array[0]&#125;"x = "docker.io"x ]; then</span><br><span class="line">        domainName="dockerhub.azk8s.cn"</span><br><span class="line">    elif [ "$&#123;array[0]&#125;"x = "gcr.io"x ]; then</span><br><span class="line">        domainName="gcr.azk8s.cn"</span><br><span class="line">    elif [ "$&#123;array[0]&#125;"x = "quay.io"x ]; then</span><br><span class="line">        domainName="quay.azk8s.cn"</span><br><span class="line">    else</span><br><span class="line">        echo 'can not support pulling $image right now.'</span><br><span class="line">    fi</span><br><span class="line">elif [ $&#123;#array[*]&#125; -eq 2 ]; then</span><br><span class="line">    if [ "$&#123;array[0]&#125;"x = "k8s.gcr.io"x ]; then</span><br><span class="line">        domainName="gcr.azk8s.cn"</span><br><span class="line">        repoName="google_containers"</span><br><span class="line">        imageName=$&#123;array[1]&#125;</span><br><span class="line">    else</span><br><span class="line">        domainName="dockerhub.azk8s.cn"</span><br><span class="line">        repoName=$&#123;array[0]&#125;</span><br><span class="line">        imageName=$&#123;array[1]&#125;</span><br><span class="line">    fi</span><br><span class="line">elif [ $&#123;#array[*]&#125; -eq 1 ]; then</span><br><span class="line">    domainName="dockerhub.azk8s.cn"</span><br><span class="line">    repoName="library"</span><br><span class="line">    imageName=$&#123;array[0]&#125;</span><br><span class="line">else</span><br><span class="line">    echo "not support pulling $image."</span><br><span class="line">    exit</span><br><span class="line">fi</span><br><span class="line">if [ $domainName != "" ]; then</span><br><span class="line">    echo "try to pull image from mirror $domainName/$repoName/$imageName."</span><br><span class="line">    docker pull  $domainName/$repoName/$imageName</span><br><span class="line">    if [ $? -eq 0 ]; then</span><br><span class="line">        echo "try to tag $domainName/$repoName/$imageName to $image."</span><br><span class="line">        docker tag $domainName/$repoName/$imageName $image</span><br><span class="line">        if [ $? -eq 0 ]; then</span><br><span class="line">            docker rmi $domainName/$repoName/$imageName</span><br><span class="line">            echo 'pull finished.'</span><br><span class="line">        fi</span><br><span class="line">    fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>添加可执行属性：<code>chmod +x pullk8s.sh</code>。<br>放置系统 PATH 目录，如 /usr/bin。<br>使用：<code>pullk8s.sh k8s.gcr.io/pause-amd64:3.0</code>。</p>
+</main>
+
+    
+  </div>
+</section>
+
+<nav class="page-section text-center">
+  <div class="btn-group" role="group" aria-label="Post navigator">
+    
+    <a class="btn btn-secondary" role="button" href="activity/website-update/">
+      &lt; CST研习舍全新上线了！
+    </a>
+    
+    <a class="btn btn-secondary" role="button" href="meeting/meeting-20191125/">
+      核心开发组 2019-11-25 例会 &gt;
+    </a>
+    
+  </div>
+</nav>
+
+<script>
+(function () {
+
+  var path = self.location.href.split('#')[0];
+
+  $('details > .toc a[href]').attr('href', function (_, value) {
+
+    return path + value;
+  });
+
+  $('.blog-post').find('h1, h2, h3, h4, h5, h6').append(function () {
+
+    if ( this.id.trim() )
+      return '<a class="header-link" title="Permalink" href="' +
+        path + '#' + this.id +
+        '"><span class="octicon octicon-link"></span></a>';
+  });
+})();
+</script>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav">
+        
+          <a class="footer-nav-item active" href="/profile/license">版权声明</a>
+        
+          <a class="footer-nav-item " href="/profile/contact">联系我们</a>
+        
+          <a class="footer-nav-item " href="https://electronjs.org/">electron</a>
+        
+          <a class="footer-nav-item " href="https://kaiyuanshe.cn/">kaiyuanshe</a>
+        
+          <a class="footer-nav-item " href="http://kxs-co.gicp.net/Linux/index.html">科学社</a>
+        
+      </nav>
+      <span>Copyright &copy; <a href="https://www.cststudio.com.cn">CST研习舍</a> 2017-2020</span>
+      <a href="https://beian.miit.gov.cn/" rel="external nofollow" target="_blank"> 桂ICP备10003672号-2</a>
+      <script src="https://s13.cnzz.com/z_stat.php?id=1273965306&web_id=1273965306" language="JavaScript"></script>
+    </div>
+  </footer>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1608624537946')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>
